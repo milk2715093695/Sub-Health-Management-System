@@ -18,7 +18,7 @@ const texts = {
         'username': 'Please input your username',
         'password': 'Please input your password',
         'showPassword': 'Show password',
-        'submit': 'Log in',
+        'submit': 'Log In',
         'createAccountText': 'Don\'t have an account yet? Create one',
         'footerContent': 'Your health is what we care!(Creator:******************)',
         'switchLanguage': '中/EN'

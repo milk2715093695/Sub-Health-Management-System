@@ -8,7 +8,7 @@ const texts = {
         'confirmPassword': '请确认您的密码',
         'showPassword': '显示密码',
         'showPassword2': '显示密码',
-        'signup': '注册',
+        'register': '注册',
         'footerContent': '你的健康，我们关心！（制作者：******************）',
         'switchLanguage': 'EN/中'
     },
@@ -21,7 +21,7 @@ const texts = {
         'confirmPassword': 'Please confirm your password',
         'showPassword': 'Show password',
         'showPassword2': 'Show password',
-        'signup': 'Sign up',
+        'register': 'Sign Up',
         'createAccountText': 'Don\'t have an account yet? Create one',
         'footerContent': 'Your health is what we care!(Creator:******************)',
         'switchLanguage': '中/EN'
