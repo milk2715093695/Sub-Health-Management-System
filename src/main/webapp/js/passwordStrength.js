@@ -6,16 +6,18 @@ document.getElementById('password').addEventListener('input', function() {
     let strongRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})');
     let mediumRegex = new RegExp('^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})');
 
+    let language = localStorage.getItem('language') || 'zh-CN';
+
     if(password.length===0){
         passwordStrength.innerHTML = '';
     } else if(strongRegex.test(password)) {
-        passwordStrength.innerHTML = '密码强度：强';
+        passwordStrength.innerHTML = (language === 'zh-CN') ? '密码强度：强' : 'Password Strength: Strong';
         passwordStrength.style.color = 'green';
     } else if(mediumRegex.test(password)) {
-        passwordStrength.innerHTML = '密码强度：中';
+        passwordStrength.innerHTML = (language === 'zh-CN') ? '密码强度：中' : 'Password Strength: Medium';
         passwordStrength.style.color = 'orange';
     } else {
-        passwordStrength.innerHTML = '密码强度：弱';
+        passwordStrength.innerHTML = (language === 'zh-CN') ? '密码强度：弱' : 'Password Strength: Weak';
         passwordStrength.style.color = 'red';
     }
 });
