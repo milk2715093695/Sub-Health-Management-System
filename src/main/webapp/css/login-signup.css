@@ -172,10 +172,12 @@ body {
     background-size: 100% auto;
 }
 
+/* “显示密码”容器 */
 .show-password-container {
     margin: 0 20px 0 10px;
 }
 
+/* 确保间距足够 */
 .password-strength {
     margin-right: auto;
 }
