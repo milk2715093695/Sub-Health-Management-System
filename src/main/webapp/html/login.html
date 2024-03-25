@@ -21,7 +21,7 @@
             </div>
 
             <div class="login-container position-relative">
-                <div id="containerTitle" class="container-title text-center">用户登录</div>
+                <div id="containerTitle-login" class="container-title text-center">用户登录</div>
                 <div class="container-body">
                     <form action="/login" method="post">
                         <div>
@@ -41,7 +41,7 @@
                             <label for="password" class="password"></label>
                             <input id="password" class="input-field" type="password" name="password" placeholder="请输入您的密码" required>
 
-                            <div>
+                            <div class="show-password-container">
                                 <div class="show-password flex-display">
                                     <label for="show"></label>
                                     <input id="show" class="cursor-pointer" type="checkbox" onclick="showPassword('password')">
@@ -70,6 +70,7 @@
     </div>
 
     <script type="text/javascript" src="./../js/switchLanguage.js"></script>
+    <script type="text/javascript" src="../js/login-texts.js"></script>
     <script type="text/javascript" src="./../js/showPassword.js"></script>
 </body>
 

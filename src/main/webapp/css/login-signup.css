@@ -172,10 +172,17 @@ body {
     background-size: 100% auto;
 }
 
+.show-password-container {
+    margin: 0 20px 0 10px;
+}
+
+.password-strength {
+    margin-right: auto;
+}
+
 /* 显示密码按钮 */
 .show-password {
     justify-content: flex-end;
-    margin: 0 20px 0 0;
 }
 
 /* 登录按钮 */
