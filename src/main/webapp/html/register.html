@@ -42,7 +42,7 @@
                             <input id="password" class="input-field" type="password" name="password" placeholder="请输入您的密码" required>
 
                             <div class="show-password-container flex-display">
-                                <span id="passwordStrength" class="password-strength font-small"></span>
+                                <span id="passwordStrength" class="password-information font-small"></span>
                                 <div class="show-password flex-display">
                                     <label for="show"></label>
                                     <input id="show" class="cursor-pointer" type="checkbox" onclick="showPassword('password')">
@@ -60,6 +60,7 @@
                             <input id="confirmPassword" class="input-field" type="password" name="password" placeholder="请确认您的密码" required>
 
                             <div class="show-password-container">
+                                <span id="checkPassword" class="password-information font-small"></span>
                                 <div class="show-password flex-display">
                                     <label for="show2"></label>
                                     <input id="show2" class="cursor-pointer" type="checkbox" onclick="showPassword('confirmPassword')">
@@ -85,6 +86,7 @@
     <script type="text/javascript" src="./../js/register-texts.js"></script>
     <script type="text/javascript" src="./../js/showPassword.js"></script>
     <script type="text/javascript" src="./../js/passwordStrength.js"></script>
+    <script type="text/javascript" src="./../js/checkPassword.js"></script>
 </body>
 
 </html>
