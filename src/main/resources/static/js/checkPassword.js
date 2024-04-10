@@ -1,4 +1,4 @@
-document.getElementById('confirmPassword').addEventListener('input', function () {
+function checkPassword() {
     let password = document.getElementById('password').value;
     let confirmPassword = document.getElementById('confirmPassword').value;
 
@@ -13,7 +13,10 @@ document.getElementById('confirmPassword').addEventListener('input', function ()
         checkPassword.innerText = (language === 'zh-CN') ? '密码匹配' : 'Passwords match';
         checkPassword.style.color = 'green';
     }
-})
+}
+
+document.getElementById('confirmPassword').addEventListener('input', checkPassword);
+document.getElementById('password').addEventListener('input', checkPassword);
 
 document.getElementById('register').addEventListener('click', function (event) {
     let password = document.getElementById('password').value;
