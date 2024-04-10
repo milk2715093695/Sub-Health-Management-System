@@ -14,3 +14,13 @@ document.getElementById('confirmPassword').addEventListener('input', function ()
         checkPassword.style.color = 'green';
     }
 })
+
+document.getElementById('register').addEventListener('click', function (event) {
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        event.preventDefault(); // 阻止表单提交
+        alert('两次密码输入不一致，请重新输入！');
+    }
+});
