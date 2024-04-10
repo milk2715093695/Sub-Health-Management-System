@@ -1,0 +1,11 @@
+spring:
+    datasource:
+      url: jdbc:sqlite:myapp.db
+      driver-class-name: org.sqlite.JDBC
+    jpa:
+      database-platform: org.hibernate.dialect.SQLiteDialect
+      hibernate:
+        ddl-auto: none
+    sql:
+      init:
+        mode: always
