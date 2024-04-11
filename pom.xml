@@ -38,23 +38,6 @@
             <version>4.0.1</version> <!-- 添加版本号 -->
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.xerial</groupId>
-            <artifactId>sqlite-jdbc</artifactId>
-            <version>3.45.2.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-            <version>3.2.0-M2</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -65,5 +48,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
