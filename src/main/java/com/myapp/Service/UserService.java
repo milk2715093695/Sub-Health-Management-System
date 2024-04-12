@@ -24,4 +24,16 @@ public class UserService {
 
         return true;
     }
+
+    public User login(String username, String password) {
+        User existingUser = userRepository.findByUsername(username);
+
+        if (existingUser != null && existingUser.getPassword().equals(password)) {
+            System.out.println("登录成功");
+            return existingUser;
+        } else {
+            System.out.println("用户名或密码错误");
+            return null;
+        }
+    }
 }
