@@ -114,3 +114,77 @@ axios.post('/register', {
 ```
 
 注意：你需要替换 `inputUsername` 和 `inputPassword` 为实际获取表单输入的代码。同样地，你的前端应该使用一个可处理Ajax请求的库，如Axios，jQuery等，这里的示例中使用的是Axios。使用这种方式，你就可以在用户名被占用时弹出警告信息啦。
+
+
+
+当然，这是你的代码，我将验证密码匹配和登录请求的功能整合到一起，如下所示：
+
+```javascript
+function checkPassword() {
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirmPassword').value;
+    let checkPassword = document.getElementById('checkPassword');
+    let language = localStorage.getItem('language') || 'zh-CN';
+
+    if (confirmPassword !== password) {
+        checkPassword.innerText = (language === 'zh-CN') ? '两次密码输入不一致' : 'The passwords entered do not match';
+        checkPassword.style.color = 'red';
+    } else {
+        checkPassword.innerText = (language === 'zh-CN') ? '密码匹配' : 'Passwords match';
+        checkPassword.style.color = 'green';
+    }
+}
+
+document.getElementById('confirmPassword').addEventListener('input', checkPassword);
+document.getElementById('password').addEventListener('input', checkPassword);
+
+var form = document.getElementById('login-form');
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        alert('两次密码输入不一致，请重新输入！');
+        return;
+    }
+
+    // 获取用户名
+    var username = document.getElementById('username').value;
+
+    // 发起登录请求
+    fetch('http://youapiaddress/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password
+        }),
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.text();
+        } else {
+            throw new Error('Login failed');
+        }
+    })
+    .then(data => {
+        console.log(data);
+        // 登录成功，重定向到 loginSuccess 页面
+        window.location.href = "/html/loginSuccess.html";
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Login failed: ' + error.message);
+    });
+});
+```
+
+这段代码首先会在用户键入密码或确认密码时验证它们是否匹配。然后，在用户提交表单时，如果密码和确认密码不匹配，那么它将弹出一个警告并阻止表单的提交。否则，它将使用Fetch API发送登录请求到你的API。
+
+你需要确保你的HTML包含了函数中用到的所有元素，例如使用`getElementById()`函数获取的元素。在JavaScript中的字符串`'http://youapiaddress/login'`应该被替换为你的实际API地址。
+
+
