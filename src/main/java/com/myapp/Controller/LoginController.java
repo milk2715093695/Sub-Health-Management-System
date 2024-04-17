@@ -21,7 +21,7 @@ public class LoginController {
             @RequestParam String password) {
 
         Map<String, Object> result = new HashMap<>();
-        User loginuser = userService.login(username, password);
+        User loginuser = userService.login(username, password);     //调用登录服务
 
         // 验证并处理登录结果
         if (loginuser == null) {
