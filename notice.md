@@ -65,3 +65,52 @@ function submitForm() {
 ```
 
 这样，当你点击注册按钮时，页面会发送一个 AJAX POST 请求到后端的 `/register` 路由，后端处理完注册请求后返回一个 JSON 格式的响应，前端接收到响应后根据其中的 message 决定是弹出 "用户名被占用，请重新注册" 的警告框，还是 "注册成功" 的警告框，并重定向到成功页面。
+
+
+
+
+
+
+
+
+你可以在处理用户注册的后端代码里，当发现重复的用户名时，返回一个特定的错误信息。然后在你的前端JavaScript代码里，针对这个错误信息弹出警告。这就需要前后端进行协作。
+
+首先，在你的后端Java代码中，当检测到用户名已被使用时，不返回重定向，而是返回一个错误信息。可以通过一个 Map 或者一个自定义的 Result 类实现。示例如下：
+
+```java
+@PostMapping("/register")
+@ResponseBody
+public Map<String, Object> register(@RequestParam String username,
+                                    @RequestParam String password) {
+    Map<String, Object> result = new HashMap<>();
+    User existedUser = userService.findByUsername(username);
+
+    if (existedUser != null) {
+        result.put("error", "该用户名已被占用，请重新输入");
+    } else {
+        User newUser = userService.register(username, password);
+        result.put("user", newUser);
+    }
+
+    return result;
+}
+```
+
+然后，在你的前端JavaScript代码中，处理这个注册请求的响应，如果返回的JSON对象中含有 "error" 字段，那么就弹出警告：
+
+```javascript
+axios.post('/register', {
+    username: inputUsername,
+    password: inputPassword,
+}).then(function (response) {
+    if (response.data.error) {
+        alert(response.data.error);
+    } else {
+        window.location.href = '/html/loginSuccess.html';
+    }
+}).catch(function (error) {
+    console.log(error);
+});
+```
+
+注意：你需要替换 `inputUsername` 和 `inputPassword` 为实际获取表单输入的代码。同样地，你的前端应该使用一个可处理Ajax请求的库，如Axios，jQuery等，这里的示例中使用的是Axios。使用这种方式，你就可以在用户名被占用时弹出警告信息啦。
