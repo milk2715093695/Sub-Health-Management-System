@@ -8,7 +8,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class TestController {
     @GetMapping("/test")
     public String test(RedirectAttributes redirectAttributes) {
-        redirectAttributes.addFlashAttribute("info", "1");
+        redirectAttributes.addFlashAttribute("info", "这是一个测试网页");
         return "test";
     }
 }
