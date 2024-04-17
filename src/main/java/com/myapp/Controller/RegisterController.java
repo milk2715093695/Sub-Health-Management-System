@@ -19,7 +19,7 @@ public class RegisterController {
         boolean success = userService.register(username, password);
 
         if (!success) {
-            redirectAttributes.addFlashAttribute("errMessage", "注册失败，用户名被占用");
+            redirectAttributes.addFlashAttribute("errMessage", "用户名已被占用");
             return "redirect:/html/register.html";
         }
 
