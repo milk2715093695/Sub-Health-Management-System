@@ -16,6 +16,7 @@ public class RegisterController {
     @PostMapping("/register")
     public Map<String, Object> register(@RequestParam("username") String username,
                                         @RequestParam("password") String password) {
+
         Map<String, Object> result = new HashMap<>();
         boolean success = userService.register(username, password);     //调用注册服务
 
