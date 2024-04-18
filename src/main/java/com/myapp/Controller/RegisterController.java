@@ -1,12 +1,12 @@
 package com.myapp.Controller;
 
-import com.myapp.Service.UserService;
 import com.myapp.model.UserData;
+import com.myapp.Service.UserService;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 import java.util.HashMap;
