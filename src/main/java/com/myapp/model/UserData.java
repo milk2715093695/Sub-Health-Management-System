@@ -1,6 +1,6 @@
 package com.myapp.model;
 
-public class LoginData {
+public class UserData {
     String username;
     String password;
 

@@ -1,13 +1,13 @@
 package com.myapp.Controller;
 
-import com.myapp.Service.UserService;
+import com.myapp.model.UserData;
 import com.myapp.entity.User;
-import com.myapp.model.LoginData;
+import com.myapp.Service.UserService;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +17,9 @@ public class LoginController {
     @Autowired UserService userService;  // 通过Spring框架自动注入UserService实例
 
     @PostMapping("/login")  // 处理到/login的POST请求
-    public Map<String, Object> login(@RequestBody LoginData loginData) {
+    public Map<String, Object> login(@RequestBody UserData userData) {
         Map<String, Object> result = new HashMap<>();
-        User loginuser = userService.login(loginData.getUsername(), loginData.getPassword());     //调用登录服务
+        User loginuser = userService.login(userData.getUsername(), userData.getPassword());     //调用登录服务
 
         // 验证并处理登录结果
         if (loginuser == null) {
