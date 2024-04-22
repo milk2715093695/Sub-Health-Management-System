@@ -13,7 +13,6 @@ public class UserService {
         User existingUser = userRepository.findByUsername(username);
 
         if (existingUser != null) {
-            System.out.println("用户名被占用");
             return false;
         }
 
@@ -29,10 +28,8 @@ public class UserService {
         User existingUser = userRepository.findByUsername(username);
 
         if (existingUser != null && existingUser.getPassword().equals(password)) {
-            System.out.println("登录成功");
             return existingUser;
         } else {
-            System.out.println("用户名或密码错误");
             return null;
         }
     }

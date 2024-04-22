@@ -16,7 +16,8 @@ document.getElementById("submit").addEventListener('click', function (event) {
             if (data.success) {
                 location.href = "/home";
             } else {
-                alert(data.errMessage);
+                let language = localStorage.getItem('language') || 'zh-CN';
+                alert(data.errMessage[language]);
                 document.getElementById('username').value = '';
                 document.getElementById('password').value = '';
             }

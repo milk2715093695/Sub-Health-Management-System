@@ -23,7 +23,10 @@ public class LoginController {
 
         // 验证并处理登录结果
         if (loginuser == null) {
-            result.put("errMessage", "用户名或密码错误，请重新输入");
+            Map<String, String> errMessage = new HashMap<>();
+            errMessage.put("zh-CN", "用户名或密码错误，请重新输入");
+            errMessage.put("en", "Username or password is incorrect, please try again");
+            result.put("errMessage", errMessage);
             result.put("success", false);
         } else {
             result.put("success", true);
