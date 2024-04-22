@@ -16,7 +16,7 @@ document.getElementById("submit").addEventListener('click', function (event) {
             if (data.success) {
                 location.href = "/home";
             } else {
-                alert('用户名或密码错误，请重新输入');
+                alert(data.errMessage);
                 document.getElementById('username').value = '';
                 document.getElementById('password').value = '';
             }

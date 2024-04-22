@@ -19,11 +19,35 @@ document.getElementById('confirmPassword').addEventListener('input', checkPasswo
 document.getElementById('password').addEventListener('input', checkPassword);
 
 document.getElementById('register').addEventListener('click', function (event) {
+    event.preventDefault(); // 阻止表单提交
+
+    let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let confirmPassword = document.getElementById('confirmPassword').value;
 
     if (password !== confirmPassword) {
-        event.preventDefault(); // 阻止表单提交
         alert('两次密码输入不一致，请重新输入！');
+    } else {
+        fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.href = './../html/registerSuccess.html'
+                } else {
+                    alert(data.errMessage);
+                    document.getElementById('username').value = '';
+                    document.getElementById('password').value = '';
+                    document.getElementById('confirmPassword').value = '';
+                }
+            })
     }
 });
