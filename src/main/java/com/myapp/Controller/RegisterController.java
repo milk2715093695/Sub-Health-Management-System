@@ -24,7 +24,10 @@ public class RegisterController {
         boolean success = userService.register(username, password);     //调用注册服务
         result.put("success", success);
         if (!success) {
-            result.put("errMessage", "用户名已被占用，请重新输入");
+            Map<String, String> errMessage = new HashMap<>();
+            errMessage.put("zh-CN", "用户名已被占用，请重新输入");
+            errMessage.put("en", "Username already exists, please try another one.");
+            result.put("errMessage", errMessage);
         }
 
         System.out.println("用户名：" + username);

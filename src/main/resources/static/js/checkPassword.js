@@ -21,12 +21,13 @@ document.getElementById('password').addEventListener('input', checkPassword);
 document.getElementById('register').addEventListener('click', function (event) {
     event.preventDefault(); // 阻止表单提交
 
+    let language = localStorage.getItem('language') || 'zh-CN';
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let confirmPassword = document.getElementById('confirmPassword').value;
 
     if (password !== confirmPassword) {
-        alert('两次密码输入不一致，请重新输入！');
+        alert(language === 'zh-CN' ? "密码不一致，请重新输入" : "Passwords do not match, please try again.");
     } else {
         fetch('/register', {
             method: 'POST',
@@ -43,7 +44,7 @@ document.getElementById('register').addEventListener('click', function (event) {
                 if (data.success) {
                     location.href = './../html/registerSuccess.html'
                 } else {
-                    alert(data.errMessage);
+                    alert(data.errMessage[language]);
                     document.getElementById('username').value = '';
                     document.getElementById('password').value = '';
                     document.getElementById('confirmPassword').value = '';
