@@ -7,6 +7,8 @@
     --royal-blue: #1873b6;
     --navy-blue: #0000cd;
     --silver: #889aa4;
+    --very-light-grey: #bbbbbb;
+    --light-grey: #65686b;
     --light-brown: #696666;
     --black: #2e2e2e;
 }
@@ -153,7 +155,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: var(--white);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -214,14 +216,14 @@ body {
     width: 10px;
     height: 10px;
     margin: 0 5px;
-    background-color: #bbb;
+    background-color: var(--very-light-grey);
     border-radius: 50%;
     cursor: pointer;
 }
 
 /*设置被激活的小点的颜色*/
 .dot.active {
-    background-color: #717171;
+    background-color: var(--black);
 }
 
 
@@ -235,7 +237,7 @@ body {
     width: 37px;
     height: 24px;
     margin: 0 auto;
-    background: url(../images/icon-adown.png)no-repeat center center;
+    background: url(./../images/icon-adown.png)no-repeat center center;
     background-size: 30px;
     cursor: pointer;
     -webkit-transition: 1s linear 0s;
@@ -247,7 +249,7 @@ body {
 .iBanner-down p {
     text-align: center;
     font-size: 16px;
-    color: #65686B;
+    color: var(--light-grey);
     padding-top: 5px;
 }
 .mean {
@@ -260,7 +262,7 @@ body {
 .meaning {
     font-size: 32px;
     font-weight: bold;
-    color: #333;
+    color: var(--black);
     text-align: center ;
     display: block;
 }
@@ -269,7 +271,7 @@ body {
     text-align: left;
     font-size: 18px;
     line-height: 1.5;
-    color: #666;
+    color: var(--light-grey);
 }
 /*第二个轮播器*/
 .slider2{
