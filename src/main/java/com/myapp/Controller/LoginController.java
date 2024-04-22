@@ -23,7 +23,7 @@ public class LoginController {
 
         // 验证并处理登录结果
         if (loginuser == null) {
-            result.put("errMessage", "用户名或密码错误");
+            result.put("errMessage", "用户名或密码错误，请重新输入");
             result.put("success", false);
         } else {
             result.put("success", true);

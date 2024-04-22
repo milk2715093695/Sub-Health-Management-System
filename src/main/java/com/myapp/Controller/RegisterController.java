@@ -22,11 +22,9 @@ public class RegisterController {
         String password = userData.getPassword();
         boolean success = userService.register(username, password);     //调用注册服务
 
+        result.put("success", success);
         if (!success) {
             result.put("errMessage", "用户名已被占用，请重新输入");
-            result.put("success", true);
-        } else {
-            result.put("success", false);
         }
 
         System.out.println("用户名：" + username);
