@@ -15,7 +15,7 @@
 body {
     margin: 0;
     background: var(--white);
-    font-family: Microsoft YaHei, serif;
+    font-family: Arial, sans-serif;
 }
 
 /* 通用类：把鼠标变成手形 */

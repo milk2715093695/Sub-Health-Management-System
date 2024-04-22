@@ -17,7 +17,7 @@
 body {
     margin: 0;
     background: var(--white);
-    font-family: Microsoft YaHei, serif;
+    font-family: Arial, sans-serif;
 }
 
 /* 通用类：把鼠标变成手形 */
@@ -73,10 +73,10 @@ body {
 /* 页面包裹器，设置了背景图片 */
 .wrapper {
     height: 800px;
-
     background-size: 100% 100%;
     box-sizing: border-box;
 }
+
 .header {
     width: calc(100% - 70px);
     top: 0;
@@ -86,9 +86,6 @@ body {
     -ms-flex-align: center;
     align-items: center;
     padding-left: 70px;
-}
-body {
-    font-family: Arial, sans-serif;
 }
 
 .logo-title span {
@@ -125,7 +122,6 @@ body {
 
 .navList li a {
     display: block;
-    text-align: center;
     color: var(--black);
     text-decoration: none;
     font-size: 20px;
@@ -147,14 +143,13 @@ body {
 .navList li a:hover {
     color: var(--royal-blue);
 }
+
 .dropdown {
-    position: relative;
     display: inline-block;
 }
 
 .dropdown-content {
     display: none;
-    position: absolute;
     background-color: var(--white);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -174,7 +169,6 @@ body {
 
 /*设置轮播图容器的大小和位置*/
 .slider1 {
-    position: relative;
     width: 100vw;
     height: 600px;
     overflow: hidden;
@@ -201,7 +195,6 @@ body {
 
 /*为轮播图下方的小点设置位置位于slider元素底部10px处，宽度充满父级元素，文本居中*/
 .dots {
-    position: absolute;
     bottom: 10px;
     width: 100%;
     text-align: center;
@@ -215,7 +208,6 @@ body {
     margin: 0 5px;
     background-color: var(--very-light-grey);
     border-radius: 50%;
-    cursor: pointer;
 }
 
 /*设置被激活的小点的颜色*/
@@ -236,7 +228,6 @@ body {
     margin: 0 auto;
     background: url(./../images/icon-adown.png)no-repeat center center;
     background-size: 30px;
-    cursor: pointer;
     -webkit-transition: 1s linear 0s;
     -moz-transition: 1s linear 0s;
     -o-transition: 1s linear 0s;
@@ -272,7 +263,6 @@ body {
 }
 /*第二个轮播器*/
 .slider2{
-    position: relative;
     width: 90%;
     height: 500px;
     overflow: hidden;
