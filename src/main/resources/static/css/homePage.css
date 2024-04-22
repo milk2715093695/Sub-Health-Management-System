@@ -199,9 +199,6 @@ body {
     object-fit: cover;
 }
 
-.item:hover{
-    cursor: pointer;
-}
 /*为轮播图下方的小点设置位置位于slider元素底部10px处，宽度充满父级元素，文本居中*/
 .dots {
     position: absolute;
