@@ -55,11 +55,6 @@ body {
     display: inline-block;
 }
 
-/* 通用类：小号字体 */
-.font-small {
-    font-size: 13px;
-}
-
 /* 通用类：隐藏元素 */
 .hidden {
     display: none;
