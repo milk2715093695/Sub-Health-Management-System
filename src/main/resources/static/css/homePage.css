@@ -273,6 +273,5 @@ body {
 }
 
 .slider-items {
-    display: flex;
     transition: all 1s;
 }
