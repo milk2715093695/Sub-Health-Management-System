@@ -45,6 +45,11 @@ body {
     display: flex;
 }
 
+/* 通用类：block布局 */
+.block-display {
+    display: block;
+}
+
 /* 通用类：小号字体 */
 .font-small {
     font-size: 13px;
@@ -68,6 +73,11 @@ body {
 .input-field {
     height: 30px;
     width: 75%;
+}
+
+/* 通用类：隐藏元素 */
+.hidden {
+    display: none;
 }
 
 /* 页面包裹器，设置了背景图片 */
@@ -116,16 +126,8 @@ body {
 }
 
 .navContent {
-    display: flex;
     justify-content: space-between;
     padding: 10px;
-}
-
-.navList li a {
-    display: block;
-    color: var(--black);
-    text-decoration: none;
-    font-size: 20px;
 }
 
 .navList {
@@ -133,13 +135,13 @@ body {
     text-align: center;
     list-style-type: none;
     flex-grow: 1;
-    display: flex;
     gap: 20px;
 }
 
-.active{
-    display: block;
-    text-align: center;
+.navList li a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .navList li a:hover {
@@ -151,15 +153,14 @@ body {
 }
 
 .dropdown-content {
-    display: none;
     background-color: var(--white);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
+    color: var(--black);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -217,14 +218,12 @@ body {
     background-color: var(--black);
 }
 
-
 .iBanner-down {
     height: 100px;
     padding-top: 20px;
     text-align: center;
 }
 .iBanner-arrow {
-    display: none;
     width: 37px;
     height: 24px;
     margin: 0 auto;
@@ -236,12 +235,14 @@ body {
     -ms-transition: 1s linear 0s;
     transition: 1s linear 0s;
 }
+
 .iBanner-down p {
     text-align: center;
     font-size: 16px;
     color: var(--light-grey);
     padding-top: 5px;
 }
+
 .mean {
     padding: 10px;
     width: 66%;
@@ -270,6 +271,7 @@ body {
     overflow: hidden;
     margin: 0 auto;
 }
+
 .slider-items {
     display: flex;
     transition: all 1s;

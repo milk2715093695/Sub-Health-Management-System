@@ -10,83 +10,91 @@
 </head>
 
 <body>
-<header>
     <nav class="navBox">
-        <div class="navContent">
+        <div class="navContent flex-display">
             <div class="header flex-display"> <!-- 添加这个 div 进行包裹 -->
                 <img src="./../images/logo.png" class="logo" alt="图片加载失败">
                 <span id="title" class="title">亚健康管理系统</span>
             </div> <!-- 这里结束包裹 -->
-            <ul class="navList">
+
+            <ul class="navList flex-display">
                 <li class="active">
                     <a href="homePage.html">首页</a>
                 </li>
 
                 <li class="dropdown">
                     <a href="product.html">健康评估</a>
-                    <div class="dropdown-content position-absolute">
+                    <div class="dropdown-content position-absolute hidden">
                         <a href="physicalTest.html">体质评测</a>
                         <a href="mentalTest.html">心理评测</a>
                         <a href="riskTest.html">风险评测</a>
                     </div>
                 </li>
-                <li class="active">
+
+                <li>
                     <a href="news.html">新闻动态</a>
                 </li>
-                <li class="active">
+
+                <li>
                     <a href="healthCare.html">健康管理</a>
                 </li>
-                <li class="login">
+
+                <li>
                     <a href="login.html">登录</a>
                 </li>
-                <li class="register">
+
+                <li>
                     <a href="register.html">注册</a>
                 </li>
             </ul>
         </div>
     </nav>
-</header>
-<div class="slider1 position-relative">
-    <div class="slider-items">
-        <div class="item cursor-pointer"><img src="./../images/dna.jpg" alt="图片加载失败"></div>
-        <div class="item cursor-pointer"><img src="./../images/health.jpg" alt="图片加载失败"></div>
-        <div class="item cursor-pointer"><img src="./../images/doctor.png" alt="图片加载失败"></div>
-    </div>
-            <div class="dots position-absolute">
-                <span class="dot cursor-pointer"></span>
-                <span class="dot cursor-pointer"></span>
-                <span class="dot cursor-pointer"></span>
-            </div>
-</div>
-<div class="wrapper iBanner-down">
-    <span class="iBanner-arrow cursor-pointer" style="display: block;"></span>
-    <p style="display: none;">亚健康能够悄无声息地威胁生命健康，我们关爱每一位患者用心打造一个舒适健康的亚健康管理平台</p>
-</div>
-<div class="mean">
-    <span class="meaning" >亚健康是什么？</span>
-    <p>亚健康就是指处于疾病和健康十足的中间状态，通常会表现出疲乏无力，肢体倦怠，头晕头痛，咽部异物感，失眠健忘，胸闷心悸，胃胀，腹胀，消化不良，便秘，肌肉酸痛等一系列不适的症状，但是系统检查后没有明确的疾病，也就是功能性的改变。</p>
-    <div class="slider2 position-relative">
+
+    <div class="slider1 position-relative">
         <div class="slider-items">
-            <div class="item cursor-pointer"><img src="./../images/headache.jpg" alt="图片加载失败"></div>
-            <div class="item cursor-pointer"><img src="./../images/insomnia.png" alt="图片加载失败"></div>
-            <div class="item cursor-pointer"><img src="./../images/muscleache.jpg" alt="图片加载失败"></div>
-            <div class="item cursor-pointer"><img src="./../images/stomachache.png" alt="图片加载失败"></div>
-            <div class="item cursor-pointer"><img src="./../images/heartache.jpg" alt="图片加载失败"></div>
+            <div class="item cursor-pointer"><img src="./../images/dna.jpg" alt="图片加载失败"></div>
+            <div class="item cursor-pointer"><img src="./../images/health.jpg" alt="图片加载失败"></div>
+            <div class="item cursor-pointer"><img src="./../images/doctor.png" alt="图片加载失败"></div>
         </div>
-            <div class="dots position-absolute">
-                <span class="dot cursor-pointer"></span>
-                <span class="dot cursor-pointer"></span>
-                <span class="dot cursor-pointer"></span>
-                <span class="dot cursor-pointer"></span>
-                <span class="dot cursor-pointer"></span>
-            </div>
+
+        <div class="dots position-absolute">
+            <span class="dot cursor-pointer"></span>
+            <span class="dot cursor-pointer"></span>
+            <span class="dot cursor-pointer"></span>
+        </div>
     </div>
-    <p>处于亚健康状态的人不能达到健康的标准，他们会表现出一定时间内的活力降低、功能和适应能力减退的症状，但这些症状并不符合现代医学有关疾病的临床或亚临床诊断标准。
+
+    <div class="wrapper iBanner-down">
+        <span id="arrow" class="iBanner-arrow cursor-pointer block-display"></span>
+        <p id="hidden-text" class="hidden">亚健康能够悄无声息地威胁生命健康，我们关爱每一位患者用心打造一个舒适健康的亚健康管理平台</p>
+    </div>
+
+    <div class="mean">
+        <span class="meaning" >亚健康是什么？</span>
+        <p>亚健康就是指处于疾病和健康十足的中间状态，通常会表现出疲乏无力，肢体倦怠，头晕头痛，咽部异物感，失眠健忘，胸闷心悸，胃胀，腹胀，消化不良，便秘，肌肉酸痛等一系列不适的症状，但是系统检查后没有明确的疾病，也就是功能性的改变。</p>
+        <div class="slider2 position-relative">
+            <div class="slider-items">
+                <div class="item cursor-pointer"><img src="./../images/headache.jpg" alt="图片加载失败"></div>
+                <div class="item cursor-pointer"><img src="./../images/insomnia.png" alt="图片加载失败"></div>
+                <div class="item cursor-pointer"><img src="./../images/muscleache.jpg" alt="图片加载失败"></div>
+                <div class="item cursor-pointer"><img src="./../images/stomachache.png" alt="图片加载失败"></div>
+                <div class="item cursor-pointer"><img src="./../images/heartache.jpg" alt="图片加载失败"></div>
+            </div>
+                <div class="dots position-absolute">
+                    <span class="dot cursor-pointer"></span>
+                    <span class="dot cursor-pointer"></span>
+                    <span class="dot cursor-pointer"></span>
+                    <span class="dot cursor-pointer"></span>
+                    <span class="dot cursor-pointer"></span>
+                </div>
+        </div>
+        <p>处于亚健康状态的人不能达到健康的标准，他们会表现出一定时间内的活力降低、功能和适应能力减退的症状，但这些症状并不符合现代医学有关疾病的临床或亚临床诊断标准。
         因此，有时候亚健康也被称为"次健康"，"第三状态"，"中间状态"，"游移状态"，"灰色状态"或者"潜病状态"。</p>
-</div>
+    </div>
 </body>
 
 <script type="text/javascript" src="./../js/scripts.js"></script>
 <script type="text/javascript" src="./../js/setPictureInterval.js"></script>
 <script type="text/javascript" src="./../js/arrow.js"></script>
+
 </html>
