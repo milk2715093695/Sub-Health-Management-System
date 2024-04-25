@@ -50,29 +50,14 @@ body {
     display: block;
 }
 
-/* 通用类：小号字体 */
-.font-small {
-    font-size: 13px;
-}
-
-/* 通用类：鼠标悬停变色 */
-.button-hover:hover {
-    background-color: var(--navy-blue);
-    color: var(--white);
-}
-
-/* 通用类：图标 */
-.icon {
-    top: 9px;
-    width: 32px;
-    height: 32px;
+/* 通用类：inline-block布局 */
+.inline-block-display {
     display: inline-block;
 }
 
-/* 通用类：输入区域 */
-.input-field {
-    height: 30px;
-    width: 75%;
+/* 通用类：小号字体 */
+.font-small {
+    font-size: 13px;
 }
 
 /* 通用类：隐藏元素 */
@@ -148,10 +133,6 @@ body {
     color: var(--royal-blue);
 }
 
-.dropdown {
-    display: inline-block;
-}
-
 .dropdown-content {
     background-color: var(--white);
     min-width: 160px;
@@ -178,7 +159,6 @@ body {
 
 /*设置轮播项的布局为水平排列，当切换时有过渡效果*/
 .slider-items {
-    display: flex;
     transition: all 1s;
 }
 
