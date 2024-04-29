@@ -5,7 +5,7 @@ document.getElementById('arrow').addEventListener('click', function() {
     arrow.style.display = 'none';
     text.style.display = 'block';
 
-    // 滚动到文本位置，smooth表示平滑地滚动
+    // 滚动到文本位置
     window.scrollTo({
         top: text.getBoundingClientRect().top + window.scrollY,
         behavior: 'smooth'

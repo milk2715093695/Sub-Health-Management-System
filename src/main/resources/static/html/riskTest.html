@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="totalTitle">亚健康管理系统心理评测</title>
+  <link rel="stylesheet" href="./../css/homePage.css">
+  <link rel="stylesheet" href="./../css/test.css">
+</head>
+<body>
+<nav class="navBox">
+  <div class="navContent flex-display">
+    <div class="header flex-display"> <!-- 添加这个 div 进行包裹 -->
+      <img src="./../images/logo.png" class="logo" alt="图片加载失败">
+      <span id="title" class="title">亚健康管理系统</span>
+    </div> <!-- 这里结束包裹 -->
+
+    <ul class="navList flex-display">
+      <li><a href="homePage.html">首页</a></li>
+
+      <li class="dropdown">
+        <a href="product.html">健康评估</a>
+        <div class="dropdown-content position-absolute hidden">
+          <a class="block-display" href="physicalTest.html">体质评测</a>
+          <a class="block-display" href="mentalTest.html">心理评测</a>
+          <a class="block-display" href="riskTest.html">风险评测</a>
+        </div>
+      </li>
+
+      <li><a href="news.html">新闻动态</a></li>
+
+      <li><a href="healthCare.html">健康管理</a></li>
+
+      <li><a href="./login.html">登录</a></li>
+
+      <li><a href="./register.html">注册</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <h2>风险评估问卷</h2>
+  <form action="" id="quiz" onsubmit="return calculateScore();">
+    <h3>1. 您最近是否经常感到疲劳或无力？</h3>
+    <input type="radio" id="very" name="emo" value="20">
+    <label for="very">从不</label><br>
+    <input type="radio" id="ra" name="emo" value="10">
+    <label for="ra">有时</label><br>
+    <input type="radio" id="less" name="emo" value="0">
+    <label for="less">经常</label>
+
+    <h3>2. 您是否有持续的肌肉或关节疼痛?</h3>
+    <input type="radio" id="yes" name="satisfy" value="10">
+    <label for="yes">从不</label><br>
+    <input type="radio" id="no" name="satisfy" value="5">
+    <label for="no">有时</label><br>
+    <input type="radio" id="not" name="emo" value="0">
+    <label for="not">经常</label>
+
+    <h3>3. 您是否经常感到焦虑或烦躁？</h3>
+    <input type="radio" id="morning" name="energy" value="10">
+    <label for="morning">从不</label><br>
+    <input type="radio" id="afternoon" name="energy" value="5">
+    <label for="afternoon">有时</label><br>
+    <input type="radio" id="evening" name="energy" value="0">
+    <label for="evening">经常</label>
+
+    <h3>4. 您是否有持续的睡眠问题，如失眠或多梦？</h3>
+    <input type="radio" id="often" name="sports" value="0">
+    <label for="often">经常</label><br>
+    <input type="radio" id="sometimes" name="sports" value="5">
+    <label for="sometimes">有时</label><br>
+    <input type="radio" id="rarely" name="sports" value="10">
+    <label for="rarely">很少</label>
+
+    <h3>5. 您是否有已知的慢性疾病，如高血压、糖尿病等？</h3>
+    <input type="radio" id="ten" name="time" value="10">
+    <label for="ten">否</label><br>
+    <input type="radio" id="eleven" name="time" value="0">
+    <label for="eleven">是</label><br>
+
+    <h3>6. 您多久进行一次体检？</h3>
+    <input type="radio" id="often1" name="put" value="0">
+    <label for="often1">从不体检</label><br>
+    <input type="radio" id="sometimes1" name="put" value="5">
+    <label for="sometimes1">两年一次</label><br>
+    <input type="radio" id="rarely1" name="put" value="10">
+    <label for="rarely1">每年一次</label>
+
+    <h3>7. 您是否抽烟或喝酒？</h3>
+    <input type="radio" id="often2" name="ill" value="0">
+    <label for="often">经常</label><br>
+    <input type="radio" id="sometimes2" name="ill" value="5">
+    <label for="sometimes">有时</label><br>
+    <input type="radio" id="rarely2" name="ill" value="10">
+    <label for="rarely">很少</label>
+
+    <h3>8. 您的家族中是否有重大疾病的遗传史？</h3>
+    <input type="radio" id="often3" name="rega" value="10">
+    <label for="often">否</label><br>
+    <input type="radio" id="sometimes3" name="rega" value="0">
+    <label for="sometimes">是</label><br>
+
+    <h3>9. 您的饮食习惯如何？</h3>
+    <input type="radio" id="often4" name="temper" value="0">
+    <label for="often">很不健康，很少吃蔬菜水果</label><br>
+    <input type="radio" id="sometimes4" name="temper" value="5">
+    <label for="sometimes">一般，偶尔摄入快餐或零食</label><br>
+    <input type="radio" id="rarely4" name="temper" value="10">
+    <label for="rarely">非常健康，蔬菜水果丰富</label>
+    <br><br>
+    <input type="submit" value="提交">
+  </form>
+
+  <p id="score"></p>
+  <script type="text/javascript" src="./../js/calculateHealthScore.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+</body>
+</html>

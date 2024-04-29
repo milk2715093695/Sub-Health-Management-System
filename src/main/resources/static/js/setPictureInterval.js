@@ -37,7 +37,7 @@ function showSlide2(index) {
 function startAutoPlay1() {
     timer1 = setInterval(() => {
         showSlide1((currentIndex1 + 1) % totalItems1)
-    }, 6000);
+    }, 10000)
 }
 
 function stopAutoPlay1() {
