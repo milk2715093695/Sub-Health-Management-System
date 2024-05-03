@@ -9,6 +9,6 @@
    2. homePage.css
    3. arrow.js；（已完成✅）
    4. scripts.js；（已完成✅）
-   5. setPictureInterval.js
+   5. setPictureInterval.js；（已完成✅）
 4. 待定：身份认证功能（管理员/用户/游客）与权限分配功能；
 5. 后续功能实现（视情况而定）
