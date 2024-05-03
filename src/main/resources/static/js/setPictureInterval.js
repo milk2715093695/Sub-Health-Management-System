@@ -8,7 +8,6 @@
         this.slider = document.querySelector(`.${sliderClass}`);
 
         this.showSlide = function (index) {
-            console.log("Function showSlide called, index = " + index);
             this.currentIndex = index;
             this.slider.querySelector('.transition-time').style.transform = `translateX(-${this.currentIndex * 100}%)`;
             this.dots.forEach(dot => dot.classList.remove('active'));
@@ -16,21 +15,16 @@
         };
 
         this.startAutoPlay = function () {
-            console.log("Function startAutoPlay called");
             this.timer = setInterval(() => {
                 this.showSlide((this.currentIndex + 1) % this.totalItems)
             }, 10000);
-            console.log(this.timer);
         };
 
         this.stopAutoPlay = function () {
-            console.log("Function stopAutoPlay called");
             clearInterval(this.timer);
-            console.log(this.timer);
         };
 
         this.bindEvents = function () {
-            console.log("Function bindEvents called");
             this.dots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     this.showSlide(index);
