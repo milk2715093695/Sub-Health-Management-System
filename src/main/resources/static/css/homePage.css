@@ -158,13 +158,13 @@ body {
 }
 
 /*每一个轮播项占用的空间是其父级元素的100%，且高度一致*/
-.item {
+.slider-item {
     flex: 0 0 100%;
     height: 100%;
 }
 
 /*图片的尺寸与其父级元素同宽高，设置object-fit: cover;使得图片在保持其宽高比的同时填充其内容框*/
-.item img {
+.slider-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;

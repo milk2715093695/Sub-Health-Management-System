@@ -2,7 +2,7 @@
     function Slider(sliderClass) {
         this.currentIndex = 0;
         this.timer = null;
-        this.items = document.querySelectorAll(`.${sliderClass} .item`);
+        this.items = document.querySelectorAll(`.${sliderClass} .slider-item`);
         this.totalItems = this.items.length;
         this.dots = document.querySelectorAll(`.${sliderClass} .dot`);
         this.slider = document.querySelector(`.${sliderClass}`);
