@@ -60,6 +60,11 @@ body {
     display: none;
 }
 
+/* 通用类：transition设置为1s */
+.transition-time {
+    transition: all 1s;
+}
+
 /* 页面包裹器，设置了背景图片 */
 .wrapper {
     height: 800px;
@@ -152,11 +157,6 @@ body {
     overflow: hidden;
 }
 
-/*设置轮播项的布局为水平排列，当切换时有过渡效果*/
-.slider-items {
-    transition: all 1s;
-}
-
 /*每一个轮播项占用的空间是其父级元素的100%，且高度一致*/
 .item {
     flex: 0 0 100%;
@@ -229,8 +229,8 @@ body {
     font-weight: bold;
     color: var(--black);
     text-align: center ;
-    display: block;
 }
+
 /* 设置段落字体 */
 .mean p {
     text-align: left;
@@ -238,14 +238,11 @@ body {
     line-height: 1.5;
     color: var(--light-grey);
 }
+
 /*第二个轮播器*/
 .slider2{
     width: 90%;
     height: 500px;
     overflow: hidden;
     margin: 0 auto;
-}
-
-.slider-items {
-    transition: all 1s;
 }
