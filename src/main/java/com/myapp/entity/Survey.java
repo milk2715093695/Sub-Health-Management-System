@@ -25,6 +25,8 @@ public class Survey {
         this.riskScore = surveyData.getRiskScore();
     }
 
+    public Survey() {}
+
     public Long getId() {
         return id;
     }
