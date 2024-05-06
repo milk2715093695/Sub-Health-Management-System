@@ -1,5 +1,7 @@
 package com.myapp.entity;
 
+import com.myapp.model.SurveyData;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +17,13 @@ public class Survey {
     private Integer healthScore;
     private Integer mentalScore;
     private Integer riskScore;
+
+    public Survey(SurveyData surveyData) {
+        this.username = surveyData.getUsername();
+        this.healthScore = surveyData.getHealthScore();
+        this.mentalScore = surveyData.getMentalScore();
+        this.riskScore = surveyData.getRiskScore();
+    }
 
     public Long getId() {
         return id;
