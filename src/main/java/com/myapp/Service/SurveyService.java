@@ -20,12 +20,10 @@ public class SurveyService {
 
         if (existingSurvey != null) {
             surveyRepository.delete(existingSurvey);
-            surveyRepository.save(survey);
-            return true;
-        } else {
-            surveyRepository.save(survey);
-            return false;
         }
+
+        surveyRepository.save(survey);
+        return (existingSurvey != null);
     }
 
     public Survey getSurvey(String username) {
