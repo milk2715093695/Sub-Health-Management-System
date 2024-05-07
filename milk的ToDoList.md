@@ -10,6 +10,6 @@
    3. arrow.js；（已完成✅）
    4. scripts.js；（已完成✅）
    5. setPictureInterval.js；（已完成✅）
-4. homePage中英文切换；
-5. 新的数据表（用来存问卷数据）；
+4. 新的数据表（用来存问卷数据）；（已完成✅）
+5. homePage中英文切换；
 6. 后续功能实现（视情况而定）
