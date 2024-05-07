@@ -6,6 +6,8 @@ import com.myapp.repository.SurveyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class SurveyService {
     private final SurveyRepository surveyRepository;
@@ -19,11 +21,17 @@ public class SurveyService {
         Survey existingSurvey = surveyRepository.findByUsername(survey.getUsername());
 
         if (existingSurvey != null) {
-            surveyRepository.delete(existingSurvey);
+            if (!Objects.equals(survey.getGender(), existingSurvey.getGender())) return false;
+
+            if(survey.getHealthScore() != null) existingSurvey.setHealthScore(survey.getHealthScore());
+            if(survey.getMentalScore() != null) existingSurvey.setMentalScore(survey.getMentalScore());
+            if(survey.getRiskScore() != null) existingSurvey.setRiskScore(survey.getRiskScore());
+            surveyRepository.save(existingSurvey);
+        } else {
+            surveyRepository.save(survey);
         }
 
-        surveyRepository.save(survey);
-        return (existingSurvey != null);
+        return true;
     }
 
     public Survey getSurvey(String username) {

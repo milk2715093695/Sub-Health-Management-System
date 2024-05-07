@@ -13,13 +13,16 @@ public class Survey {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     private String username;
+    private String gender;
     private Integer healthScore;
     private Integer mentalScore;
     private Integer riskScore;
 
     public Survey(SurveyData surveyData) {
         this.username = surveyData.getUsername();
+        this.gender = surveyData.getGender();
         this.healthScore = surveyData.getHealthScore();
         this.mentalScore = surveyData.getMentalScore();
         this.riskScore = surveyData.getRiskScore();
@@ -33,6 +36,10 @@ public class Survey {
 
     public String getUsername() {
         return username;
+    }
+
+    public String getGender() {
+        return gender;
     }
 
     public Integer getHealthScore() {
@@ -49,6 +56,10 @@ public class Survey {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public void setHealthScore(Integer healthScore) {
