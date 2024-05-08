@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+// 此类代表问卷结果，使用Jakarta Persistence注解进行数据库映射
 @Entity
 public class Survey {
     @Id
@@ -20,6 +21,7 @@ public class Survey {
     private Integer mentalScore;
     private Integer riskScore;
 
+    // 使用surveyData作为参数的构造函数
     public Survey(SurveyData surveyData) {
         this.username = surveyData.getUsername();
         this.gender = surveyData.getGender();

@@ -26,6 +26,7 @@ public class LoginController {
      * @param userData 用户数据（包括用户名和密码）
      *
      * @return 返回一个包含登录操作是否成功以及相关信息的Map。
+     *
      * <ul>
      * <li>当登录成功时，返回的map里将会有一个"success"字段并且值为true。</li>
      * <li>当登录失败时，map里将会有两个字段："success"值为false，以及一个错误信息"errMessage"。</li>

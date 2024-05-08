@@ -10,11 +10,20 @@ import org.springframework.stereotype.Service;  // `Service` 注解
 public class UserService {
     private final UserRepository userRepository;
 
+    // 自动注入实例（这样可以不需要手动创建实例）
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
+    /**
+     * 注册用户
+     *
+     * @param username 用户名
+     * @param password 密码
+     *
+     * @return 如果用户已经存在，返回false，否则保存新用户并返回true
+     */
     public boolean register(String username, String password) {
         User existingUser = userRepository.findByUsername(username);
 
@@ -30,6 +39,14 @@ public class UserService {
         return true;
     }
 
+    /**
+     * 用户登录
+     *
+     * @param username 用户名
+     * @param password 密码
+     *
+     * @return 如果用户名和密码匹配，返回对应的用户实例， 否则返回null
+     */
     public User login(String username, String password) {
         User existingUser = userRepository.findByUsername(username);
 
