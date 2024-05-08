@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MyErrorController implements ErrorController {
     /**
      * 错误处理方法
-     *
-     * 当出现错误请求时，会转向到"error"页面。
+     * <p>当出现错误请求时，会转向到"error"页面。</p>
      *
      * @return 返回error视图。
      */
