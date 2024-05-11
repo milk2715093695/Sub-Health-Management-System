@@ -4,6 +4,7 @@ import com.myapp.model.UserData;
 import com.myapp.entity.User;
 import com.myapp.Service.UserService;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,7 +34,7 @@ public class LoginController {
      * </ul>
      */
     @PostMapping("/login")
-    public Map<String, Object> login(@RequestBody UserData userData) {
+    public Map<String, Object> login(@RequestBody UserData userData, HttpSession session) {
         Map<String, Object> result = new HashMap<>();
         User loginuser = userService.login(userData.getUsername(), userData.getPassword());     //调用登录服务
 
@@ -45,6 +46,8 @@ public class LoginController {
             result.put("errMessage", errMessage);
             result.put("success", false);
         } else {
+            // 登录成功后设置session为用户名
+            session.setAttribute("user", loginuser);
             result.put("success", true);
         }
 

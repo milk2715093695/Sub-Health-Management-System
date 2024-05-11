@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<body>
+
+<h1>Session Testing</h1>
+
+<button onclick="setSession()">Set Session</button>
+<button onclick="getSession()">Get Session</button>
+<button onclick="removeSession()">Remove Session</button>
+
+<p id="demo"></p>
+
+<script>
+  function setSession() {
+    fetch('/session/set')
+            .then(response => response.text())
+            .then(data => document.getElementById('demo').innerText = data)
+  }
+
+  function getSession() {
+    fetch('/session/get')
+            .then(response => response.text())
+            .then(data => document.getElementById('demo').innerText = data)
+  }
+
+  function removeSession() {
+    fetch('/session/remove')
+            .then(response => response.text())
+            .then(data => document.getElementById('demo').innerText = data)
+  }
+</script>
+
+</body>
+</html>
