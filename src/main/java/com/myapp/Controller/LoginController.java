@@ -34,7 +34,7 @@ public class LoginController {
      * </ul>
      */
     @PostMapping("/login")
-    public Map<String, Object> login(@RequestBody UserData userData, HttpSession session) {
+    public Map<String, Object> login(HttpSession session, @RequestBody UserData userData) {
         Map<String, Object> result = new HashMap<>();
         User loginuser = userService.login(userData.getUsername(), userData.getPassword());     //调用登录服务
 

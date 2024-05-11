@@ -21,8 +21,10 @@
         const outputBox = document.getElementById("outputBox");
         const userInput = inputBox.value;
 
+        const encodedInput = encodeURIComponent(userInput);
+
         // 创建一个新的事件源（EventSource），用来监听服务器发送的SSE事件
-        const eventSource = new EventSource(`/api/chat?userInput=${userInput}`);
+        const eventSource = new EventSource(`/api/chat?encodedInput=${encodedInput}`);
 
         // 设置一个事件监听器，用来处理服务器发送的消息
         eventSource.onmessage = function (event) {
