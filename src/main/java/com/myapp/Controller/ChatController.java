@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 @RestController
 @RequestMapping("/api")
 public class ChatController {
-    private APIService apiService;
+    private final APIService apiService;
 
     @Autowired
     public ChatController(APIService apiService) {
@@ -35,7 +35,6 @@ public class ChatController {
             chatHistory = new JSONArray();
             session.setAttribute("chatHistory", chatHistory);
         }
-
 
         APIResponse response = apiService.accessAPI(userInput, chatHistory, username, "1");
         SseEmitter emitter = response.getSseEmitter();

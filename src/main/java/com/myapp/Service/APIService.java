@@ -24,6 +24,8 @@ public class APIService {
             try {
                 // final String token = System.getenv("MY_API_TOKEN");
                 final String token = "pat_7XBJJBTZ5RSwd98QVw4VPJ68jG1hZYHIIuj6xEUxPX2t6XNlfygc4JLNhER4myCk";
+                // final String bot_id = System.getenv("MY_BOT_ID");
+                final String bot_id = "7367342304811991046";
 
                 URL url = new URL("https://api.coze.com/open_api/v2/chat");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -39,7 +41,7 @@ public class APIService {
                 connection.setRequestProperty("Connection", "keep-alive");
 
                 // 设置请求体
-                JSONObject requestBody = JsonParser.creatJsonObject(conversation_id, "7366455788757778437", username, userInput, true, chatHistory);
+                JSONObject requestBody = JsonParser.creatJsonObject(conversation_id, bot_id, username, userInput, true, chatHistory);
 
                 // 向服务器发送请求
                 connection.setDoOutput(true);
