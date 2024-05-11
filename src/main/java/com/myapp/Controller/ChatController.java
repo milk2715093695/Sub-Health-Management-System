@@ -1,35 +1,53 @@
 package com.myapp.Controller;
 
+import com.myapp.Service.APIService;
+import com.myapp.model.APIResponse;
+import com.myapp.util.JsonParser;
 import jakarta.servlet.http.HttpSession;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.request.RequestAttributes;
-import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 @RestController
-@RequestMapping("/session")  // 指定类级别的请求映射
+@RequestMapping("/api")
 public class ChatController {
-    @GetMapping("/set")
-    public String setSessionData(HttpSession session) {
-        // 在会话中设置一个属性
-        session.setAttribute("Greeting", "Hello, world!");
-        return "数据已经保存在了会话中.";
+    private APIService apiService;
+
+    @Autowired
+    public ChatController(APIService apiService) {
+        this.apiService = apiService;
     }
 
-    @GetMapping("/get")
-    public String getSessionData(HttpSession session) {
-        String greeting = (String) session.getAttribute("Greeting");
-        if (greeting != null && !greeting.isEmpty()) {
-            return "在会话中找到的数据: " + greeting;
-        } else {
-            return "会话中不存在这个值";
+    @GetMapping("/chat")
+    public SseEmitter chat(HttpSession session, @RequestParam String userInput) {
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            username = "Guest";
         }
-    }
 
-    @GetMapping("/remove")
-    public String removeSessionData(HttpSession session) {
-        session.removeAttribute("Greeting");
-        return "数据已经从会话中移除.";
+        JSONArray chatHistory = (JSONArray) session.getAttribute("chatHistory");
+        if (chatHistory == null) {
+            chatHistory = new JSONArray();
+            session.setAttribute("chatHistory", chatHistory);
+        }
+
+
+        APIResponse response = apiService.accessAPI(userInput, chatHistory, username, "1");
+        SseEmitter emitter = response.getSseEmitter();
+        JSONObject message = response.getMessage();
+
+        if (message != null) {
+            chatHistory.put(JsonParser.creatJsonObject("user", userInput, "text"));
+            chatHistory.put(message);
+
+            session.setAttribute("chatHistory", chatHistory);
+        }
+
+        return emitter;
     }
 }

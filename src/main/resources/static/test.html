@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="zh-CH">
+<html lang="zh-CN">
+<head>
+    <title>Chat Test</title>
+</head>
 <body>
-
-<h1>Session Testing</h1>
-
-<button onclick="setSession()">Set Session</button>
-<button onclick="getSession()">Get Session</button>
-<button onclick="removeSession()">Remove Session</button>
-
-<p id="demo"></p>
+<label for="inputBox"></label>
+<input id="inputBox" type="text">
+<button onclick="sendInput()">Send</button>
+<label for="outputBox"></label>
+<textarea id="outputBox"></textarea>
 
 <script>
-  function setSession() {
-    fetch('/session/set')
-            .then(response => response.text())
-            .then(data => document.getElementById('demo').innerText = data)
-  }
+    function sendInput() {
+        const inputBox = document.getElementById("inputBox");
+        const outputBox = document.getElementById("outputBox");
+        const userInput = inputBox.value;
 
-  function getSession() {
-    fetch('/session/get')
-            .then(response => response.text())
-            .then(data => document.getElementById('demo').innerText = data)
-  }
+        // 创建一个新的事件源（EventSource），用来监听服务器发送的SSE事件
+        const eventSource = new EventSource(`/api/chat?userInput=${userInput}`);
 
-  function removeSession() {
-    fetch('/session/remove')
-            .then(response => response.text())
-            .then(data => document.getElementById('demo').innerText = data)
-  }
+        // 设置一个事件监听器，用来处理服务器发送的消息
+        eventSource.onmessage = function (event) {
+            // event.data就是服务器发送的消息
+            outputBox.value += event.data;
+        };
+
+        // 清空输入框
+        inputBox.value = '';
+    }
 </script>
-
 </body>
 </html>
