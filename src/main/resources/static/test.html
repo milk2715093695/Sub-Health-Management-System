@@ -2,6 +2,11 @@
 <html lang="zh-CN">
 <head>
     <title>Chat Test</title>
+    <style>
+        #outputBox {
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
 <label for="inputBox"></label>
@@ -21,6 +26,7 @@
 
         // 设置一个事件监听器，用来处理服务器发送的消息
         eventSource.onmessage = function (event) {
+            alert(event.data + event.data + event.data);
             // event.data就是服务器发送的消息
             outputBox.value += event.data;
         };

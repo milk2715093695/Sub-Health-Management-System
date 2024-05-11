@@ -18,12 +18,12 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 @Service
 public class APIService {
     public APIResponse accessAPI(String userInput, JSONArray chatHistory, String username, String conversation_id) {
-        SseEmitter emitter = new SseEmitter();
+        SseEmitter emitter = new SseEmitter(300000L);
         StringBuilder answer = new StringBuilder();
         new Thread(() -> {
             try {
                 // final String token = System.getenv("MY_API_TOKEN");
-                final String token = "pat_7XBJJBTZ5RSwd98QVw4VPJ68jG1hZYHIIuj6xEUxPX2t6XNlfygc4JLNhER4myCk";
+                final String token = "pat_0wos8gCEuKpPPu2jtdHmBoDosjfzwtHWZRNxUUEPogoJV0N4CjuCtxC2WSGkecdM";
                 // final String bot_id = System.getenv("MY_BOT_ID");
                 final String bot_id = "7367342304811991046";
 
@@ -54,8 +54,8 @@ public class APIService {
                     String line;
                     while ((line = reader.readLine()) != null) {
                         String parsedContent = JsonParser.parseJson(line);
-                        if (parsedContent == null) break;
-                        emitter.send(parsedContent);
+                        if (parsedContent == null) continue;
+                        emitter.send("\u200B" + parsedContent);
                         answer.append(parsedContent);
                     }
                 }
