@@ -2,11 +2,6 @@
 <html lang="zh-CN">
 <head>
     <title>Chat Test</title>
-    <style>
-        #outputBox {
-            white-space: pre-wrap;
-        }
-    </style>
 </head>
 <body>
 <label for="inputBox"></label>
@@ -14,27 +9,6 @@
 <button onclick="sendInput()">Send</button>
 <label for="outputBox"></label>
 <textarea id="outputBox"></textarea>
-
-<script>
-    function sendInput() {
-        const inputBox = document.getElementById("inputBox");
-        const outputBox = document.getElementById("outputBox");
-        const userInput = inputBox.value;
-
-        const encodedInput = encodeURIComponent(userInput);
-
-        // 创建一个新的事件源（EventSource），用来监听服务器发送的SSE事件
-        const eventSource = new EventSource(`/api/chat?encodedInput=${encodedInput}`);
-
-        // 设置一个事件监听器，用来处理服务器发送的消息
-        eventSource.onmessage = function (event) {
-            // event.data就是服务器发送的消息
-            outputBox.value += event.data;
-        };
-
-        // 清空输入框
-        inputBox.value = '';
-    }
-</script>
+<script type="text/javascript" src="./js/chat.js"></script>
 </body>
 </html>
