@@ -1,4 +1,4 @@
-function sendInput() {
+document.getElementById("button").addEventListener('click', function() {
     const inputBox = document.getElementById('inputBox');
     const outputBox = document.getElementById('outputBox');
 
@@ -14,4 +14,8 @@ function sendInput() {
     }
 
     inputBox.value = '';    // 清空inputBox
-}
+});
+
+document.getElementById("reset-button").addEventListener('click', function() {
+    document.getElementById("outputBox").value = '';
+})
