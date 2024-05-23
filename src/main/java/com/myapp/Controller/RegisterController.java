@@ -15,23 +15,34 @@ import java.util.HashMap;
 public class RegisterController {
     @Autowired UserService userService;
 
+    /**
+     * 注册方法
+     * <p>处理来自客户端的注册请求，要求是POST方法提交，
+     * 并且需要在请求体中提供userData（用户名和密码）</p>
+     *
+     * @param userData 用户数据（包括用户名和密码）
+     *
+     * @return 返回一个包含注册操作是否成功以及相关信息的Map。
+     * <ul>
+     * <li>当注册成功时，返回的map里将会有一个"success"字段并且值为true。</li>
+     * <li>当注册失败时，map里将会有两个字段："success"值为false，以及一个错误信息"errMessage"。</li>
+     * </ul>
+     */
     @PostMapping("/register")
     public Map<String, Object> register(@RequestBody UserData userData) {
         Map<String, Object> result = new HashMap<>();
         String username = userData.getUsername();
         String password = userData.getPassword();
 
-        boolean success = userService.register(username, password);     //调用注册服务
+        boolean success = userService.register(username, password);     // 调用注册服务
         result.put("success", success);
+        // 注册失败时在返回值中添加错误信息
         if (!success) {
             Map<String, String> errMessage = new HashMap<>();
             errMessage.put("zh-CN", "用户名已被占用，请重新输入");
             errMessage.put("en", "Username already exists, please try another one.");
             result.put("errMessage", errMessage);
         }
-
-        System.out.println("用户名：" + username);
-        System.out.println("密码：" + password);
 
         return result;
     }

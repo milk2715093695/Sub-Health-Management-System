@@ -6,11 +6,13 @@
     --blue: #409ed9;
     --royal-blue: #1873b6;
     --navy-blue: #0000cd;
+    --s-blue:#1489d3;
     --silver: #889aa4;
     --very-light-grey: #bbbbbb;
     --light-grey: #65686b;
     --light-brown: #696666;
     --black: #2e2e2e;
+
 }
 
 /* 通用样式 */
@@ -58,6 +60,11 @@ body {
 /* 通用类：隐藏元素 */
 .hidden {
     display: none;
+}
+
+/* 通用类：transition设置为1s */
+.transition-time {
+    transition: all 1s;
 }
 
 /* 页面包裹器，设置了背景图片 */
@@ -152,19 +159,14 @@ body {
     overflow: hidden;
 }
 
-/*设置轮播项的布局为水平排列，当切换时有过渡效果*/
-.slider-items {
-    transition: all 1s;
-}
-
 /*每一个轮播项占用的空间是其父级元素的100%，且高度一致*/
-.item {
+.slider-item {
     flex: 0 0 100%;
     height: 100%;
 }
 
 /*图片的尺寸与其父级元素同宽高，设置object-fit: cover;使得图片在保持其宽高比的同时填充其内容框*/
-.item img {
+.slider-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -229,8 +231,8 @@ body {
     font-weight: bold;
     color: var(--black);
     text-align: center ;
-    display: block;
 }
+
 /* 设置段落字体 */
 .mean p {
     text-align: left;
@@ -238,6 +240,7 @@ body {
     line-height: 1.5;
     color: var(--light-grey);
 }
+
 /*第二个轮播器*/
 .slider2{
     width: 90%;
@@ -245,7 +248,189 @@ body {
     overflow: hidden;
     margin: 0 auto;
 }
+.health-bg {
+    height: 600px;
+    background: url('./../images/ihealth-bg.png')var(--royal-blue) no-repeat center center;
+    background-size: cover;
+}
+.health-wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+.health-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.health-animate {
+    position: relative;
+    width: 430px;
+    height: 430px;
+    margin-top: 130px;
+}
+/*旋转动画*/
+@keyframes hcircle {
+    from { /* 开始状态 */
+        transform: rotate(0deg);
+    }
+    to { /* 结束状态 */
+        transform: rotate(360deg);
+    }
+}
+.circle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 430px;
+    height: 430px;
+    background: url('./../images/i-hcircle.png') no-repeat center center;
+    background-size: 100%;
+    animation: hcircle 8s linear 0s infinite;
+    -webkit-animation: hcircle 8s linear 0s infinite;
+    -moz-animation: hcircle 8s linear 0s infinite;
+    -o-animation: hcircle 8s linear 0s infinite;
+}
+.people {
+    position: absolute;
+    left: 121px;
+    top: 45px;
+    width: 190px;
+    height: 330px;
+    background: url('./../images/i-hpeople.png')no-repeat 0 0;
+    background-size: 100%;
+}
+.small {
+    display: block;
+    position: absolute;
+    width: 119px;
+    height: 119px;
+}
+.cbg {
+    background: url(./../images/i-hcbg.png) no-repeat;
+    animation: hcircle 8s linear 0s infinite;
+    -webkit-animation: hcircle 8s linear 0s infinite;
+    -moz-animation: hcircle 8s linear 0s infinite;
+    -o-animation: hcircle 8s linear 0s infinite;
+}
+i {
+    font-style: italic;
+}
+.cfont {
+    text-align: center;
+    color: var(--s-blue);
+    font: normal 600 26px/119px arial,sans-serif;
+}
+.circle1 {
+    left: -6px;
+    bottom: 0;
+}
+.circle2 {
+    left: 150px;
+    top: -64px;
+}
+.circle3 {
+    right: -6px;
+    bottom: 0;
+}
+.health-platform {
+    width: 540px;
+    padding-top: 210px;
+    color: var(--white);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+.health-animate, .health-platform {
+    float: left;
+}
 
-.slider-items {
-    transition: all 1s;
+.fr {
+    float: right;
+}
+.health-platform h2{
+    font-size: xx-large;
+}
+.health-platform p{
+    font-size: large;
+    text-align: center;
+}
+.wrapper2 {
+    display: flex;
+    justify-content: center;
+}
+.knowledgeList {
+    margin: 158px auto 200px;
+    width: 1200px;
+}
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    font-size: xx-large;
+    text-align: center;
+}
+.ik-p{
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--light-grey);
+}
+.ik-item {
+    width: 202px;
+    height: 200px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 15px;
+    overflow: hidden;
+    position: relative;
+}
+.ik-item i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 202px;
+    height: 119px;
+    background: url('./../images/ik-bg.png')no-repeat 0 0;
+    opacity: 0;
+    transition: .5s;
+}
+.ik-item a {
+    position: absolute;
+    left: 62px;
+    top: 56px;
+    transition: .5s;
+    opacity: 0;
+}
+.ik-item p {
+    text-align: center;
+    font-size: 16px;
+    color: var(--black);
+    line-height: 30px;
+    margin-top: 20px;
+}
+.btn1 {
+    height: 28px;
+    border: 3px solid var(--blue);
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 28px;
+    font-size: 14px;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 2px;
+}
+.btn-kepu, .btn-kepu:hover {
+    border: 1px solid var(--white);
+    color: var(--white);
 }
