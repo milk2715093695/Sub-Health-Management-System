@@ -435,3 +435,22 @@ h4 {
     color: var(--white);
 }
 
+/* 页脚 */
+.footer {
+    height: 50px;
+    width: 100%;
+    background-color: var(--royal-blue);
+    color: var(--white);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    bottom: 0;
+    text-align: center;
+}
+
+/* 页脚内容 */
+.footer-content {
+    margin: 26px;
+}
+
