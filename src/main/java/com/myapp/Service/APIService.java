@@ -41,7 +41,7 @@ public class APIService {
                 connection.setRequestProperty("Connection", "keep-alive");
 
                 // 设置请求体
-                JSONObject requestBody = JsonParser.creatJsonObject(conversation_id, bot_id, username, userInput, true, chatHistory);
+                JSONObject requestBody = JsonParser.createJsonObject(conversation_id, bot_id, username, userInput, true, chatHistory);
 
                 // 向服务器发送请求
                 connection.setDoOutput(true);
@@ -66,6 +66,6 @@ public class APIService {
             }
         }).start();
 
-        return new APIResponse(emitter, JsonParser.creatJsonObject("assistant", "answer", answer.toString(), "text"));
+        return new APIResponse(emitter, JsonParser.createJsonObject("assistant", "answer", answer.toString(), "text"));
     }
 }

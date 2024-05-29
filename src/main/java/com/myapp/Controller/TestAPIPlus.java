@@ -33,7 +33,7 @@ public class TestAPIPlus {
             connection.setRequestProperty("Connection", "keep-alive");
 
             // 设置请求体
-            JSONObject requestBody = JsonParser.creatJsonObject("1", "7366455788757778437", "milk", userInput, true, chatHistory);
+            JSONObject requestBody = JsonParser.createJsonObject("1", "7366455788757778437", "milk", userInput, true, chatHistory);
 
             // 向服务器发送请求
             connection.setDoOutput(true);
@@ -59,7 +59,7 @@ public class TestAPIPlus {
             return null;
         }
 
-        return JsonParser.creatJsonObject("assistant", "answer", answer.toString(), "text");
+        return JsonParser.createJsonObject("assistant", "answer", answer.toString(), "text");
     }
 
     public static void main(String[] args) {
@@ -75,7 +75,7 @@ public class TestAPIPlus {
             JSONObject newAnswer = APITest(question, chatHistory);
 
             if (newAnswer != null) {
-                chatHistory.put(JsonParser.creatJsonObject("user", question, "text"));
+                chatHistory.put(JsonParser.createJsonObject("user", question, "text"));
                 chatHistory.put(newAnswer);
             }
         }

@@ -48,7 +48,7 @@ public class ChatController {
         JSONObject message = response.message();
 
         if (message != null) {
-            chatHistory.put(JsonParser.creatJsonObject("user", userInput, "text"));
+            chatHistory.put(JsonParser.createJsonObject("user", userInput, "text"));
             chatHistory.put(message);
 
             session.setAttribute("chatHistory", chatHistory);

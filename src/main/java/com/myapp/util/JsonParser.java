@@ -42,7 +42,7 @@ public class JsonParser {
         return parsedContent.toString();
     }
 
-    public static JSONObject creatJsonObject(String role, String type, String content, String content_type) {
+    public static JSONObject createJsonObject(String role, String type, String content, String content_type) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("role", role);
         jsonObject.put("type", type);
@@ -51,7 +51,7 @@ public class JsonParser {
         return jsonObject;
     }
 
-    public static JSONObject creatJsonObject(String role, String content, String content_type) {
+    public static JSONObject createJsonObject(String role, String content, String content_type) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("role", role);
         jsonObject.put("content", content);
@@ -59,7 +59,7 @@ public class JsonParser {
         return jsonObject;
     }
 
-    public static JSONObject creatJsonObject(String conversation_id, String bot_id, String user, String query, Boolean stream, JSONArray chat_history) {
+    public static JSONObject createJsonObject(String conversation_id, String bot_id, String user, String query, Boolean stream, JSONArray chat_history) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("conversation_id", conversation_id);
         jsonObject.put("bot_id", bot_id);
