@@ -26,7 +26,7 @@ __请确保你已设置了名为 `MYSQL_USERNAME` 和 `MYSQL_PASSWORD` 的环境
 
 在开始使用本项目之前，请确保你已经在你的本地环境中安装并配置好了LibreOffice。如果你尚未安装LibreOffice，你可以访问[LibreOffice官方网站](https://www.libreoffice.org)下载并安装。
 
-此外，你需要设置一个名为`SOFFICE_HOME`的环境变量，其值为你的LibreOffice的安装目录。你可以在你的操作系统的环境变量设置中添加这个环境变量，或者你也可以在你的IDE的运行配置中设置这个环境变量。
+此外，你需要设置一个名为`SOFFICE_HOME`的环境变量，其值为你的LibreOffice的安装目录。你可以在你的操作系统的环境变量设置中添加这个环境变量，或者你也可以在你的IDE的运行配置中（Spring Boot的运行配置中）设置这个环境变量。
 
 否则关于docx转pdf的功能将无法使用（对其他功能无影响）
 
