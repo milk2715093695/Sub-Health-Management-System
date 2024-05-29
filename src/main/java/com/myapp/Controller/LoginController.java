@@ -40,7 +40,7 @@ public class LoginController {
     @PostMapping("/login")
     public Map<String, Object> login(HttpSession session, @RequestBody UserData userData) {
         Map<String, Object> result = new HashMap<>();
-        User loginuser = userService.login(userData.getUsername(), userData.getPassword());     //调用登录服务
+        User loginuser = userService.login(userData.username(), userData.password());     //调用登录服务
 
         // 验证并处理登录结果
         if (loginuser == null) {

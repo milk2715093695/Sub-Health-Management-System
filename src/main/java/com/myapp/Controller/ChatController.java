@@ -44,8 +44,8 @@ public class ChatController {
         }
 
         APIResponse response = apiService.accessAPI(userInput, chatHistory, username, "1");
-        SseEmitter emitter = response.getSseEmitter();
-        JSONObject message = response.getMessage();
+        SseEmitter emitter = response.sseEmitter();
+        JSONObject message = response.message();
 
         if (message != null) {
             chatHistory.put(JsonParser.creatJsonObject("user", userInput, "text"));

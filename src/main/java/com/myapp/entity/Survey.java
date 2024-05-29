@@ -23,11 +23,11 @@ public class Survey {
 
     // 使用surveyData作为参数的构造函数
     public Survey(SurveyData surveyData) {
-        this.username = surveyData.getUsername();
-        this.gender = surveyData.getGender();
-        this.healthScore = surveyData.getHealthScore();
-        this.mentalScore = surveyData.getMentalScore();
-        this.riskScore = surveyData.getRiskScore();
+        this.username = surveyData.username();
+        this.gender = surveyData.gender();
+        this.healthScore = surveyData.healthScore();
+        this.mentalScore = surveyData.mentalScore();
+        this.riskScore = surveyData.riskScore();
     }
 
     public Survey() {}

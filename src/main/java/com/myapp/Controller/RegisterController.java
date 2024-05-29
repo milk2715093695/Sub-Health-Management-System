@@ -35,8 +35,8 @@ public class RegisterController {
     @PostMapping("/register")
     public Map<String, Object> register(@RequestBody UserData userData) {
         Map<String, Object> result = new HashMap<>();
-        String username = userData.getUsername();
-        String password = userData.getPassword();
+        String username = userData.username();
+        String password = userData.password();
 
         boolean success = userService.register(username, password);     // 调用注册服务
         result.put("success", success);
