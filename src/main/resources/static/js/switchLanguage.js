@@ -1,6 +1,5 @@
 // 语言更改的函数
 function showLanguage(language, texts) {
-
     localStorage.setItem('language', language);
 
     Object.keys(texts[language]).forEach(function(key) {
