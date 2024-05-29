@@ -8,9 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TestApachePOIDocx {
-
-    public static void main(String[] args)
-            throws IOException {
+    public static void main(String[] args) throws IOException {
         // 获取类路径下的资源文件
         Resource resource = new ClassPathResource("static/model/Doc2.docx");
 
@@ -22,13 +20,10 @@ public class TestApachePOIDocx {
 
         // 获取所有的表格
         for (XWPFTable tbl : document.getTables()) {
-
             // 遍历表格的所有行
             for (XWPFTableRow row : tbl.getRows()) {
-
                 // 遍历行中的所有单元格
                 for (XWPFTableCell cell : row.getTableCells()) {
-
                     // 打印单元格的内容
                     System.out.println(cell.getText());
                 }

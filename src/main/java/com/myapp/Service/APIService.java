@@ -22,9 +22,7 @@ public class APIService {
         StringBuilder answer = new StringBuilder();
         new Thread(() -> {
             try {
-                // final String token = System.getenv("MY_API_TOKEN");
                 final String token = "pat_0wos8gCEuKpPPu2jtdHmBoDosjfzwtHWZRNxUUEPogoJV0N4CjuCtxC2WSGkecdM";
-                // final String bot_id = System.getenv("MY_BOT_ID");
                 final String bot_id = "7367342304811991046";
 
                 URL url = new URL("https://api.coze.com/open_api/v2/chat");
