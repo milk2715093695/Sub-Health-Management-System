@@ -16,8 +16,12 @@ import java.util.HashMap;
 @RestController  // 标识为Spring MVC RestController类
 public class LoginController {
     // 通过自动注入依赖，将用户服务注入到登录控制器
+    private final UserService userService;
+
     @Autowired
-    UserService userService;  // 用户服务对象，用于处理所有用户相关的逻辑
+    public LoginController(UserService userService) {
+        this.userService = userService;
+    }
 
     /**
      * 登录方法

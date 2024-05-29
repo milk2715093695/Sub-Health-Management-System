@@ -13,7 +13,11 @@ import java.util.HashMap;
 
 @RestController
 public class RegisterController {
-    @Autowired UserService userService;
+    private final UserService userService;
+    @Autowired
+    public RegisterController(UserService userService) {
+        this.userService = userService;
+    }
 
     /**
      * 注册方法

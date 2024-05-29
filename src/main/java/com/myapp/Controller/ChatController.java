@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 
@@ -31,7 +30,7 @@ public class ChatController {
     }
 
     @GetMapping("/chat")
-    public SseEmitter chat(HttpSession session, @RequestParam String encodedInput) throws UnsupportedEncodingException {
+    public SseEmitter chat(HttpSession session, @RequestParam String encodedInput) {
         String userInput = URLDecoder.decode(encodedInput, StandardCharsets.UTF_8);
         String username = (String) session.getAttribute("username");
         if (username == null) {
