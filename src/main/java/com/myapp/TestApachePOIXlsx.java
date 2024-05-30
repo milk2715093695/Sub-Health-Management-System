@@ -11,7 +11,7 @@ import java.io.InputStream;
 public class TestApachePOIXlsx {
     public static void main(String[] args) {
         try {
-            Resource resource = new ClassPathResource("static/model/test.xlsx");
+            Resource resource = new ClassPathResource("templates/test.xlsx");
             InputStream inputStream = resource.getInputStream();
 
             Workbook workbook = new XSSFWorkbook(inputStream);

@@ -10,7 +10,7 @@ import java.io.IOException;
 public class TestApachePOIDocx {
     public static void main(String[] args) throws IOException {
         // 获取类路径下的资源文件
-        Resource resource = new ClassPathResource("static/model/Doc2.docx");
+        Resource resource = new ClassPathResource("templates/Doc2.docx");
 
         // 打开存在的 Word 文档
         XWPFDocument document = new XWPFDocument(new FileInputStream(resource.getFile()));
