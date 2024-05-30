@@ -22,12 +22,14 @@ __请确保你已设置了名为 `MYSQL_USERNAME` 和 `MYSQL_PASSWORD` 的环境
 
 **关于docx转pdf功能：**
 
-此项目的某些功能依赖于LibreOffice软件，特别是docx文件转pdf文件的功能。（请查看`xxx`文件）
+此项目的某些功能依赖于LibreOffice软件，特别是docx文件转pdf文件的功能。（请查看`DocxToPdfService.java`文件，位于`/src/main/java/com/app/Service`目录下）
 
 在开始使用本项目之前，请确保你已经在你的本地环境中安装并配置好了LibreOffice。如果你尚未安装LibreOffice，你可以访问[LibreOffice官方网站](https://www.libreoffice.org)下载并安装。
 
 此外，你需要设置一个名为`SOFFICE_HOME`的环境变量，其值为你的LibreOffice的安装目录。你可以在你的操作系统的环境变量设置中添加这个环境变量，或者你也可以在你的IDE的运行配置中（Spring Boot的运行配置中）设置这个环境变量。
 
-否则关于docx转pdf的功能将无法使用（对其他功能无影响）
+当然，你也可以像上面一样，直接把`DocxToPdfService.java`中的`soffice`变量设置为到你的LibreOffice的路径。
+
+请不要忽略这一点，否则关于docx转pdf的功能将无法使用（对其他功能无影响）
 
 ---
