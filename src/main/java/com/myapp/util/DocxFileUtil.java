@@ -114,4 +114,13 @@ public class DocxFileUtil {
     public XWPFTableCell cellText(TableCellCoordinate coordinate) throws IOException {
         return cellText(coordinate.tableIndex(), coordinate.rowIndex(), coordinate.columnIndex());
     }
+
+
+    // 第五个需要补全的内容，如果不知道怎么写可以去参考我写的src/main/java/TestDocx.java和src/main/java/TestApachePOIDocx.java文件
+    /**
+     * 打印整个文档的内容。
+     *
+     * @throws IOException 如果在打印文档时出现I/O错误
+     */
+    public void printDocument() throws IOException {}
 }
