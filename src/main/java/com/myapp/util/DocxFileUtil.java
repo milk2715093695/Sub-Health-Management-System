@@ -13,6 +13,7 @@ import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 
+// 如果不知道怎么写可以去参考我写的src/main/java/TestDocx.java和src/main/java/TestApachePOIDocx.java文件
 public class DocxFileUtil {
     private final XWPFDocument doc;
     private final FileInputStream fis;
@@ -40,7 +41,7 @@ public class DocxFileUtil {
         }
     }
 
-    // 第一个需要补全的内容
+    // 第一个需要补全的内容，如果不知道怎么写可以去参考我写的src/main/java/TestDocx.java和src/main/java/TestApachePOIDocx.java文件
     /**
      * 修改指定表格中单元格的文本。
      *
@@ -59,7 +60,7 @@ public class DocxFileUtil {
         return modifyCellInTable(coordinate.tableIndex(), coordinate.rowIndex(), coordinate.columnIndex(), newText);
     }
 
-    // 第二个需要补全的内容
+    // 第二个需要补全的内容，如果不知道怎么写可以去参考我写的src/main/java/TestDocx.java和src/main/java/TestApachePOIDocx.java文件
     /**
      * 查找目标文本，并在目标文本的指定偏移位置修改文本。
      *
@@ -83,7 +84,7 @@ public class DocxFileUtil {
         return findAndInsert(targetText, newText, coordinate.tableIndex(), coordinate.rowIndex(), coordinate.columnIndex());
     }
 
-    // 第三个需要补全的内容
+    // 第三个需要补全的内容，如果不知道怎么写可以去参考我写的src/main/java/TestDocx.java和src/main/java/TestApachePOIDocx.java文件
     /**
      * 查找包含目标字符串的单元格。
      *
@@ -96,7 +97,7 @@ public class DocxFileUtil {
         return null;
     }
 
-    // 第四个需要补全的内容
+    // 第四个需要补全的内容，如果不知道怎么写可以去参考我写的src/main/java/TestDocx.java和src/main/java/TestApachePOIDocx.java文件
     /**
      * 获取指定表格、行、列中单元格。
      *
