@@ -78,7 +78,7 @@ body {
 
 /* 页眉 */
 .header {
-    width: calc(100% - 70px);
+    width: 100%;
     top: 0;
     height: 95px;
     background: var(--white);
@@ -86,6 +86,7 @@ body {
     -ms-flex-align: center;
     align-items: center;
     padding-left: 70px;
+    box-sizing: border-box;
 }
 
 .header span {
@@ -108,7 +109,6 @@ body {
 /* 标题文字 */
 .title {
     letter-spacing: 4px;
-    font-size: 30px;
 }
 
 /* 语言切换按钮容器 */

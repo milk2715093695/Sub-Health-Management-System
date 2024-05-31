@@ -2,19 +2,44 @@
 <html lang="zh-CN">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>亚健康管理系统</title>
+    <link rel="stylesheet" href="./../css/chat.css">
 </head>
 
 <body>
-    <label for="inputBox"></label>
-    <input id="inputBox" type="text">
-    <button id="button">Send</button>
+    <div class="page-wrapper">
+        <div class="vertical-center header">
+            <img src="./../images/logo.png" class="inline-block-display logo" alt="中大logo">
+            <span class="title">亚健康管理系统</span>
+        </div>
 
-    <label for="outputBox"></label>
-    <textarea id="outputBox" rows="30" cols="60"></textarea>
-    <button id="reset-button">Reset</button>
+        <div class="center chat-wrapper">
+            <div class="chat-room">
+                <div class="center chat-head">
+                    <p>AI医生咨询</p>
+                </div>
 
-    <script type="text/javascript" src="./../js/chat.js"></script>
+                <div>
+                    <label for="inputBox"></label>
+                    <input id="inputBox" type="text">
+                    <button id="button">Send</button>
+
+                    <label for="outputBox"></label>
+                    <textarea id="outputBox" rows="30" cols="60"></textarea>
+                    <button id="reset-button">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-absolute center footer">
+        <p>你的健康，我们关心！（制作者：******************）</p>
+    </div>
+<!--        <script type="text/javascript" src="./../js/chat.js"></script>-->
+
 </body>
 
 </html>
