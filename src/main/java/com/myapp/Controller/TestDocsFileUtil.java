@@ -21,7 +21,7 @@ public class TestDocsFileUtil {
         TableCellCoordinate coordinate = docxFileUtil.findCellInTable("Test");
         XWPFTableCell cell = docxFileUtil.cellText(coordinate);
         System.out.println(cell.getText());
-        docxFileUtil.printDocument();
+        docxFileUtil.close();
 
         return "error";
     }
