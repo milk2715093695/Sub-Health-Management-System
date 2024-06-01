@@ -11,35 +11,50 @@
 
 <body>
     <div class="page-wrapper">
-        <div class="vertical-center header">
+        <div class="vertical-center unselectable header">
             <img src="./../images/logo.png" class="inline-block-display logo" alt="中大logo">
             <span class="title">亚健康管理系统</span>
         </div>
 
         <div class="center chat-wrapper">
             <div class="chat-room">
-                <div class="center chat-head">
+                <div class="center unselectable chat-head">
                     <p>AI医生咨询</p>
                 </div>
 
-                <div>
-                    <label for="inputBox"></label>
-                    <input id="inputBox" type="text">
-                    <button id="button">Send</button>
+                <div id="chat-body" class="position-relative chat-body"></div>
 
-                    <label for="outputBox"></label>
-                    <textarea id="outputBox" rows="30" cols="60"></textarea>
-                    <button id="reset-button">Reset</button>
+                <div class="position-relative center user-input-wrapper">
+                    <div class="user-input">
+                        <div class="center input-area-wrapper">
+                            <label for="input-box"></label>
+                            <textarea id="input-box" placeholder="在这里输入要询问的问题" class="input-area"></textarea>
+                        </div>
+
+                        <div class="position-relative button-wrapper">
+                            <div id="clean" class="position-absolute icon clean-button">
+                                <img src="./../images/icons/cleanIcon.png" alt="清理" class="full-height full-width">
+                            </div>
+
+                            <div id="send" class="position-absolute icon send-button">
+                                <img src="./../images/icons/sendIcon.png" alt="发送" class="full-height full-width">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="position-relative center unselectable chat-footer">
+                    <p>所有内容均由AI模型输出，仅供参考，不保证准确性，更推荐咨询真人医生意见</p>
                 </div>
             </div>
         </div>
+
+        <div class="position-absolute center unselectable footer">
+            <p>你的健康，我们关心！（制作者：******************）</p>
+        </div>
     </div>
 
-    <div class="position-absolute center footer">
-        <p>你的健康，我们关心！（制作者：******************）</p>
-    </div>
-<!--        <script type="text/javascript" src="./../js/chat.js"></script>-->
-
+    <script type="text/javascript" src="./../js/chat.js"></script>
 </body>
 
 </html>

@@ -1,21 +1,58 @@
-document.getElementById("button").addEventListener('click', function() {
-    const inputBox = document.getElementById('inputBox');
-    const outputBox = document.getElementById('outputBox');
+function addChatHistory(type, message) {
+    const chatBody = document.getElementById('chat-body');
 
-    // 将URL元素中的inputBox中的内容进行URL编码（否则发送中文时会乱码）
-    const encodedInput = encodeURIComponent(inputBox.value);
+    let chatRecords = chatBody.getElementsByClassName('chat-message');
+    if (chatRecords.length >= 20) chatBody.removeChild(chatRecords[0]);
 
-    // 创建一个新的事件源（EventSource），用来监听服务器发送的SSE事件-->
-    const eventSource = new EventSource(`/api/chat?encodedInput=${encodedInput}`);
+    const div = document.createElement('div');
+    div.className = 'chat-message';
 
-    // 设置一个事件监听器，用来处理服务器发送的消息-->
-    eventSource.onmessage = function(event) {
-        outputBox.value += event.data;  // 将新的数据连接到原来的output中
+    const innerDiv = document.createElement('div');
+    innerDiv.className = `inline-block-display chat-history ${type}`;
+
+    const text = document.createElement('p');
+    text.className = 'chat-content';
+    text.innerText = message;
+
+    innerDiv.appendChild(text);
+    div.appendChild(innerDiv);
+    chatBody.appendChild(div);
+    chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到最底部
+}
+
+document.getElementById("clean").addEventListener('click', function() {
+    const chatBody = document.getElementById('chat-body');
+    while (chatBody.firstChild) {
+        chatBody.removeChild(chatBody.firstChild);
     }
-
-    inputBox.value = '';    // 清空inputBox
 });
 
-document.getElementById("reset-button").addEventListener('click', function() {
-    document.getElementById("outputBox").value = '';
-})
+function sendMessage() {
+    const inputBox = document.getElementById('input-box');
+    if (inputBox.value !== '') {
+        addChatHistory('human', inputBox.value);
+        const encodedInput = encodeURIComponent(inputBox.value);
+        addChatHistory('bot', '');
+
+        const chatBody = document.getElementById('chat-body');
+        let chatRecords = chatBody.getElementsByClassName('chat-message');
+        const outputBox = chatRecords[chatRecords.length - 1].firstChild.firstChild;
+        console.log(outputBox);
+
+        const eventSource = new EventSource(`/api/chat?encodedInput=${encodedInput}`);
+        eventSource.onmessage = function(event) {
+            outputBox.innerText += event.data;
+        }
+
+        inputBox.value = '';
+    }
+}
+
+document.getElementById("send").addEventListener("click", sendMessage);
+
+document.getElementById("input-box").addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        sendMessage();
+    }
+});
