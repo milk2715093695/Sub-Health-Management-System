@@ -1,17 +1,14 @@
 package com.myapp.util;
 
 import com.myapp.model.TableCellCoordinate;
+import org.apache.poi.xwpf.usermodel.*;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFTable;
-import org.apache.poi.xwpf.usermodel.XWPFTableCell;
-import org.apache.poi.xwpf.usermodel.XWPFTableRow;
+import java.util.List;
 
 // 如果不知道怎么写可以去参考我写的src/main/java/TestDocx.java和src/main/java/TestApachePOIDocx.java文件
 public class DocxFileUtil {
@@ -52,13 +49,28 @@ public class DocxFileUtil {
      * @return 如果操作成功返回true，否则返回false。
      * @throws IOException 如果在修改文本时出现I/O错误
      */
+
     public boolean modifyCellInTable(int tableIndex, int rowIndex, int columnIndex, String newText) throws IOException {
-        return false;
+        try {
+            XWPFTable table = doc.getTables().get(tableIndex);
+            XWPFTableRow row = table.getRow(rowIndex);
+            XWPFTableCell cell = row.getCell(columnIndex);
+            for (XWPFParagraph p : cell.getParagraphs()) {
+                for (XWPFRun r : p.getRuns()) {
+                    r.setText(newText, 0);
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public boolean modifyCellInTable(TableCellCoordinate coordinate, String newText) throws IOException {
         return modifyCellInTable(coordinate.tableIndex(), coordinate.rowIndex(), coordinate.columnIndex(), newText);
     }
+
 
     // 第二个需要补全的内容，如果不知道怎么写可以去参考我写的src/main/java/TestDocx.java和src/main/java/TestApachePOIDocx.java文件
     /**
@@ -73,7 +85,22 @@ public class DocxFileUtil {
      * @throws IOException 如果在查找和插入文本时出现I/O错误
      */
     public boolean findAndInsert(String targetText, String newText,int offsetIndex, int offsetRow, int offsetColumn) throws IOException {
-        return false;
+        try {
+            XWPFTable table = doc.getTableArray(offsetIndex);
+            XWPFTableRow row = table.getRow(offsetRow);
+            XWPFTableCell cell = row.getCell(offsetColumn);
+            String cellText = cell.getText();
+            if(cellText.contains(targetText)){
+                String replacedText = cellText.replace(targetText, targetText + newText);
+                cell.removeParagraph(0);
+                cell.setText(replacedText);
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public boolean findAndInsert(String targetText, String newText) throws IOException {
@@ -93,7 +120,23 @@ public class DocxFileUtil {
      * 关于记录类的使用方法可能需要自行查询
      * @throws IOException  如果在查找文本时出现I/O错误
      */
+    // 第三个需要补全的内容
     public TableCellCoordinate findCellInTable(String targetString) throws IOException {
+        List<XWPFTable> tables = doc.getTables();
+        for (int tableIndex = 0; tableIndex < tables.size(); tableIndex++) {
+            XWPFTable table = tables.get(tableIndex);
+            List<XWPFTableRow> rows = table.getRows();
+            for (int rowIndex = 0; rowIndex < rows.size(); rowIndex++) {
+                XWPFTableRow row = rows.get(rowIndex);
+                List<XWPFTableCell> cells = row.getTableCells();
+                for (int cellIndex = 0; cellIndex < cells.size(); cellIndex++) {
+                    XWPFTableCell cell = cells.get(cellIndex);
+                    if (cell.getText().contains(targetString)) {
+                        return new TableCellCoordinate(tableIndex, rowIndex, cellIndex);
+                    }
+                }
+            }
+        }
         return null;
     }
 
@@ -108,7 +151,10 @@ public class DocxFileUtil {
      * @throws IOException 如果在获取单元格时出现I/O错误
      */
     public XWPFTableCell cellText(int tableIndex, int rowIndex, int columnIndex) throws IOException {
-        return null;
+        XWPFTable table = doc.getTables().get(tableIndex);
+        XWPFTableRow row = table.getRows().get(rowIndex);
+        XWPFTableCell cell = row.getTableCells().get(columnIndex);
+        return cell;
     }
 
     public XWPFTableCell cellText(TableCellCoordinate coordinate) throws IOException {
@@ -122,5 +168,19 @@ public class DocxFileUtil {
      *
      * @throws IOException 如果在打印文档时出现I/O错误
      */
-    public void printDocument() throws IOException {}
+    // 第五个需要补全的内容
+    public void printDocument() throws IOException {
+        // 打印段落内容
+        for (XWPFParagraph p : doc.getParagraphs()) {
+            System.out.println("Paragraph: " + p.getText());
+        }
+        // 打印表格内容
+        for (XWPFTable tbl : doc.getTables()) {
+            for (XWPFTableRow row : tbl.getRows()) {
+                for (XWPFTableCell cell : row.getTableCells()) {
+                    System.out.println("Table Cell: " + cell.getText());
+                }
+            }
+        }
+    }
 }
