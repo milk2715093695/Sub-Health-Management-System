@@ -13,11 +13,11 @@ public class TestDocsFileUtil {
     public String testDocUtil() throws IOException {
         DocxFileUtil docxFileUtil = new DocxFileUtil("health_report_template.docx", "filled_report.docx");
 
-        System.out.println(docxFileUtil.modifyCellInTable(0, 0, 0, "Fuc"));
-        System.out.println(docxFileUtil.modifyCellInTable(0, 1, 1, "Second"));
-        System.out.println(docxFileUtil.modifyCellInTable(0, 2, 0, "Third"));
+        System.out.println(docxFileUtil.modifyCellInTable(0, 0, 0, "one"));
+        System.out.println(docxFileUtil.modifyCellInTable(0, 1, 1, "two"));
+        System.out.println(docxFileUtil.modifyCellInTable(0, 2, 0, "three"));
         docxFileUtil.close();
 
-        return "error";
+        return "test";
     }
 }
