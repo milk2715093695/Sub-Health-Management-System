@@ -13,7 +13,6 @@ public class DocxToPdfService {
             process.waitFor();
             return true;
         } catch(Exception exception) {
-            exception.printStackTrace();
             return false;
         }
     }

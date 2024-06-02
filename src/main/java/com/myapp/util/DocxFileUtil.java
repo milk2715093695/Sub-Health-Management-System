@@ -42,7 +42,23 @@ public class DocxFileUtil {
             XWPFTable table = doc.getTables().get(tableIndex);
             XWPFTableRow row = table.getRow(rowIndex);
             XWPFTableCell cell = row.getCell(columnIndex);
-            cell.setText(newText);
+
+            // 获取该单元格的第一个段落
+            XWPFParagraph paragraph;
+            if(!cell.getParagraphs().isEmpty()){
+                paragraph = cell.getParagraphs().get(0);
+            }else{
+                paragraph = cell.addParagraph(); // 如果单元格没有段落，添加一个新的段落
+            }
+
+            // 创建一个新的 XWPFRun 对象，然后对它设置文字和字体
+            XWPFRun run = paragraph.createRun();
+            run.setFontFamily("宋体");
+            run.setText(newText);
+
+            // 清空原有的内容
+            paragraph.removeRun(0);
+
             return true;
         } catch (Exception exception) {
             return false;

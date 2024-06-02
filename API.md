@@ -81,7 +81,3 @@ curl --location --request POST 'https://api.coze.com/open_api/v2/chat' \
 
 pat_0wos8gCEuKpPPu2jtdHmBoDosjfzwtHWZRNxUUEPogoJV0N4CjuCtxC2WSGkecdM
 7367342304811991046
-
-```shell
-/opt/homebrew/bin/soffice --headless --convert-to pdf /Users/mac/Desktop/Doc2.docx --outdir /Users/mac/Desktop/
-```

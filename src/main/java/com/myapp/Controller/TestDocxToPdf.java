@@ -15,7 +15,9 @@ public class TestDocxToPdf {
 
     @RequestMapping("/docxToPdf")
     public String docxToPdf() {
-        docxToPdfService.convertDocxToPdf("newDoc.docx");
+        if (docxToPdfService.convertDocxToPdf("filled_report.docx")) {
+            return "test";
+        }
         return "error";
     }
 }
