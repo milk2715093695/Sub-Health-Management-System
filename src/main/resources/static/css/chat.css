@@ -17,6 +17,10 @@
     --icon-length: 30px;
 }
 
+:root {
+    overflow: hidden;
+}
+
 body {
     font-family: Arial, sans-serif;
 }

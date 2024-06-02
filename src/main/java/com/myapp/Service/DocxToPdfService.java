@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class DocxToPdfService {
     public boolean convertDocxToPdf(String fileName) {
         final String LibreOffice_Home = System.getenv("LIBREOFFICE_HOME");
-        String command = LibreOffice_Home + " --headless --convert-to pdf src/main/resources/templates/" + fileName + " --outdir src/main/resources/templates";
+        String command = LibreOffice_Home + " --headless --convert-to pdf src/main/resources/static/files/" + fileName + " --outdir src/main/resources/static/files";
 
         try {
             Process process = Runtime.getRuntime().exec(command);

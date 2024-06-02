@@ -18,7 +18,7 @@ public class DocxFileUtil {
     public DocxFileUtil(String inputFilename, String outputFilename) throws IOException {
         Resource resource = new ClassPathResource("templates/"+inputFilename);
         fis = new FileInputStream(resource.getFile());
-        fos = new FileOutputStream("src/main/resources/templates/" + outputFilename);
+        fos = new FileOutputStream("src/main/resources/static/files/" + outputFilename);
         doc = new XWPFDocument(fis);
     }
 
