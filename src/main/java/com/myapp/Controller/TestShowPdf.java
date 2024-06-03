@@ -1,7 +1,9 @@
 package com.myapp.Controller;
 
 
+import com.myapp.Service.DocxToPdfService;
 import org.apache.poi.util.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -18,22 +20,29 @@ import java.io.IOException;
 
 @Controller
 public class TestShowPdf {
+    final DocxToPdfService docxToPdfService;
+    @Autowired
+    public TestShowPdf(DocxToPdfService docxToPdfService) {
+        this.docxToPdfService = docxToPdfService;
+    }
+
     @RequestMapping("/showPdf")
     public String showPdf(){
         return "TestPdf";
     }
 
-    @GetMapping("/download")
+    @RequestMapping("/download")
     @ResponseBody
-    public ResponseEntity<ByteArrayResource> downloadPdf(@RequestParam String filename) throws IOException {
-        File file = new File("src/main/resources/static/files/" + filename);
-        if(file.exists()){
+    public ResponseEntity<ByteArrayResource> downloadPdf() throws IOException {
+        boolean isConverted = docxToPdfService.convertDocxToPdf("filled_report.docx");
+        File file = new File("src/main/resources/static/files/filled_report" + (isConverted ? ".pdf" : ".docx"));
+        if(file.exists()) {
             byte[] data = IOUtils.toByteArray(new FileInputStream(file));
             ByteArrayResource resource = new ByteArrayResource(data);
 
             return ResponseEntity.ok()
                     .header(HttpHeaders.CONTENT_LOCATION, "attachment;filename=" + file.getName())
-                    .contentType(MediaType.APPLICATION_PDF)
+                    .contentType(isConverted ? MediaType.APPLICATION_PDF : MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
                     .contentLength(data.length)
                     .body(resource);
         }
