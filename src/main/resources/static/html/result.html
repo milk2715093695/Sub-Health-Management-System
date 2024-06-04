@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="totalTitle">亚健康管理系统</title>
+    <link rel="stylesheet" href="./../css/homePage.css">
+</head>
+
+<body>
+<nav class="navBox">
+    <div class="navContent flex-display">
+        <div class="header flex-display"> <!-- 添加这个 div 进行包裹 -->
+            <img src="./../images/logo.png" class="logo" alt="图片加载失败">
+            <span id="title" class="title">亚健康管理系统</span>
+        </div> <!-- 这里结束包裹 -->
+
+        <ul class="navList flex-display">
+            <li><a href="homePage.html">首页</a></li>
+
+            <li class="dropdown">
+                <a href="allTest.html">健康评估</a>
+                <div class="dropdown-content position-absolute hidden">
+                    <a class="block-display" href="physicalTest.html">体质评测</a>
+                    <a class="block-display" href="mentalTest.html">心理评测</a>
+                    <a class="block-display" href="riskTest.html">风险评测</a>
+                </div>
+            </li>
+
+            <li><a href="chat.html">AI问答</a></li>
+
+            <li><a href="healthCare.html">健康方案</a></li>
+
+            <li><a href="./login.html">登录</a></li>
+
+            <li><a href="./register.html">注册</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="footer">
+    <p id="footerContent" class="footer-content">你的健康，我们关心！（制作者：******************）</p>
+</div>
+<script type="text/javascript" src="./../js/setPictureInterval.js"></script>
+
+
+</body>
+</html>

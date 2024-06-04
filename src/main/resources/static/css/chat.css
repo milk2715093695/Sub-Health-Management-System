@@ -7,19 +7,16 @@
 }
 
 :root {
-    --header-height: 95px;
-    --footer-height: 40px;
+    --navBox-height: 95px;
+    --footer-height: 35px;
     --chat-head-height: 40px;
     --chat-footer-height: 20px;
-    --user-input-height: 100px;
+    --user-input-height: 95px;
     --border-radius: 10px;
     --border: 1px;
     --icon-length: 30px;
 }
 
-:root {
-    overflow: hidden;
-}
 
 body {
     font-family: Arial, sans-serif;
@@ -81,37 +78,12 @@ body {
     position: absolute;
 }
 
-.header {
-    top: 0;
-    width: 100%;
-    height: var(--header-height);
-    padding-left: 70px;
-    box-sizing: border-box;
-}
 
-.header span {
-    font-size: 30px;
-    font-weight: 600;
-}
-
-.header span:before {
-    content: "|";
-    font-weight: 400;
-    margin: 0 20px;
-}
-
-.logo {
-    height: 70px;
-}
-
-.title {
-    letter-spacing: 4px;
-}
 
 .chat-wrapper {
     margin: 0;
     width: 100%;
-    height: calc(100% - var(--header-height) - var(--footer-height));
+    height: calc(100% - var(--navBox-height) - var(--footer-height));
     background-color: var(--light-grey);
 }
 
@@ -230,15 +202,3 @@ body {
     font-size: 10px;
 }
 
-.footer {
-    width: 100%;
-    height: var(--footer-height);
-    background-color: var(--royal-blue);
-    color: var(--white);
-    bottom: 0;
-}
-
-.footer p {
-    margin: 0;
-    font-size: 15px;
-}

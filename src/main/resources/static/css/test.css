@@ -1,6 +1,6 @@
 body {
     background-color: #f8f9fa;
-    background-image: url('https://cas.sysu.edu.cn/cas/themes/sysu2-bottom/images/bodybg.jpg');
+    background-image: url('./../images/bodybg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
