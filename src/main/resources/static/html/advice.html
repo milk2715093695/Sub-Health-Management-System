@@ -1,0 +1,87 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="totalTitle">亚健康管理系统</title>
+    <link rel="stylesheet" href="./../css/homePage.css">
+    <link rel="stylesheet" href="./../css/advice.css">
+</head>
+
+<body>
+<nav class="navBox">
+    <div class="navContent flex-display">
+        <div class="header flex-display"> <!-- 添加这个 div 进行包裹 -->
+            <img src="./../images/logo.png" class="logo" alt="图片加载失败">
+            <span id="title" class="title">亚健康管理系统</span>
+        </div> <!-- 这里结束包裹 -->
+
+        <ul class="navList flex-display">
+            <li><a href="homePage.html">首页</a></li>
+
+            <li class="dropdown">
+                <a href="allTest.html">健康评估</a>
+                <div class="dropdown-content position-absolute hidden">
+                    <a class="block-display" href="physicalTest.html">体质评测</a>
+                    <a class="block-display" href="mentalTest.html">心理评测</a>
+                    <a class="block-display" href="riskTest.html">风险评测</a>
+                </div>
+            </li>
+
+            <li><a href="chat.html">AI问答</a></li>
+
+            <li><a href="advice.html">健康方案</a></li>
+
+            <li><a href="./login.html">登录</a></li>
+
+            <li><a href="./register.html">注册</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="mean">
+    <span class="meaning block-display" >您的私人健康方案</span>
+</div>
+<div class="health-bg">
+    <div class="health-wrap clearfix">
+        <div class="health-animate fl">
+            <div class="circle"></div>
+            <div class="people"></div>
+            <i class="small cbg circles1"></i>
+            <i class="small cbg circles2"></i>
+            <i class="small cbg circles3"></i>
+            <i class="small cbg circles4"></i>
+            <i class="small cbg circles5"></i>
+            <i class="small cfont circles1">饮食</i>
+            <i class="small cfont circles2">作息</i>
+            <i class="small cfont circles3">运动</i>
+            <i class="small cfont circles4">心情</i>
+            <i class="small cfont circles5">就医</i>
+        </div>
+        <div class="health-platform fr">
+            <h2>更加适合您的亚健康管理方案</h2>
+            <p>我们将会基于您的测试结果，让您对自己的健康状态有更加准确而真实的认知，为您提供详细的健康管理方案，让您活出健康和活力。</p>
+            <p>我们将从饮食、作息、运动、心情、就医五方面为您提供合理建议</p>
+        </div>
+    </div>
+</div>
+
+<div class="diet-bg">
+    <div class = "diet-wrap clearfix">
+        <div class="diet-platform fr">
+            <h2>饮食健康方案</h2>
+            <p>1、均衡膳食：保证每日摄入的食物种类丰富，包括谷类、蔬菜、水果、肉类、蛋类、奶类及豆类等，以满足身体对各种营养素的需求。</p>
+            <p>2.控制油盐糖摄入：减少高油、高盐、高糖食物的摄入，降低患上心血管疾病和糖尿病的风险。</p>
+            <p>3.增加膳食纤维摄入：多吃富含膳食纤维的食物，如全谷类、豆类、蔬菜等，有助于改善肠道健康。</p>
+            <p>4.适量饮水：保持足够的水分摄入，有助于维持身体正常代谢。</p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p id="footerContent" class="footer-content">你的健康，我们关心！（制作者：******************）</p>
+</div>
+<script type="text/javascript" src="./../js/setPictureInterval.js"></script>
+
+
+</body>
+</html>
