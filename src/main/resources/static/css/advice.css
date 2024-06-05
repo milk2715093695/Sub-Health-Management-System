@@ -36,7 +36,7 @@
 }
 .diet-platform {
     width: 540px;
-    padding-top: 210px;
+    padding-top: 150px;
     color: var(--white);
     position: relative;
     margin-left: auto;
@@ -48,5 +48,125 @@
 }
 .diet-platform p{
     font-size: large;
-    text-align: center;
+    text-align: left;
+}
+.exercise-bg {
+    height: 600px;
+    background: url('./../images/advicepic/sportAdvice.png')var(--royal-blue) no-repeat center center;
+    background-size: cover;
+}
+.exercise-wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+.exercise-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.exercise-platform {
+    width: 540px;
+    padding-top: 210px;
+    color: var(--white);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+.exercise-platform h2{
+    font-size: xx-large;
+}
+.exercise-platform p{
+    font-size: large;
+    text-align: left;
+}
+.rest-bg {
+    height: 600px;
+    background: url('./../images/advicepic/restAdvice.png')var(--royal-blue) no-repeat center center;
+    background-size: cover;
+}
+.rest-wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+.rest-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.rest-platform {
+    width: 540px;
+    padding-top: 210px;
+    color: var(--white);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+.rest-platform h2{
+    font-size: xx-large;
+}
+.rest-platform p{
+    font-size: large;
+    text-align: left;
+}
+.mental-bg {
+    height: 600px;
+    background: url('./../images/advicepic/mentalAdvice.png')var(--royal-blue) no-repeat center center;
+    background-size: cover;
+}
+.mental-wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+.mental-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.mental-platform {
+    width: 500px;
+    padding-top: 200px;
+    color: var(--white);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+.mental-platform h2{
+    font-size: xx-large;
+}
+.mental-platform p{
+    font-size: large;
+    text-align: left;
+}
+.doctor-bg {
+    height: 600px;
+    background: url('./../images/advicepic/doctorAdvice.png') no-repeat center center;
+    background-size: cover;
+}
+.doctor-wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+.doctor-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.doctor-platform {
+    width: 500px;
+    padding-top: 200px;
+    color: var(--black);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+.doctor-platform h2{
+    font-size: xx-large;
+}
+.doctor-platform p{
+    font-size: large;
+    text-align: left;
 }

@@ -353,6 +353,9 @@ i {
 .fr {
     float: right;
 }
+.fl {
+    float: left;
+}
 .health-platform h2{
     font-size: xx-large;
 }
