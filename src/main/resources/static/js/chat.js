@@ -37,7 +37,6 @@ function sendMessage() {
         const chatBody = document.getElementById('chat-body');
         let chatRecords = chatBody.getElementsByClassName('chat-message');
         const outputBox = chatRecords[chatRecords.length - 1].firstChild.firstChild;
-        console.log("调用了函数");
 
         const eventSource = new EventSource(`/api/chat?encodedInput=${encodedInput}`);
         eventSource.onmessage = function(event) {
@@ -45,7 +44,6 @@ function sendMessage() {
         }
 
         eventSource.addEventListener('DONE', function(event) {
-            console.log("DONE");
             eventSource.close();
         })
 
