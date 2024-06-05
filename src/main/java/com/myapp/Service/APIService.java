@@ -1,5 +1,6 @@
 package com.myapp.Service;
 
+import com.myapp.model.JsonParserData;
 import com.myapp.util.JsonParser;
 import com.myapp.model.APIResponse;
 
@@ -51,10 +52,16 @@ public class APIService {
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
                     String line;
                     while ((line = reader.readLine()) != null) {
-                        String parsedContent = JsonParser.parseJson(line);
-                        if (parsedContent == null) continue;
-                        emitter.send("\u200B" + parsedContent);
-                        answer.append(parsedContent);
+                        JsonParserData parsedData = JsonParser.parseJson(line);
+                        if (parsedData != null && !parsedData.isParseComplete()) {
+                            String parsedContent = parsedData.parsedContent();
+                            if (parsedContent == null) continue;
+                            emitter.send("\u200B" + parsedContent);
+                            answer.append(parsedContent);
+                        } else if (parsedData != null) {
+                            emitter.send(SseEmitter.event().name("DONE").data(""));
+                            emitter.complete();
+                        }
                     }
                 }
 

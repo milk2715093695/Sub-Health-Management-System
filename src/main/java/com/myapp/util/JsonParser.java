@@ -4,6 +4,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.myapp.model.JsonParserData;
+
 public class JsonParser {
     /**
      * parseJson方法
@@ -13,7 +15,7 @@ public class JsonParser {
      * @param jsonLine 服务器相应的JSON数据（一行）
      * @return 处理完JSON数据后得到的机器人的回复
      */
-    public static String parseJson(String jsonLine) {
+    public static JsonParserData parseJson(String jsonLine) {
         StringBuilder parsedContent = new StringBuilder();  // 储存解析后的内容
 
         try {
@@ -22,15 +24,15 @@ public class JsonParser {
 
             // 处理服务器相应完成或服务器响应异常的情况
             String event = data.getString("event");
-            if (event.equals("done")) return null;
-            if (event.equals("error")) return data.getJSONObject("error_information").getString("err_msg") + "\n";
+            if (event.equals("done")) return new JsonParserData("", true);
+            if (event.equals("error")) return new JsonParserData(data.getJSONObject("error_information").getString("err_msg") + "\n", true);
 
             JSONObject message = data.getJSONObject("message");
             if (data.getBoolean("is_finish")) {
                 if (!message.getString("type").equals("follow_up")) {
-                    return "\n";
+                    return new JsonParserData("\n", false);
                 }
-                return "建议问题：" + message.getString("content") + "\n";
+                return new JsonParserData("建议问题：" + message.getString("content") + "\n", false);
             } else {
                 String content = message.getString("content");
                 parsedContent.append(content);
@@ -39,7 +41,7 @@ public class JsonParser {
             return null;
         }
 
-        return parsedContent.toString();
+        return new JsonParserData(parsedContent.toString(), false);
     }
 
     public static JSONObject createJsonObject(String role, String type, String content, String content_type) {

@@ -1,6 +1,7 @@
 package com.myapp.Controller;
 
 import com.myapp.util.JsonParser;
+import com.myapp.model.JsonParserData;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -46,7 +47,11 @@ public class TestAPIPlus {
                 String line;
                 System.out.print("回复：");
                 while ((line = reader.readLine()) != null) {
-                    String parsedContent = JsonParser.parseJson(line);
+                    JsonParserData parsedData = JsonParser.parseJson(line);
+                    String parsedContent = null;
+                    if (parsedData != null) {
+                        parsedContent = parsedData.parsedContent();
+                    }
                     if (parsedContent == null) break;
                     System.out.print(parsedContent);
                     answer.append(parsedContent);

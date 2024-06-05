@@ -36,5 +36,18 @@
    2. docx转pdf；（已完成✅）
    3. 展示以及下载pdf功能；（已完成✅）
 10. AI医生咨询功能相关前端实现；（已完成✅）
-11. homePage中英文切换；（进行中❌）；
-12. 后续功能实现（视情况而定）
+11. 关于chat.html的bug修复；（已完成✅，修复过程详见[bug.md](/bug.md)）
+    1. 关于发送六条消息后卡住的bug；（已完成✅）
+       1. 错误原因：后端SseEmitter始终未关闭，导致资源耗尽；
+       2. 解决：在全部发送完成后添加`emitter.compelete()`语句，关闭SseEmitter；
+       3. 涉及到的修改：
+          1. 为了`JsonPharser.java`的`parseJson`函数返回值添加了标记是否完成的`isParseComplete`变量;
+          2. 在`APIService.java`的`accessAPI`函数接收到完成信号时关闭SseEmitter;
+    2. 关于上一条bug修复后产生的反复调用`accessAPI`函数的问题；
+       1. 错误原因：前端`EventSource`反复尝试连接
+       2. 解决：在全部发送完成后额外发送`DONE`事件给前端，让前端关闭`EventSource`
+       3. 涉及到的修改:
+          1. 前端`chat.js`添加了对`DONE`事件的监视器，当收到信号时关闭`EventSource`
+          2. 后端`APIService.java`的`accessAPI`函数额外添加了接收到完成信号后向前端发送`DONE`事件的功能；
+12. homePage中英文切换；（进行中❌）；
+13. 后续功能实现（视情况而定）
