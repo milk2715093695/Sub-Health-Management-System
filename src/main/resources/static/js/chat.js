@@ -14,10 +14,22 @@ function addChatHistory(type, message) {
     text.className = 'chat-content';
     text.innerText = message;
 
+
     innerDiv.appendChild(text);
     div.appendChild(innerDiv);
     chatBody.appendChild(div);
     chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到最底部
+
+
+
+    // 如果类型是 AI，添加头像
+    if (type === 'ai') {
+        const avatar = document.createElement('img');
+        avatar.src = './../images/icons/aidoctor.png'; // AI头像的图片路径
+        avatar.alt = 'AI';
+        avatar.className = 'ai-avatar'; // 将用于 CSS 样式的类名
+        div.appendChild(avatar); // 将头像添加到外层div
+    }
 }
 
 document.getElementById("clean").addEventListener('click', function() {
