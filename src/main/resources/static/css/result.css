@@ -1,0 +1,99 @@
+:root {
+    --white: #FFFFFF;
+    --light-grey: #F4F4F6;
+    --royal-blue: #1873b6;
+    --navy-blue: #0000cd;
+    --black: #000000;
+    --green: #009900;
+}
+
+.test-results-container {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: var(--light-grey); /* 容器背景色 */
+    border-radius: 10px; /* 容器圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 容器阴影效果 */
+}
+
+.overall-test-result {
+    flex-basis: 30%; /* 占据整体宽度的30% */
+
+    background-color: var(--white); /* 整体评估结果背景色 */
+    padding: 15px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+.test-result-details {
+    flex-basis: 70%; /* 占据剩余宽度 */
+}
+
+.test-result-item {
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 20px;
+    background-color: var(--white); /* 测试项背景色 */
+    padding: 10px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+.left-label, .right-label {
+    margin: 0 10px; /* 左右文本的边距 */
+    color: var(--navy-blue); /* 文本颜色 */
+}
+
+.progress-container {
+    flex-grow: 1;
+    background-color: var(--light-grey); /* 进度条背景色 */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 30px;
+    color: var(--white);
+    background-color: var(--green);
+    text-align: center;
+    line-height: 30px;
+}
+
+
+.progress-bar::before {
+    content: attr(style);
+    color: var(--white);
+}
+
+/* 增加动画效果使进度条加载时有动画过度效果 */
+@keyframes loadProgress {
+    from {
+        width: 0;
+    }
+    /*换成具体数据*/
+    to {
+        width: 50px;
+    }
+
+}
+
+.progress-bar {
+    animation: loadProgress 1s ease-out forwards; /* 应用动画 */
+}
+
+
+.slider3 {
+    overflow: hidden;
+}
+.image-caption {
+    position: relative; /* 设置为绝对定位 */
+    bottom: 10px; /* 文字距离图片底部的距离 */
+    left: 0; /* 文字距离左侧的距离 */
+    width: 100%; /* 文字宽度与图片一致 */
+    color: var(--black); /* 文字颜色 */
+    padding: 5px 0; /* 文字的上下内间距 */
+}
