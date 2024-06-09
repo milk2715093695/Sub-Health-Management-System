@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="totalTitle">亚健康管理系统</title>
     <link rel="stylesheet" href="./../css/homePage.css">
+    <link rel="stylesheet" href="./../css/result.css">
 </head>
 
 <body>
@@ -29,9 +30,9 @@
                 </div>
             </li>
 
-            <li><a href="chat.html">AI问答</a></li>
+            <li><a href="./chat.html">AI问答</a></li>
 
-            <li><a href="healthCare.html">健康方案</a></li>
+            <li><a href="./advice.html">健康方案</a></li>
 
             <li><a href="./login.html">登录</a></li>
 
@@ -41,10 +42,72 @@
 </nav>
 
 
+<div class="test-results-container">
+    <!-- 整体亚健康测试结果描述 -->
+    <div class="overall-test-result">
+        <h2>整体亚健康测试结果</h2>
+        <div class="slider3 position-relative">
+            <div class="transition-time flex-display">
+                <div class="slider-item cursor-pointer">
+                    <img src="./../images/resultpic/healthyicon.png" alt="图片加载失败">
+                    <div class="image-caption">您现在的健康情况是：</div>
+                </div>
+                <div class="slider-item cursor-pointer">
+                    <img src="./../images/resultpic/healthyicon2.jpg" alt="图片加载失败">
+                    <div class="image-caption">您现在的健康情况是：</div>
+                </div>
+                <div class="slider-item cursor-pointer">
+                    <img src="./../images/resultpic/ihealthyicon3.jpg" alt="图片加载失败">
+                    <div class="image-caption">您现在的健康情况是：</div>
+                </div>
+            </div>
+
+            <div class="dots position-absolute">
+                <span class="dot cursor-pointer"></span>
+                <span class="dot cursor-pointer"></span>
+                <span class="dot cursor-pointer"></span>
+            </div>
+        </div>
+        <p>根据您的测试结果，以下各项显示了您的亚健康情况。</p>
+    </div>
+    <!-- 体质测试结果 -->
+    <div class="test-result-details">
+    <div class="test-result-item">
+        <h3>体质</h3>
+        <span class="left-label">虚弱</span>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 70%;">70%</div>
+        </div>
+        <span class="right-label">强壮</span>
+    </div>
+
+    <!-- 心理测试结果 -->
+    <div class="test-result-item">
+        <h3>心理</h3>
+        <span class="left-label">抑郁</span>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 85%;">85%</div>
+        </div>
+        <span class="right-label">积极</span>
+    </div>
+
+    <!-- 疾病测试结果 -->
+    <div class="test-result-item">
+        <h3>疾病</h3>
+        <span class="left-label">病弱</span>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 40%;">40%</div>
+        </div>
+        <span class="right-label">健康</span>
+     </div>
+    </div>
+</div>
+
 <div class="footer">
     <p id="footerContent" class="footer-content">你的健康，我们关心！（制作者：******************）</p>
 </div>
 <script type="text/javascript" src="./../js/setPictureInterval.js"></script>
+<script type="text/javascript" src="./../js/setPictureInterval2.js"></script>
 
 
 </body>

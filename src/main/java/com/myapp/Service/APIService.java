@@ -59,6 +59,7 @@ public class APIService {
                             emitter.send("\u200B" + parsedContent);
                             answer.append(parsedContent);
                         } else if (parsedData != null) {
+
                             emitter.send(SseEmitter.event().name("DONE").data(""));
                             emitter.complete();
                         }
