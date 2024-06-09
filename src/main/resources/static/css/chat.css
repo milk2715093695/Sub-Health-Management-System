@@ -196,16 +196,19 @@ body {
     color: var(--black);
 }
 
-.ai-avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%; /* 使图像变为圆形 */
-    margin-right: 10px; /* 在消息文本和头像之间添加空间 */
+.bot-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
 }
 
 
-.chat-history.ai {
-    margin-right: auto;
+.chat-history.bot {
+    display: flex;
+    margin-left: auto;
+    text-align: left;
 }
 .human {
     justify-content: flex-end;

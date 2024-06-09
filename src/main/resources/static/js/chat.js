@@ -22,13 +22,13 @@ function addChatHistory(type, message) {
 
 
 
-    // 如果类型是 AI，添加头像
-    if (type === 'ai') {
+    // 如果类型是 bot，添加头像
+    if (type === 'bot') {
         const avatar = document.createElement('img');
-        avatar.src = './../images/icons/aidoctor.png'; // AI头像的图片路径
-        avatar.alt = 'AI';
-        avatar.className = 'ai-avatar'; // 将用于 CSS 样式的类名
-        div.appendChild(avatar); // 将头像添加到外层div
+        avatar.src = './../images/icons/aidoctor.png'; //
+        avatar.alt = 'bot';
+        avatar.className = 'bot-avatar'; // 将用于 CSS 样式的类名
+        div.prepend(avatar); // 将头像添加到外层div
     }
 }
 
