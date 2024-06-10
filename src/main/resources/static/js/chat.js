@@ -38,13 +38,6 @@ function addChatHistory(type, message) {
     chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到最底部
 }
 
-document.getElementById("clean").addEventListener('click', function() {
-    const chatBody = document.getElementById('chat-body');
-    while (chatBody.firstChild) {
-        chatBody.removeChild(chatBody.firstChild);
-    }
-});
-
 function sendMessage() {
     const inputBox = document.getElementById('input-box');
     if (inputBox.value !== '') {
@@ -69,6 +62,13 @@ function sendMessage() {
         inputBox.value = '';
     }
 }
+
+document.getElementById("clean").addEventListener('click', function() {
+    const chatBody = document.getElementById('chat-body');
+    while (chatBody.firstChild) {
+        chatBody.removeChild(chatBody.firstChild);
+    }
+});
 
 document.getElementById("send").addEventListener("click", sendMessage);
 
