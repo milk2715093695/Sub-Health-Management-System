@@ -62,7 +62,7 @@ function sendMessage() {
             chatBody.scrollTop = chatBody.scrollHeight;
         }
 
-        eventSource.addEventListener('DONE', function(event) {
+        eventSource.addEventListener('DONE', function() {
             eventSource.close();
         })
 
