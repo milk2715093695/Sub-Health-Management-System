@@ -14,30 +14,36 @@ function addChatHistory(type, message) {
     text.className = 'chat-content';
     text.innerText = message;
 
+    if (type === 'bot') {
+        const avatarContainer = document.createElement('div');
+        avatarContainer.className = 'avatar-container';
 
-    innerDiv.appendChild(text);
+        const avatar = document.createElement('img');
+        avatar.className = 'bot-avatar';
+        avatar.src = './../images/icons/aiDoctor.png'
+        avatar.alt = 'bot';
+
+        const textContainer = document.createElement('div');
+        textContainer.className = 'text-container';
+
+        avatarContainer.appendChild(avatar);
+        textContainer.appendChild(text);
+        innerDiv.appendChild(avatarContainer);
+        innerDiv.appendChild(textContainer)
+    } else {
+        innerDiv.appendChild(text);
+    }
     div.appendChild(innerDiv);
     chatBody.appendChild(div);
     chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到最底部
-
-
-
-    // 如果类型是 bot，添加头像
-    if (type === 'bot') {
-        const avatar = document.createElement('img');
-        avatar.src = './../images/icons/aidoctor.png'; //
-        avatar.alt = 'bot';
-        avatar.className = 'bot-avatar'; // 将用于 CSS 样式的类名
-        div.prepend(avatar); // 将头像添加到外层div
-    }
 }
 
-// document.getElementById("clean").addEventListener('click', function() {
-//     const chatBody = document.getElementById('chat-body');
-//     while (chatBody.firstChild) {
-//         chatBody.removeChild(chatBody.firstChild);
-//     }
-// });
+document.getElementById("clean").addEventListener('click', function() {
+    const chatBody = document.getElementById('chat-body');
+    while (chatBody.firstChild) {
+        chatBody.removeChild(chatBody.firstChild);
+    }
+});
 
 function sendMessage() {
     const inputBox = document.getElementById('input-box');
@@ -47,13 +53,13 @@ function sendMessage() {
         addChatHistory('bot', '');
 
         const chatBody = document.getElementById('chat-body');
-        let chatRecords = chatBody.getElementsByClassName('chat-message');
-        const outputBox = chatRecords[chatRecords.length - 1].firstChild.firstChild;
+        let chatRecords = chatBody.getElementsByClassName('chat-content');
+        const outputBox = chatRecords[chatRecords.length - 1];
 
         const eventSource = new EventSource(`/api/chat?encodedInput=${encodedInput}`);
         eventSource.onmessage = function(event) {
-            console.log(event.data);
             outputBox.innerText += event.data;
+            chatBody.scrollTop = chatBody.scrollHeight;
         }
 
         eventSource.addEventListener('DONE', function(event) {
