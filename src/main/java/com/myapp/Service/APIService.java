@@ -1,6 +1,7 @@
 package com.myapp.Service;
 
 import com.myapp.model.JsonParserData;
+import com.myapp.repository.IAPIService;
 import com.myapp.util.JsonParser;
 import com.myapp.model.APIResponse;
 
@@ -13,11 +14,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
+@Profile("prod")
 @Service
-public class APIService {
+public class APIService implements IAPIService {
     public APIResponse accessAPI(String userInput, JSONArray chatHistory, String username, String conversation_id) {
         SseEmitter emitter = new SseEmitter(300000L);
         StringBuilder answer = new StringBuilder();

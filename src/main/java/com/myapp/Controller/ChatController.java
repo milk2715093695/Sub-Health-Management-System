@@ -2,6 +2,7 @@ package com.myapp.Controller;
 
 import com.myapp.Service.APIService;
 import com.myapp.model.APIResponse;
+import com.myapp.repository.IAPIService;
 import com.myapp.util.JsonParser;
 
 import org.json.JSONArray;
@@ -22,10 +23,10 @@ import java.nio.charset.StandardCharsets;
 @RestController
 @RequestMapping("/api")
 public class ChatController {
-    private final APIService apiService;
+    private final IAPIService apiService;
 
     @Autowired
-    public ChatController(APIService apiService) {
+    public ChatController(IAPIService apiService) {
         this.apiService = apiService;
     }
 
