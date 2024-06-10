@@ -79,8 +79,6 @@ body {
     position: absolute;
 }
 
-
-
 .chat-wrapper {
     margin: 0;
     width: 100%;
@@ -92,12 +90,12 @@ body {
 .chat-room {
     height: calc(100% - 20px);
     width: calc(100% - 20px);
-    background: url(./../images/icons/chatbg.png)var(--royal-blue) no-repeat center center;
+    background: url(./../images/icons/chatbg.png) var(--royal-blue) no-repeat center center;
     background-size: cover;
 }
 
 .chat-head {
-    height: 55px;
+    height: var(--chat-head-height);
     border: 2px solid green;
     border-radius: 10px;
 }
@@ -113,11 +111,9 @@ body {
 
 }
 
-
 .chat-body {
     height: calc(100% - var(--chat-head-height) - var(--chat-footer-height) - var(--user-input-height));
     overflow: auto;
-
 }
 
 .user-input-wrapper {
@@ -131,6 +127,7 @@ body {
     width: 90%;
     border-radius: var(--border-radius);
     border: var(--border) solid var(--black);
+    background-color: var(--white);
 }
 
 .input-area-wrapper {
@@ -210,6 +207,7 @@ body {
     margin-left: auto;
     text-align: left;
 }
+
 .human {
     justify-content: flex-end;
     margin-left: auto;
@@ -220,7 +218,7 @@ body {
 
 .chat-footer {
     bottom: 0;
-    height: 20px;
+    height: var(--chat-footer-height);
 }
 
 .chat-footer p {
@@ -228,3 +226,10 @@ body {
     font-size: 10px;
 }
 
+.footer {
+    height: var(--footer-height);
+}
+
+.footer p {
+    font-size: 15px;
+}

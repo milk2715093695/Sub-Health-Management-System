@@ -32,12 +32,12 @@ function addChatHistory(type, message) {
     }
 }
 
-document.getElementById("clean").addEventListener('click', function() {
-    const chatBody = document.getElementById('chat-body');
-    while (chatBody.firstChild) {
-        chatBody.removeChild(chatBody.firstChild);
-    }
-});
+// document.getElementById("clean").addEventListener('click', function() {
+//     const chatBody = document.getElementById('chat-body');
+//     while (chatBody.firstChild) {
+//         chatBody.removeChild(chatBody.firstChild);
+//     }
+// });
 
 function sendMessage() {
     const inputBox = document.getElementById('input-box');
@@ -52,6 +52,7 @@ function sendMessage() {
 
         const eventSource = new EventSource(`/api/chat?encodedInput=${encodedInput}`);
         eventSource.onmessage = function(event) {
+            console.log(event.data);
             outputBox.innerText += event.data;
         }
 
