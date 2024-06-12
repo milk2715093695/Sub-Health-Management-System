@@ -8,6 +8,7 @@
 }
 
 .test-results-container {
+    height: calc(100% - var(--header-height) - var(--footer-height));
     display: flex;
     justify-content: space-between;
     margin: auto;

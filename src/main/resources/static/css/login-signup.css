@@ -11,38 +11,6 @@
     --black: #2e2e2e;
 }
 
-/* 通用样式 */
-body {
-    margin: 0;
-    background: var(--white);
-    font-family: Arial, sans-serif;
-}
-
-/* 通用类：把鼠标变成手形 */
-.cursor-pointer {
-    cursor: pointer;
-}
-
-/* 通用类：文字居中 */
-.text-center {
-    text-align: center;
-}
-
-/* 通用类：相对定位 */
-.position-relative {
-    position: relative;
-}
-
-/* 通用类：绝对定位 */
-.position-absolute {
-    position: absolute;
-}
-
-/* 通用类：flex布局 */
-.flex-display {
-    display: flex;
-}
-
 /* 通用类：小号字体 */
 .font-small {
     font-size: 13px;
@@ -70,7 +38,8 @@ body {
 
 /* 页面包裹器，设置了背景图片 */
 .wrapper {
-    height: 800px;
+    height: 100%;
+    width: 100%;
     background: url("./../images/background.png") no-repeat;
     background-size: 100% 100%;
     box-sizing: border-box;
@@ -214,21 +183,4 @@ body {
 .register-section a:hover {
     color: var(--royal-blue);
     text-decoration: underline;
-}
-
-/* 页脚 */
-.footer {
-    width: 100%;
-    background-color: var(--royal-blue);
-    color: var(--white);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    bottom: 0;
-}
-
-/* 页脚内容 */
-.footer-content {
-    margin: 20px;
 }

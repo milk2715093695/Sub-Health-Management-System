@@ -1,15 +1,4 @@
 :root {
-    --white: #FFFFFF;
-    --light-grey: #e1e1e4;
-    --royal-blue: #1873b6;
-    --navy-blue: #0000cd;
-    --black: #000000;
-    --green: #009900;
-}
-
-:root {
-    --navBox-height: 95px;
-    --footer-height: 35px;
     --chat-head-height: 40px;
     --chat-footer-height: 20px;
     --user-input-height: 95px;
@@ -17,58 +6,6 @@
     --border: 1px;
     --icon-length: 30px;
 }
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-.position-relative {
-    position: relative;
-}
-
-.position-absolute {
-    position: absolute;
-}
-
-.block-display {
-    display: block;
-}
-
-.inline-block-display {
-    display: inline-block;
-}
-
-.full-width {
-    width: 100%;
-}
-
-.full-height {
-    height: 100%;
-}
-
-.vertical-center {
-    display: flex;
-    align-items: center;
-}
-
-.horizontal-center {
-    display: flex;
-    justify-content: center;
-}
-
-.center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.unselectable {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
 
 .page-wrapper {
     margin: 0;
@@ -81,7 +18,7 @@ body {
 .chat-wrapper {
     margin: 0;
     width: 100%;
-    height: calc(100% - var(--navBox-height) - var(--footer-height));
+    height: calc(100% - var(--header-height) - var(--footer-height));
     background: url(./../images/icons/chatbg.png)var(--royal-blue) no-repeat center center;
     background-size: cover;
 }
@@ -107,7 +44,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 1px;
     word-spacing: 2px;
-
 }
 
 .chat-body {
@@ -225,12 +161,4 @@ body {
 .chat-footer p {
     margin: 0;
     font-size: 10px;
-}
-
-.footer {
-    height: var(--footer-height);
-}
-
-.footer p {
-    font-size: 15px;
 }

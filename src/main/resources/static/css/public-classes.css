@@ -1,3 +1,11 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+}
+
 .position-relative {
     position: relative;
 }
@@ -6,26 +14,49 @@
     position: absolute;
 }
 
-.vertical-center {
-    display: flex;
-    justify-content: center;
-}
-
-.horizontal-center {
-    display: flex;
-    align-content: center;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
 .flex-display {
     display: flex;
 }
 
-.cursor-pointer {
-    cursor: pointer;
+.block-display {
+    display: block;
+}
+
+.inline-block-display {
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.horizontal-center {
+    display: flex;
+    justify-content: center;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

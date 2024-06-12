@@ -6,127 +6,143 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="totalTitle">亚健康管理系统-心理评测</title>
-    <link rel="stylesheet" href="./../css/homePage.css">
+    <link rel="stylesheet" href="./../css/colors.css">
+    <link rel="stylesheet" href="./../css/public-classes.css">
+    <link rel="stylesheet" href="./../css/framework.css">
     <link rel="stylesheet" href="./../css/test.css">
-    <link rel="stylesheet" href="./../css/tests.css">
 </head>
 
 <body>
-    <nav class="navBox">
-        <div class="navContent flex-display">
-            <div class="header flex-display"> <!-- 添加这个 div 进行包裹 -->
-                <img src="./../images/logo.png" class="logo" alt="图片加载失败">
-                <span id="title" class="title">亚健康管理系统</span>
-            </div> <!-- 这里结束包裹 -->
+    <div class="page-wrapper">
+        <div class="header">
+            <div class="header-title">
+                <img src="./../images/logo.png" class="header-logo" alt="中大logo">
+                <span id="header-title" class="header-title-content">亚健康管理系统</span>
+            </div>
 
-<!--            <ul class="navList flex-display">-->
-<!--                <li><a href="homePage.html">首页</a></li>-->
+            <div class="header-links">
+                <ul class="links">
+                    <li>
+                        <a href="./homePage.html">首页</a>
+                    </li>
 
-<!--                <li class="dropdown">-->
-<!--                    <a href="product.html">健康评估</a>-->
-<!--                    <div class="dropdown-content position-absolute hidden">-->
-<!--                        <a class="block-display" href="physicalTest.html">体质评测</a>-->
-<!--                        <a class="block-display" href="mentalTest.html">心理评测</a>-->
-<!--                        <a class="block-display" href="riskTest.html">风险评测</a>-->
-<!--                    </div>-->
-<!--                </li>-->
+                    <li class="dropdown">
+                        <a href="#">健康评估</a>
 
-<!--                <li><a href="news.html">新闻动态</a></li>-->
+                        <div class="dropdown-content">
+                            <a class="block-display" href="physicalTest.html">体质评测</a>
+                            <a class="block-display" href="mentalTest.html">心理评测</a>
+                            <a class="block-display" href="riskTest.html">风险评测</a>
+                        </div>
+                    </li>
 
-<!--                <li><a href="healthCare.html">健康管理</a></li>-->
+                    <li>
+                        <a href="#">新闻动态</a>
+                    </li>
 
-<!--                <li><a href="./login.html">登录</a></li>-->
+                    <li>
+                        <a href="#">健康管理</a>
+                    </li>
 
-<!--                <li><a href="./register.html">注册</a></li>-->
-<!--            </ul>-->
+                    <li>
+                        <a href="./login.html">登录</a>
+                    </li>
+
+                    <li>
+                        <a href="./register.html">注册</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </nav>
 
-    <div class="container">
-        <h2>心理评估问卷</h2>
-        <form action="" id="quiz">
-            <h3>1. 你最近心情如何？</h3>
-            <input type="radio" id="very" name="emo" value="20">
-            <label for="very">非常愉快</label><br>
-            <input type="radio" id="ra" name="emo" value="10">
-            <label for="ra">比较愉快</label><br>
-            <input type="radio" id="less" name="emo" value="0">
-            <label for="less">低落</label>
+        <div class="container">
+            <h2>心理评估问卷</h2>
+            <form action="" id="quiz">
+                <h3>1. 你最近心情如何？</h3>
+                <input type="radio" id="very" name="emo" value="20">
+                <label for="very">非常愉快</label><br>
+                <input type="radio" id="ra" name="emo" value="10">
+                <label for="ra">比较愉快</label><br>
+                <input type="radio" id="less" name="emo" value="0">
+                <label for="less">低落</label>
 
-            <h3>2. 你对当前的人际关系满意度?</h3>
-            <input type="radio" id="yes" name="satisfy" value="10">
-            <label for="yes">非常满意</label><br>
-            <input type="radio" id="no" name="satisfy" value="5">
-            <label for="no">比较满意</label><br>
-            <input type="radio" id="not" name="emo" value="0">
-            <label for="not">不满意</label>
+                <h3>2. 你对当前的人际关系满意度?</h3>
+                <input type="radio" id="yes" name="satisfy" value="10">
+                <label for="yes">非常满意</label><br>
+                <input type="radio" id="no" name="satisfy" value="5">
+                <label for="no">比较满意</label><br>
+                <input type="radio" id="not" name="emo" value="0">
+                <label for="not">不满意</label>
 
-            <h3>3. 一天中你可以集中精力是在什么时候？</h3>
-            <input type="radio" id="morning" name="energy" value="10">
-            <label for="morning">全天</label><br>
-            <input type="radio" id="afternoon" name="energy" value="5">
-            <label for="afternoon">半天</label><br>
-            <input type="radio" id="evening" name="energy" value="0">
-            <label for="evening">极少</label>
+                <h3>3. 一天中你可以集中精力是在什么时候？</h3>
+                <input type="radio" id="morning" name="energy" value="10">
+                <label for="morning">全天</label><br>
+                <input type="radio" id="afternoon" name="energy" value="5">
+                <label for="afternoon">半天</label><br>
+                <input type="radio" id="evening" name="energy" value="0">
+                <label for="evening">极少</label>
 
-            <h3>4. 你感到焦虑的频率是？</h3>
-            <input type="radio" id="often" name="sports" value="0">
-            <label for="often">经常</label><br>
-            <input type="radio" id="sometimes" name="sports" value="5">
-            <label for="sometimes">有时</label><br>
-            <input type="radio" id="rarely" name="sports" value="10">
-            <label for="rarely">很少</label>
+                <h3>4. 你感到焦虑的频率是？</h3>
+                <input type="radio" id="often" name="sports" value="0">
+                <label for="often">经常</label><br>
+                <input type="radio" id="sometimes" name="sports" value="5">
+                <label for="sometimes">有时</label><br>
+                <input type="radio" id="rarely" name="sports" value="10">
+                <label for="rarely">很少</label>
 
-            <h3>5. 你每天晚上睡眠质量如何？</h3>
-            <input type="radio" id="ten" name="time" value="10">
-            <label for="ten">很好</label><br>
-            <input type="radio" id="eleven" name="time" value="5">
-            <label for="eleven">一般</label><br>
-            <input type="radio" id="later" name="time" value="0">
-            <label for="later">比较差</label>
+                <h3>5. 你每天晚上睡眠质量如何？</h3>
+                <input type="radio" id="ten" name="time" value="10">
+                <label for="ten">很好</label><br>
+                <input type="radio" id="eleven" name="time" value="5">
+                <label for="eleven">一般</label><br>
+                <input type="radio" id="later" name="time" value="0">
+                <label for="later">比较差</label>
 
-            <h3>6. 你在有意外发生后多长时间可以恢复心情？</h3>
-            <input type="radio" id="often1" name="put" value="0">
-            <label for="often1">2天以上</label><br>
-            <input type="radio" id="sometimes1" name="put" value="5">
-            <label for="sometimes1">1-2个小时</label><br>
-            <input type="radio" id="rarely1" name="put" value="10">
-            <label for="rarely1">1个小时以下</label>
+                <h3>6. 你在有意外发生后多长时间可以恢复心情？</h3>
+                <input type="radio" id="often1" name="put" value="0">
+                <label for="often1">2天以上</label><br>
+                <input type="radio" id="sometimes1" name="put" value="5">
+                <label for="sometimes1">1-2个小时</label><br>
+                <input type="radio" id="rarely1" name="put" value="10">
+                <label for="rarely1">1个小时以下</label>
 
-            <h3>7. 你是否感到注意力不集中？</h3>
-            <input type="radio" id="often2" name="ill" value="0">
-            <label for="often2">经常</label><br>
-            <input type="radio" id="sometimes2" name="ill" value="5">
-            <label for="sometimes2">有时</label><br>
-            <input type="radio" id="rarely2" name="ill" value="10">
-            <label for="rarely2">很少</label>
+                <h3>7. 你是否感到注意力不集中？</h3>
+                <input type="radio" id="often2" name="ill" value="0">
+                <label for="often2">经常</label><br>
+                <input type="radio" id="sometimes2" name="ill" value="5">
+                <label for="sometimes2">有时</label><br>
+                <input type="radio" id="rarely2" name="ill" value="10">
+                <label for="rarely2">很少</label>
 
-            <h3>8. 你如何评价自己的能力和价值？</h3>
-            <input type="radio" id="often3" name="rega" value="10">
-            <label for="often3">非常高</label><br>
-            <input type="radio" id="sometimes3" name="rega" value="5">
-            <label for="sometimes3">中等</label><br>
-            <input type="radio" id="rarely3" name="rega" value="0">
-            <label for="rarely3">较低</label>
+                <h3>8. 你如何评价自己的能力和价值？</h3>
+                <input type="radio" id="often3" name="rega" value="10">
+                <label for="often3">非常高</label><br>
+                <input type="radio" id="sometimes3" name="rega" value="5">
+                <label for="sometimes3">中等</label><br>
+                <input type="radio" id="rarely3" name="rega" value="0">
+                <label for="rarely3">较低</label>
 
-            <h3>9. 你是否感到悲观或绝望？</h3>
-            <input type="radio" id="often4" name="temper" value="0">
-            <label for="often4">经常</label><br>
-            <input type="radio" id="sometimes4" name="temper" value="5">
-            <label for="sometimes4">有时</label><br>
-            <input type="radio" id="rarely4" name="temper" value="10">
-            <label for="rarely4">很少</label>
+                <h3>9. 你是否感到悲观或绝望？</h3>
+                <input type="radio" id="often4" name="temper" value="0">
+                <label for="often4">经常</label><br>
+                <input type="radio" id="sometimes4" name="temper" value="5">
+                <label for="sometimes4">有时</label><br>
+                <input type="radio" id="rarely4" name="temper" value="10">
+                <label for="rarely4">很少</label>
 
-            <br><br>
-            <input id="submit" type="submit" value="提交">
-        </form>
+                <br><br>
+                <input id="submit" type="submit" value="提交">
+            </form>
 
-        <p id="score"></p>
+            <p id="score"></p>
+        </div>
+
+        <div class="footer">你的健康，我们关心！（制作者：******************）</div>
     </div>
 
     <script type="text/javascript" src="./../js/calculateScore.js"></script>
     <script type="text/javascript" src="./../js/scores/mentalScore.js"></script>
-    <script type="text/javascript" src="./../js/addCursorPointer.js">
+    <script type="text/javascript" src="./../js/addCursorPointer.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
 </body>
