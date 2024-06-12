@@ -44,7 +44,7 @@
 
     <div class="container">
         <h2>心理评估问卷</h2>
-        <form action="" id="quiz" onsubmit="return calculateScore();">
+        <form action="" id="quiz">
             <h3>1. 你最近心情如何？</h3>
             <input type="radio" id="very" name="emo" value="20">
             <label for="very">非常愉快</label><br>
@@ -118,13 +118,14 @@
             <label for="rarely">很少</label>
 
             <br><br>
-            <input type="submit" value="提交">
+            <input id="submit" type="submit" value="提交">
         </form>
+
+        <p id="score"></p>
     </div>
 
-    <p id="score"></p>
-
-    <script type="text/javascript" src="./../js/calculators/calculateMentalScore.js"></script>
+    <script type="text/javascript" src="./../js/calculateScore.js"></script>
+    <script type="text/javascript" src="./../js/calculators/showMentalScore.js"></script>
     <script type="text/javascript" src="./../js/addCursorPointer.js">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
