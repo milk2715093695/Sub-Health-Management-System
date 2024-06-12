@@ -7,3 +7,8 @@ function calculateScore() {
     console.log(score);
     return score;
 }
+
+document.getElementById('quiz').onsubmit = function(event) {
+    event.preventDefault();
+    showResult(calculateScore());
+}
