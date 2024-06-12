@@ -1,0 +1,31 @@
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.vertical-center {
+    display: flex;
+    justify-content: center;
+}
+
+.horizontal-center {
+    display: flex;
+    align-content: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.flex-display {
+    display: flex;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
