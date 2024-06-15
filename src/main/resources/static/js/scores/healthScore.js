@@ -9,5 +9,24 @@ function showResult(score) {
 
 document.getElementById('quiz').onsubmit = function(event) {
     event.preventDefault();
-    showResult(calculateScore());
+    const score = calculateScore();
+    showResult(score);
+
+    fetch('/healthScore', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            gender: document.querySelector('input[name="gender"]:checked').id,
+            score: score
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    let language = localStorage.getItem('language') || 'zh-CN';
+                    alert(data.errMessage[language]);
+                }
+            })
+    })
 }

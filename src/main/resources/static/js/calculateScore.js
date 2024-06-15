@@ -4,7 +4,6 @@ function calculateScore() {
     elements.forEach(element => {
         score += parseInt(element.value);
     })
-    console.log(score);
     return score;
 }
 
