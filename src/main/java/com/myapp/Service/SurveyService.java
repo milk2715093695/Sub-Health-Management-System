@@ -34,17 +34,29 @@ public class SurveyService {
      * @return 如果保存成功返回true，否则返回false。
      */
     public Boolean saveSurvey(Survey survey) {
+        if (survey == null) return false;
+
         Survey existingSurvey = surveyRepository.findByUsername(survey.getUsername());
-
         if (existingSurvey != null) {
-            if (!Objects.equals(survey.getGender(), existingSurvey.getGender())) return false;
+            if (existingSurvey.getGender() != null) {
+                if (survey.getGender() == null || survey.getGender().equals(existingSurvey.getGender())) {
+                    if(survey.getHealthScore() != null) existingSurvey.setHealthScore(survey.getHealthScore());
+                    if(survey.getMentalScore() != null) existingSurvey.setMentalScore(survey.getMentalScore());
+                    if(survey.getRiskScore() != null) existingSurvey.setRiskScore(survey.getRiskScore());
+                } else return false;
+            } else {
+                if (survey.getGender() == null || survey.getGender().equals("male") || survey.getGender().equals("female")) {
+                    existingSurvey.setGender(survey.getGender());
 
-            if(survey.getHealthScore() != null) existingSurvey.setHealthScore(survey.getHealthScore());
-            if(survey.getMentalScore() != null) existingSurvey.setMentalScore(survey.getMentalScore());
-            if(survey.getRiskScore() != null) existingSurvey.setRiskScore(survey.getRiskScore());
+                    if(survey.getHealthScore() != null) existingSurvey.setHealthScore(survey.getHealthScore());
+                    if(survey.getMentalScore() != null) existingSurvey.setMentalScore(survey.getMentalScore());
+                    if(survey.getRiskScore() != null) existingSurvey.setRiskScore(survey.getRiskScore());
+                } else return false;
+            }
             surveyRepository.save(existingSurvey);
         } else {
-            surveyRepository.save(survey);
+            if (survey.getGender() == null || survey.getGender().equals("male") || survey.getGender().equals("female")) surveyRepository.save(survey);
+            else return false;
         }
 
         return true;

@@ -5,3 +5,28 @@ function showResult(score) {
     else if (score >= 0) result.innerText = "你的分数是：" + score + "\n你正在经历一些严重的心理压力或者困扰，对此，你可能需要专业的心理支持和援助。建议尽早与心理咨询师或者医生接洽，以便得到及时、专业的辅导。";
     else result.innerText = "抱歉，计算分数时出现了问题，请重新填写问卷";
 }
+
+document.getElementById('quiz').onsubmit = function(event) {
+    event.preventDefault();
+    const score = calculateScore();
+    showResult(score);
+
+    fetch('/mentalScore', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            score: score
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.success) {
+                let language = localStorage.getItem('language') || 'zh-CN';
+                alert(data.errMessage[language]);
+            } else {
+                alert("保存成功");
+            }
+        })
+}
