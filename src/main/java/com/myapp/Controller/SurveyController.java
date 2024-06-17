@@ -27,8 +27,8 @@ public class SurveyController {
         System.out.println(healthScore.gender());
         System.out.println(healthScore.score());
         Map<String, Object> result = new HashMap<>();
-        String username = session.getAttribute("username").toString();
-        if (username.isEmpty()) {
+        String username = (String) session.getAttribute("username");
+        if (username == null || username.isEmpty()) {
             Map<String, String> errMessage = new HashMap<>();
             errMessage.put("zh-CN", "你还未登录");
             errMessage.put("en", "You are not logged in");

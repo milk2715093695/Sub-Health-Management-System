@@ -21,12 +21,14 @@ document.getElementById('quiz').onsubmit = function(event) {
             gender: document.querySelector('input[name="gender"]:checked').id,
             score: score
         })
+    })
             .then(response => response.json())
             .then(data => {
                 if (!data.success) {
                     let language = localStorage.getItem('language') || 'zh-CN';
                     alert(data.errMessage[language]);
+                } else {
+                    
                 }
             })
-    })
 }
