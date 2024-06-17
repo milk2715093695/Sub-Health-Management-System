@@ -24,11 +24,6 @@ public class TestShowPdf {
         this.docxToPdfService = docxToPdfService;
     }
 
-    @RequestMapping("/showPdf")
-    public String showPdf(){
-        return "TestPdf";
-    }
-
     @RequestMapping("/download")
     @ResponseBody
     public ResponseEntity<ByteArrayResource> downloadPdf() throws IOException {
