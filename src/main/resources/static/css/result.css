@@ -5,38 +5,39 @@
     --navy-blue: #0000cd;
     --black: #000000;
     --green: #009900;
+    --red: maroon;
+    --grey:grey;
 }
 
 .test-results-container {
-    height: calc(100% - var(--header-height) - var(--footer-height));
+    height:calc(100% - var(--header-height) - var(--footer-height));
     display: flex;
     justify-content: space-between;
     margin: auto;
     padding: 20px;
     max-width: 1200px;
-    background-color: var(--light-grey); /* 容器背景色 */
+    background-color: var(--light-grey);
     border-radius: 10px; /* 容器圆角 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 容器阴影效果 */
 }
 
 .overall-test-result {
     flex-basis: 30%; /* 占据整体宽度的30% */
-
-    background-color: var(--white); /* 整体评估结果背景色 */
+    background-color: var(--white);
     padding: 15px; /* 内边距 */
     border-radius: 5px; /* 圆角 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
 }
 
 .test-result-details {
-    flex-basis: 70%; /* 占据剩余宽度 */
+    flex-basis: 70%;
 }
 
 .test-result-item {
-    display: flex; /* 使用flex布局 */
+    display: flex;
     align-items: center; /* 垂直居中 */
     margin-bottom: 20px;
-    background-color: var(--white); /* 测试项背景色 */
+    background-color: var(--white);
     padding: 10px; /* 内边距 */
     border-radius: 5px; /* 圆角 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
@@ -77,7 +78,7 @@
     }
     /*换成具体数据*/
     to {
-        width: 50px;
+        width: 550px;
     }
 
 }
@@ -91,10 +92,132 @@
     overflow: hidden;
 }
 .image-caption {
-    position: relative; /* 设置为绝对定位 */
-    bottom: 10px; /* 文字距离图片底部的距离 */
-    left: 0; /* 文字距离左侧的距离 */
-    width: 100%; /* 文字宽度与图片一致 */
-    color: var(--black); /* 文字颜色 */
-    padding: 5px 0; /* 文字的上下内间距 */
+    position: relative;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    color: var(--black);
+    padding: 5px 0;
+}
+.test-result-details h5{
+    text-align: center;
+    font-size: larger;
+}
+.health-report-wrapper{
+    position:relative;
+    padding:20px;
+    background: url('./../images/resultpic/resultbg.jpg');
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    border-radius: 10px; /* 容器圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 容器阴影效果 */
+    flex-direction: column;
+}
+
+.physical-report {
+    font-size: 18px;
+    color: var(--blue);
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+
+.mental-report {
+    font-size: 18px;
+    color: var(--green);
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+
+.ill-report {
+    font-size: 18px;
+    color: var(--red);
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+.all-report{
+    font-size: 18px;
+    color: var(--navy-blue);
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+
+.health-report-wrapper p {
+    font-size: 16px;
+    color: var(--black);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: justify;
+    padding: 0 15px;
+}
+
+
+#report {
+    font-size: 26px;
+    color: darkblue;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.advice-link{
+    position:relative;
+    padding:20px;
+    background: var(--white);
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.advice-link p{
+    font-size: 16px;
+    color: var(--grey);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 0 15px;
+}
+.download-button{
+    height:60px;
+    width:180px;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    background: powderblue;
+    color: var(--black);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    right:10px;
+
+}
+.download-button:hover {
+    background-color: var(--blue);
+}
+
+.advice-link h1{
+    color: orange;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
