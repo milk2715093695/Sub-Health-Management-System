@@ -28,7 +28,7 @@ document.getElementById('quiz').onsubmit = function(event) {
                     let language = localStorage.getItem('language') || 'zh-CN';
                     alert(data.errMessage[language]);
                 } else {
-                    
+                    alert("保存成功");
                 }
             })
 }
