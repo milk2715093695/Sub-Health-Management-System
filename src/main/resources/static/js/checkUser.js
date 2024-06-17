@@ -14,7 +14,7 @@ document.getElementById("submit").addEventListener('click', function (event) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                location.href = "/home";
+                location.href = "/html/homePage.html";
             } else {
                 let language = localStorage.getItem('language') || 'zh-CN';
                 alert(data.errMessage[language]);

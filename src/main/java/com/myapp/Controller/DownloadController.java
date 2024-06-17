@@ -17,10 +17,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 @Controller
-public class TestShowPdf {
+public class DownloadController {
     final DocxToPdfService docxToPdfService;
     @Autowired
-    public TestShowPdf(DocxToPdfService docxToPdfService) {
+    public DownloadController(DocxToPdfService docxToPdfService) {
         this.docxToPdfService = docxToPdfService;
     }
 
