@@ -26,8 +26,8 @@ public class APIService implements IAPIService {
         StringBuilder answer = new StringBuilder();
         new Thread(() -> {
             try {
-                final String token = "pat_0wos8gCEuKpPPu2jtdHmBoDosjfzwtHWZRNxUUEPogoJV0N4CjuCtxC2WSGkecdM";
-                final String bot_id = "7367342304811991046";
+                final String token = System.getenv("TOKEN");
+                final String bot_id = System.getenv("BOT_ID");
 
                 URL url = new URL("https://api.coze.com/open_api/v2/chat");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
