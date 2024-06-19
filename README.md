@@ -105,3 +105,5 @@ spring:
 由于调用AI咨询的相关API需要一定费用，为了防止浪费，测试阶段若使用AI咨询功能默认调用测试函数，AI回复的结果为固定的测试文本
 
 如果你希望使用正常的AI咨询功能，只需要去`application.yml`文件中，将`active: test`改成`active: prod`，即可正常使用
+
+前提是你需要一个[coze](https://www.coze.com)的账号以及你自己的token令牌，并将运行时的环境变量TOKEN与BOT_ID设置为自己的token与bot_id
