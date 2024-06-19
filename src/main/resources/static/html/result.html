@@ -84,47 +84,50 @@
             </div>
             <p>根据您的测试结果，以下各项显示了您的亚健康情况。</p>
         </div>
+
         <!-- 体质测试结果 -->
         <div class="test-result-details">
-        <div class="test-result-item">
-            <h3>体质</h3>
-            <span class="left-label">虚弱</span>
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 70%;">70%</div>
+            <div class="test-result-item">
+                <h3>体质</h3>
+                <span class="left-label">虚弱</span>
+                <div class="progress-container">
+                    <div class="progress-bar physical-score"></div>
+                </div>
+                <span class="right-label">强壮</span>
             </div>
-            <span class="right-label">强壮</span>
-        </div>
 
-        <!-- 心理测试结果 -->
-        <div class="test-result-item">
-            <h3>心理</h3>
-            <span class="left-label">抑郁</span>
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 85%;">85%</div>
+            <!-- 心理测试结果 -->
+            <div class="test-result-item">
+                <h3>心理</h3>
+                <span class="left-label">抑郁</span>
+                <div class="progress-container">
+                    <div class="progress-bar mental-score"></div>
+                </div>
+                <span class="right-label">积极</span>
             </div>
-            <span class="right-label">积极</span>
-        </div>
 
-        <!-- 疾病测试结果 -->
-        <div class="test-result-item">
-            <h3>疾病</h3>
-            <span class="left-label">病弱</span>
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 40%;">40%</div>
+            <!-- 疾病测试结果 -->
+            <div class="test-result-item">
+                <h3>疾病</h3>
+                <span class="left-label">病弱</span>
+                <div class="progress-container">
+                    <div class="progress-bar ill-score"></div>
+                </div>
+                <span class="right-label">健康</span>
             </div>
-            <span class="right-label">健康</span>
-        </div>
+
             <!--整体健康结果-->
-        <div class="test-result-item">
-            <h3>整体</h3>
-            <span class="left-label">危险</span>
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 40%;">40%</div>
-<!--                注意这里要放加权分数-->
+            <div class="test-result-item">
+                <h3>整体</h3>
+                <span class="left-label">危险</span>
+                <div class="progress-container">
+                    <div class="progress-bar total-score"></div>
+                    <!--注意这里要放加权分数-->
+                </div>
+                <span class="right-label">健全</span>
             </div>
-            <span class="right-label">健全</span>
-        </div>
-        <h5>基于您的测试结果，点此箭头查看您的健康报告</h5>
+
+            <h5>基于您的测试结果，点此箭头查看您的健康报告</h5>
             <span id="arrow" class="iBanner-arrow cursor-pointer block-display"></span>
         </div>
     </div>
@@ -177,6 +180,7 @@
 
     <script type="text/javascript" src="./../js/pictureInterval/setSlider.js"></script>
     <script type="text/javascript" src="./../js/pictureInterval/createSlider.js"></script>
+    <script type="text/javascript" src="./../js/test.js"></script>
     <script type="text/javascript" src="./../js/arrow/arrowText.js"></script>
     <script type="text/javascript" src="./../js/homePageIcon.js"></script>
 </body>
