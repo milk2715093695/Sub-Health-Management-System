@@ -36,7 +36,7 @@
    2. docx转pdf；（已完成✅）
    3. 展示以及下载pdf功能；（已完成✅）
 10. AI医生咨询功能相关前端实现；（已完成✅）
-11. 关于chat.html的bug修复；（已完成✅，修复过程详见[bug.md](/bug.md)）
+11. 关于chat.html的bug修复；（已完成✅，修复过程详见[bug.md](./bug.md)）
     1. 关于发送六条消息后卡住的bug；（已完成✅）
        1. 错误原因：后端SseEmitter始终未关闭，导致资源耗尽；
        2. 解决：在全部发送完成后添加`emitter.compelete()`语句，关闭SseEmitter；
