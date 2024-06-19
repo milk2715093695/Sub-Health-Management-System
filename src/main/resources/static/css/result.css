@@ -1,12 +1,11 @@
 :root {
-    --white: #FFFFFF;
     --light-grey: #F4F4F6;
-    --royal-blue: #1873b6;
-    --navy-blue: #0000cd;
-    --black: #000000;
-    --green: #009900;
     --red: maroon;
     --grey:grey;
+}
+
+:root {
+
 }
 
 .test-results-container {
@@ -78,7 +77,7 @@
     }
     /*换成具体数据*/
     to {
-        width: 550px;
+        width: 70%;
     }
 
 }
@@ -87,10 +86,10 @@
     animation: loadProgress 1s ease-out forwards; /* 应用动画 */
 }
 
-
 .slider {
     overflow: hidden;
 }
+
 .image-caption {
     position: relative;
     bottom: 10px;
@@ -99,10 +98,12 @@
     color: var(--black);
     padding: 5px 0;
 }
+
 .test-result-details h5{
     text-align: center;
     font-size: larger;
 }
+
 .health-report-wrapper{
     position:relative;
     padding:20px;
@@ -126,7 +127,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
 }
 
-
 .mental-report {
     font-size: 18px;
     color: var(--green);
@@ -137,7 +137,6 @@
     border-radius: 5px; /* 圆角 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
 }
-
 
 .ill-report {
     font-size: 18px;
