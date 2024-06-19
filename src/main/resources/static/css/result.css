@@ -78,7 +78,7 @@
 }
 
 .progress-bar::before {
-    content: attr(data-percentage);
+    content: attr(data);
     color: var(--white);
 }
 

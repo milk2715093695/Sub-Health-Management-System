@@ -1,16 +1,16 @@
 function setWidth(element, score) {
     element.style.setProperty('--target-width', `${score}%`);
-    element.setAttribute('data-percentage', `${score}分`);
+    element.setAttribute('data', `${score}分`);
 }
+
+let physic = document.querySelector('.physical-score');
+let mental = document.querySelector('.mental-score');
+let ill = document.querySelector('.ill-score');
+let total = document.querySelector('.total-score');
 
 fetch('/result')
     .then(response => response.json())
     .then(data => {
-        let physic = document.querySelector('.physical-score');
-        let mental = document.querySelector('.mental-score');
-        let ill = document.querySelector('.ill-score');
-        let total = document.querySelector('.total-score');
-
         if (!data.success) {
             let language = localStorage.getItem('language') || 'zh-CN';
             alert(data.errMessage[language]);
@@ -21,6 +21,7 @@ fetch('/result')
             setWidth(total, 0);
         } else {
             let scores = data.survey;
+
             let physicalScore = scores.healthScore;
             let mentalScore = scores.mentalScore;
             let illScore = scores.riskScore;
@@ -31,4 +32,10 @@ fetch('/result')
             setWidth(ill, illScore);
             setWidth(total, totalScore);
         }
+
+        showPhysicalScoreComment();
+        showMentalScoreComment();
+        showIllScoreComment();
+        showTotalScoreComment();
     })
+
