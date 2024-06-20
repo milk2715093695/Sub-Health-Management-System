@@ -1,5 +1,3 @@
-document.getElementById("afternoon");
-
 fetch('/result')
     .then(response => response.json())
     .then(data => {
