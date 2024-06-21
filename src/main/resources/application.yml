@@ -9,7 +9,7 @@ spring:
     show-sql: true
     open-in-view: true
   profiles:
-    active: prod
+    active: test
 
 #spring:
 #  datasource:
