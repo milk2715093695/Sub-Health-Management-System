@@ -27,6 +27,10 @@ fetch('/result')
             let illScore = scores.riskScore;
             let totalScore = Math.round((physicalScore + mentalScore + illScore) / 3);
 
+            if (physicalScore === null || mentalScore === null || illScore === null) {
+                alert("问卷未填完");
+            }
+
             setWidth(physic, physicalScore);
             setWidth(mental, mentalScore);
             setWidth(ill, illScore);
