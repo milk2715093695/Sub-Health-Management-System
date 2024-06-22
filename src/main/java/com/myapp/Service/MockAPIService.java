@@ -1,7 +1,6 @@
 package com.myapp.Service;
 
 import com.myapp.model.APIResponse;
-import com.myapp.repository.IAPIService;
 import com.myapp.util.JsonParser;
 import org.json.JSONArray;
 import org.springframework.context.annotation.Profile;

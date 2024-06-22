@@ -1,7 +1,6 @@
 package com.myapp.Service;
 
 import com.myapp.model.JsonParserData;
-import com.myapp.repository.IAPIService;
 import com.myapp.util.JsonParser;
 import com.myapp.model.APIResponse;
 

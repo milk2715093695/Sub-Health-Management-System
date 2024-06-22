@@ -1,4 +1,4 @@
-package com.myapp.repository;
+package com.myapp.Service;
 
 import com.myapp.model.APIResponse;
 import org.json.JSONArray;
