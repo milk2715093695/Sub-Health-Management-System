@@ -30,9 +30,9 @@ import java.io.IOException;
  */
 @Controller
 public class DownloadController {
-    final DocxToPdfService docxToPdfService;
-    final SurveyService surveyService;
-    final FillDocxService fillDocxService;
+    private final DocxToPdfService docxToPdfService;
+    private final SurveyService surveyService;
+    private final FillDocxService fillDocxService;
 
     /**
      * 自动注入服务依赖。
