@@ -3,7 +3,7 @@ package com.myapp.Controller;
 
 import com.myapp.entity.User;
 import com.myapp.model.APIResponse;
-import com.myapp.Service.IAPIService;
+import com.myapp.Service.APIService.IAPIService;
 import com.myapp.util.JsonParser;
 
 import org.json.JSONArray;
