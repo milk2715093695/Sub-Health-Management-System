@@ -1,5 +1,6 @@
 package com.myapp.entity;
 
+
 import com.myapp.model.SurveyData;
 
 import jakarta.persistence.Entity;
