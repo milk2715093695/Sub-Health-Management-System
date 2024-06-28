@@ -53,7 +53,7 @@ public class SurveyController {
         Map<String, Object> result = new HashMap<>();
 
         User user = (User) session.getAttribute("user");
-        if (!checkUser(session, result, user)) return result;
+        if (!checkUser(result, user)) return result;
 
         SurveyData surveyData = new SurveyData(user.getUsername(), healthScore.gender(), healthScore.score(), null, null);
         return saveSurveyScore(result, surveyData);
@@ -71,7 +71,7 @@ public class SurveyController {
         Map<String, Object> result = new HashMap<>();
 
         User user = (User) session.getAttribute("user");
-        if (!checkUser(session, result, user)) return result;
+        if (!checkUser(result, user)) return result;
 
         SurveyData surveyData = new SurveyData(user.getUsername(), null, null, surveyScore.score(), null);
         return saveSurveyScore(result, surveyData);
@@ -89,7 +89,7 @@ public class SurveyController {
         Map<String, Object> result = new HashMap<>();
 
         User user = (User) session.getAttribute("user");
-        if (!checkUser(session, result, user)) return result;
+        if (!checkUser(result, user)) return result;
 
         SurveyData surveyData = new SurveyData(user.getUsername(), null, null, null, surveyScore.score());
         return saveSurveyScore(result, surveyData);
@@ -124,12 +124,11 @@ public class SurveyController {
     /**
      * 检查用户是否存在并已登录。如果用户没登录，添加验一个“没有登录”的错误消息。
      *
-     * @param session 包含用户会话信息的HttpSession。
      * @param result  用于存储结果或错误消息的Map。
      * @param user    要检验的User对象。
      * @return        如果用户已登录，返回true；否则，返回false。
      */
-    private Boolean checkUser(HttpSession session, Map<String, Object> result, User user) {
+    private Boolean checkUser(Map<String, Object> result, User user) {
         if (user == null || user.getUsername() == null || user.getUsername().isEmpty()) {
             addErrorMessage.addErrorMessage(result, "你还未登录", "You are not logged in");
         }
