@@ -4,8 +4,8 @@ package com.myapp.Controller;
 import com.myapp.Service.DocxToPdfService;
 import com.myapp.Service.FillDocxService;
 import com.myapp.Service.SurveyService;
-import com.myapp.entity.Survey;
-import com.myapp.entity.User;
+import com.myapp.Entity.Survey;
+import com.myapp.Entity.User;
 
 import jakarta.servlet.http.HttpSession;
 

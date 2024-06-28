@@ -1,6 +1,6 @@
 package com.myapp.repository;
 
-import com.myapp.entity.User;
+import com.myapp.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // UserRepository接口

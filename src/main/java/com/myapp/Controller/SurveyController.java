@@ -3,8 +3,8 @@ package com.myapp.Controller;
 
 import com.myapp.Service.AddErrorMessage;
 import com.myapp.Service.SurveyService;
-import com.myapp.entity.Survey;
-import com.myapp.entity.User;
+import com.myapp.Entity.Survey;
+import com.myapp.Entity.User;
 import com.myapp.model.HealthScore;
 import com.myapp.model.SurveyData;
 import com.myapp.model.SurveyScore;

@@ -1,7 +1,7 @@
 package com.myapp.Service;
 
 
-import com.myapp.entity.Survey;
+import com.myapp.Entity.Survey;
 import com.myapp.util.DocxFileUtil;
 
 import org.springframework.stereotype.Service;

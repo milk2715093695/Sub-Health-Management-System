@@ -3,7 +3,7 @@ package com.myapp.Controller;
 
 import com.myapp.Service.AddErrorMessage;
 import com.myapp.Service.UserService;
-import com.myapp.entity.User;
+import com.myapp.Entity.User;
 import com.myapp.model.UserData;
 
 import jakarta.servlet.http.HttpSession;

@@ -1,6 +1,6 @@
 package com.myapp.repository;
 
-import com.myapp.entity.Survey;
+import com.myapp.Entity.Survey;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // SurveyRepository接口

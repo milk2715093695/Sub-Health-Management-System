@@ -1,4 +1,4 @@
-package com.myapp.entity;
+package com.myapp.Entity;
 
 
 import com.myapp.model.SurveyData;
