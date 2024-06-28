@@ -1,6 +1,7 @@
 package com.myapp.Controller;
 
 
+import com.myapp.Service.AddErrorMessage;
 import com.myapp.Service.UserService;
 import com.myapp.entity.User;
 import com.myapp.model.UserData;
@@ -22,15 +23,18 @@ import java.util.Map;
 @RestController
 public class UserController {
     private final UserService userService;
+    private final AddErrorMessage addErrorMessage;
 
     /**
      * 构造函数，使用@Autowired来自动注入UserService的实例。
      *
      * @param userService 用户服务提供者。
+     * @param addErrorMessage 填写错误信息的服务。
      */
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService, AddErrorMessage addErrorMessage) {
         this.userService = userService;
+        this.addErrorMessage = addErrorMessage;
     }
 
     /**
@@ -47,7 +51,7 @@ public class UserController {
 
         // 验证并处理登录结果
         if (loginuser == null) {
-            addErrorMessage(result, "用户名或密码错误，请重新输入", "Username or password is incorrect, please try again");
+            addErrorMessage.addErrorMessage(result, "用户名或密码错误，请重新输入", "Username or password is incorrect, please try again");
         } else {
             // 登录成功后设置session为用户名
             session.setAttribute("user", loginuser);
@@ -71,26 +75,11 @@ public class UserController {
 
         // 注册失败时在返回值中添加错误信息
         if (!userService.register(username, password)) {
-            addErrorMessage(result, "用户名已被占用，请重新输入", "Username already exists, please try another one.");
+            addErrorMessage.addErrorMessage(result, "用户名已被占用，请重新输入", "Username already exists, please try another one.");
         } else {
             result.put("success", true);
         }
 
         return result;
-    }
-
-    /**
-     * 辅助方法，用于向结果Map添加错误信息。
-     *
-     * @param result  结果Map
-     * @param zhMsg   中文错误信息
-     * @param enMsg   英文错误信息
-     */
-    private void addErrorMessage(Map<String, Object> result, String zhMsg, String enMsg) {
-        Map<String, String> errMessage = new HashMap<>();
-        errMessage.put("zh-CN", zhMsg);
-        errMessage.put("en", enMsg);
-        result.put("errMessage", errMessage);
-        result.put("success", false);
     }
 }

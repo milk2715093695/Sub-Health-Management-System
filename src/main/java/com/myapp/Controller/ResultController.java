@@ -1,6 +1,7 @@
 package com.myapp.Controller;
 
 
+import com.myapp.Service.AddErrorMessage;
 import com.myapp.Service.SurveyService;
 import com.myapp.entity.Survey;
 import com.myapp.entity.User;
@@ -16,10 +17,13 @@ import java.util.Map;
 
 @RestController
 public class ResultController {
-    SurveyService surveyService;
+    private final SurveyService surveyService;
+    private final AddErrorMessage addErrorMessage;
+
     @Autowired
-    public ResultController(SurveyService surveyService) {
+    public ResultController(SurveyService surveyService, AddErrorMessage addErrorMessage) {
         this.surveyService = surveyService;
+        this.addErrorMessage = addErrorMessage;
     }
 
     @GetMapping("/result")
@@ -27,20 +31,12 @@ public class ResultController {
         Map<String, Object> result = new HashMap<>();
         User user = (User) session.getAttribute("user");
         if (user == null || user.getUsername() == null || user.getUsername().isEmpty()) {
-            Map<String, String> errMessage = new HashMap<>();
-            errMessage.put("zh-CN", "你还未登录");
-            errMessage.put("en", "You are not logged in");
-            result.put("errMessage", errMessage);
-            result.put("success", false);
+            addErrorMessage.addErrorMessage(result, "你还未登录", "You are not logged in");
             return result;
         }
         Survey survey = surveyService.getSurvey(user.getUsername());
         if (survey == null) {
-            Map<String, String> errMessage = new HashMap<>();
-            errMessage.put("zh-CN", "你还没有填写过问卷");
-            errMessage.put("en", "You have not done any survey");
-            result.put("errMessage", errMessage);
-            result.put("success", false);
+            addErrorMessage.addErrorMessage(result, "你还没有填写过问卷", "You have not done any survey");
             return result;
         }
         result.put("success", true);
