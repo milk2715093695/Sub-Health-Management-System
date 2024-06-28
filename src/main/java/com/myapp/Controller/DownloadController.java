@@ -38,7 +38,7 @@ public class DownloadController {
      * 自动注入服务依赖。
      *
      * @param docxToPdfService 文档转换服务
-     * @param surveyService 调查服务
+     * @param surveyService 问卷服务
      * @param fillDocxService 填充文档服务
      */
     @Autowired
