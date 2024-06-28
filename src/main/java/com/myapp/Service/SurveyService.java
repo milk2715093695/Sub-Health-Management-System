@@ -1,7 +1,7 @@
 package com.myapp.Service;
 
 import com.myapp.Entity.Survey;
-import com.myapp.repository.SurveyRepository;
+import com.myapp.Repository.SurveyRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

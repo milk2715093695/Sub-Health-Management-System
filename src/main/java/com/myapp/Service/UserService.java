@@ -1,7 +1,7 @@
 package com.myapp.Service;
 
 import com.myapp.Entity.User;
-import com.myapp.repository.UserRepository;
+import com.myapp.Repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;  // `Service` 注解
