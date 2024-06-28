@@ -22,7 +22,7 @@ SseEmitter结束的时机应该是在调用的API的应答结束后，因此，�
 
 可以创建一个记录类`JsonParserData`记录返回值
 ```JsonParserData.java
-package com.myapp.model;
+package com.myapp.Model;
 
 public record JsonParserData(String parsedContent, boolean isParseComplete) {}
 ```

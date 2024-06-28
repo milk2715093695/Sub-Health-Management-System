@@ -4,7 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.myapp.model.JsonParserData;
+import com.myapp.Model.JsonParserData;
 
 public class JsonParser {
     /**

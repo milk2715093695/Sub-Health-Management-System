@@ -4,7 +4,7 @@ package com.myapp.Controller;
 import com.myapp.Service.AddErrorMessage;
 import com.myapp.Service.UserService;
 import com.myapp.Entity.User;
-import com.myapp.model.UserData;
+import com.myapp.Model.UserData;
 
 import jakarta.servlet.http.HttpSession;
 

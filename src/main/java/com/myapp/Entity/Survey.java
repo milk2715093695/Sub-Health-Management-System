@@ -1,7 +1,7 @@
 package com.myapp.Entity;
 
 
-import com.myapp.model.SurveyData;
+import com.myapp.Model.SurveyData;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

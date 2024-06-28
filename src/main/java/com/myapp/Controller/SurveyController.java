@@ -5,9 +5,9 @@ import com.myapp.Service.AddErrorMessage;
 import com.myapp.Service.SurveyService;
 import com.myapp.Entity.Survey;
 import com.myapp.Entity.User;
-import com.myapp.model.HealthScore;
-import com.myapp.model.SurveyData;
-import com.myapp.model.SurveyScore;
+import com.myapp.Model.HealthScore;
+import com.myapp.Model.SurveyData;
+import com.myapp.Model.SurveyScore;
 
 import jakarta.servlet.http.HttpSession;
 

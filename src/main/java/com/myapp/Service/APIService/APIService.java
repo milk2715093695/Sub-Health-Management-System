@@ -1,8 +1,8 @@
 package com.myapp.Service.APIService;
 
-import com.myapp.model.JsonParserData;
+import com.myapp.Model.JsonParserData;
 import com.myapp.util.JsonParser;
-import com.myapp.model.APIResponse;
+import com.myapp.Model.APIResponse;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

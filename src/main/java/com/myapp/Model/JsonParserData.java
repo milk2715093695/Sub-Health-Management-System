@@ -1,3 +1,3 @@
-package com.myapp.model;
+package com.myapp.Model;
 
 public record JsonParserData(String parsedContent, boolean isParseComplete) {}

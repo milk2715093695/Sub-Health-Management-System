@@ -1,6 +1,6 @@
 package com.myapp.util;
 
-import com.myapp.model.TableCellCoordinate;
+import com.myapp.Model.TableCellCoordinate;
 import org.apache.poi.xwpf.usermodel.*;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

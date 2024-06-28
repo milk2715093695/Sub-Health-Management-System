@@ -1,3 +1,3 @@
-package com.myapp.model;
+package com.myapp.Model;
 
 public record SurveyScore(int score) {}

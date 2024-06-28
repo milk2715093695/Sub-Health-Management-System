@@ -1,6 +1,6 @@
 package com.myapp.Service.APIService;
 
-import com.myapp.model.APIResponse;
+import com.myapp.Model.APIResponse;
 import org.json.JSONArray;
 
 public interface IAPIService {
