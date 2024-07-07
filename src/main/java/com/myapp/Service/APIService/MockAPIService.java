@@ -13,7 +13,6 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 /**
  * 模拟API服务实现类，用于在测试环境中提供假数据响应。
  * 当application.yml中设置了active: test时，会使用此实现类。
- *
  * @author milk
  */
 @Profile("test")

@@ -1,16 +1,21 @@
 package com.myapp.Service;
 
+
 import com.myapp.Entity.Survey;
 import com.myapp.Repository.SurveyRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 用于保存问卷数据的服务
+ * @author milk
+ */
 @Service
 public class SurveyService {
     private final SurveyRepository surveyRepository;
 
-    // 自动注入实例（这样可以不需要手动创建实例）
+    // 自动注入实例
     @Autowired
     SurveyService(SurveyRepository surveyRepository) {
         this.surveyRepository = surveyRepository;
@@ -28,7 +33,6 @@ public class SurveyService {
      * </ul>
      *
      * @param survey - 需要保存的问卷数据
-     *
      * @return 如果保存成功返回true，否则返回false。
      */
     public Boolean saveSurvey(Survey survey) {
@@ -64,7 +68,6 @@ public class SurveyService {
      * getSurvey方法用于根据用户名返回先前的问卷数据
      *
      * @param username 用户名
-     *
      * @return 该用户以前的问卷记录，若不存在返回null
      */
     public Survey getSurvey(String username) {

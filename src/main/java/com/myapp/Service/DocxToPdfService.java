@@ -2,6 +2,10 @@ package com.myapp.Service;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * 用于通过命令行命令调用本地的LibreOffice进行Docx与Pdf的转换
+ * @author milk
+ */
 @Service
 public class DocxToPdfService {
     public boolean convertDocxToPdf(String fileName) {

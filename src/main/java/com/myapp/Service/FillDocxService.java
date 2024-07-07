@@ -8,8 +8,19 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
+/**
+ * 提供填写模板pdf的服务
+ * @author milk
+ */
 @Service
 public class FillDocxService {
+    /**
+     * 填写 Docx 模板文档
+     *
+     * @param survey 健康调查表对象，包含调查信息
+     * @return 填写是否成功的布尔值，成功为 true，失败为 false
+     * @throws IOException 如果操作 Docx 文件时发生 IO 异常
+     */
     public Boolean fillDocx(Survey survey) throws IOException {
         DocxFileUtil docxFileUtil = new DocxFileUtil("health_report_template.docx", "filled_report.docx");
 
@@ -18,6 +29,34 @@ public class FillDocxService {
         if (!docxFileUtil.modifyCellInTable(0, 3, 1, (survey.getGender().equals("male")) ? "男" : "女")) return false;
 
         Integer physicalScore = survey.getHealthScore();
+        String physicalComment = getPhysicalComment(physicalScore);
+        if (!docxFileUtil.modifyCellInTable(0, 3, 2, physicalScore.toString())) return false;
+        if (!docxFileUtil.modifyCellInTable(0, 3, 3, physicalComment)) return false;
+
+        Integer mentalScore = survey.getMentalScore();
+        String mentalComment = getMentalComment(mentalScore);
+        if (!docxFileUtil.modifyCellInTable(0, 3, 4, mentalScore.toString())) return false;
+        if (!docxFileUtil.modifyCellInTable(0, 3, 5, mentalComment)) return false;
+
+        Integer riskScore = survey.getRiskScore();
+        String riskComment = getRiskComment(riskScore);
+        if (!docxFileUtil.modifyCellInTable(0, 3, 6, riskScore.toString())) return false;
+        if (!docxFileUtil.modifyCellInTable(0, 3, 7, riskComment)) return false;
+
+        String totalComment = getTotalComment(physicalScore, mentalScore, riskScore);
+        if (!docxFileUtil.modifyCellInTable(0, 4, 1, totalComment)) return false;
+
+        docxFileUtil.close();
+        return true;
+    }
+
+    /**
+     * 根据身体健康评分获取评价内容
+     *
+     * @param physicalScore 身体健康评分
+     * @return 身体健康评价内容
+     */
+    private static String getPhysicalComment(Integer physicalScore) {
         String physicalComment = "分数计算错误";
         if (physicalScore >= 0) {
             if (physicalScore <= 20) {
@@ -32,10 +71,16 @@ public class FillDocxService {
                 physicalComment = "极佳体质";
             }
         }
-        if (!docxFileUtil.modifyCellInTable(0, 3, 2, physicalScore.toString())) return false;
-        if (!docxFileUtil.modifyCellInTable(0, 3, 3, physicalComment)) return false;
+        return physicalComment;
+    }
 
-        Integer mentalScore = survey.getMentalScore();
+    /**
+     * 根据心理健康评分获取评价内容
+     *
+     * @param mentalScore 心理健康评分
+     * @return 心理健康评价内容
+     */
+    private static String getMentalComment(Integer mentalScore) {
         String mentalComment = "分数计算错误";
         if (mentalScore >= 0) {
             if (mentalScore <= 20) {
@@ -50,10 +95,16 @@ public class FillDocxService {
                 mentalComment = "非常健康";
             }
         }
-        if (!docxFileUtil.modifyCellInTable(0, 3, 4, mentalScore.toString())) return false;
-        if (!docxFileUtil.modifyCellInTable(0, 3, 5, mentalComment)) return false;
+        return mentalComment;
+    }
 
-        Integer riskScore = survey.getRiskScore();
+    /**
+     * 根据风险评估评分获取评价内容
+     *
+     * @param riskScore 风险评估评分
+     * @return 风险评估评价内容
+     */
+    private static String getRiskComment(Integer riskScore) {
         String riskComment = "分数计算错误";
         if (riskScore >= 0) {
             if (riskScore <= 20) {
@@ -68,9 +119,18 @@ public class FillDocxService {
                 riskComment = "极低风险";
             }
         }
-        if (!docxFileUtil.modifyCellInTable(0, 3, 6, riskScore.toString())) return false;
-        if (!docxFileUtil.modifyCellInTable(0, 3, 7, riskComment)) return false;
+        return riskComment;
+    }
 
+    /**
+     * 根据身体健康、心理健康和风险评估评分计算总体评价内容
+     *
+     * @param physicalScore 身体健康评分
+     * @param mentalScore   心理健康评分
+     * @param riskScore     风险评估评分
+     * @return 总体评价内容
+     */
+    private static String getTotalComment(Integer physicalScore, Integer mentalScore, Integer riskScore) {
         int totalScore = (physicalScore + mentalScore + riskScore) / 3;
         String totalComment = "评价生成失败";
         if (totalScore >= 0) {
@@ -90,9 +150,6 @@ public class FillDocxService {
                         """;
             }
         }
-        if (!docxFileUtil.modifyCellInTable(0, 4, 1, totalComment)) return false;
-
-        docxFileUtil.close();
-        return true;
+        return totalComment;
     }
 }

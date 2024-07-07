@@ -9,7 +9,6 @@ import org.json.JSONArray;
  * 定义API服务接口，用于访问聊天功能。
  * 当application.yml中设置了active: test时，调用测试的MockApiService实现类。
  * 若设置了active: prod，则调用APIService实现类。
- *
  * @author milk
  */
 public interface IAPIService {

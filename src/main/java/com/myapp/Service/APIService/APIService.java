@@ -20,7 +20,6 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 /**
  * 提供API服务的实现类，用于访问聊天功能。
  * 该类在生产环境中运行，并使用HttpClient发送HTTP请求。
- *
  * @author milk
  */
 @Profile("prod")
