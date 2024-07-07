@@ -10,6 +10,8 @@ spring:
     open-in-view: true
   profiles:
     active: test
+server:
+  port: 8080
 
 #spring:
 #  datasource:
@@ -22,3 +24,5 @@ spring:
 #    open-in-view: true
 #  profiles:
 #    active: test
+#server:
+#  port: 8080

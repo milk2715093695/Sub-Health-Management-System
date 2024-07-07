@@ -163,7 +163,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
+    open-in-view: true
+  profiles:
+    active: test
+server:
+  port: 8080
+  
 #spring:
 #  datasource:
 #    url: jdbc:h2:mem:testdb
@@ -172,6 +177,11 @@ spring:
 #    password: password
 #  jpa:
 #    database-platform: org.hibernate.dialect.H2Dialect
+#    open-in-view: true
+#  profiles:
+#    active: test
+#server:
+#  port: 8080
 ```
 
 将它改成
@@ -186,7 +196,12 @@ spring:
 #    hibernate:
 #      ddl-auto: update
 #    show-sql: true
-
+#    open-in-view: true
+#  profiles:
+#    active: test
+#server:
+#  port: 8080
+  
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
@@ -195,6 +210,11 @@ spring:
     password: password
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: true
+  profiles:
+    active: test
+server:
+  port: 8080
 ```
 
 即切换为H2数据库
