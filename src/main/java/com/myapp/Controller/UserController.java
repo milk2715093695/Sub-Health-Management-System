@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ import java.util.Map;
  * @author milk
  */
 @RestController
+@RequestMapping("/user")
 public class UserController {
     private final UserService userService;
     private final AddErrorMessage addErrorMessage;

@@ -1,7 +1,7 @@
 document.getElementById("submit").addEventListener('click', function (event) {
     event.preventDefault();
 
-    fetch('/login', {
+    fetch('/user/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

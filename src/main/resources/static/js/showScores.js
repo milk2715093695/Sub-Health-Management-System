@@ -8,7 +8,7 @@ let mental = document.querySelector('.mental-score');
 let ill = document.querySelector('.ill-score');
 let total = document.querySelector('.total-score');
 
-fetch('/result')
+fetch('/survey/result')
     .then(response => response.json())
     .then(data => {
         if (!data.success) {

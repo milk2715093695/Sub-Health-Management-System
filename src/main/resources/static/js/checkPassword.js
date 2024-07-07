@@ -29,7 +29,7 @@ document.getElementById('register').addEventListener('click', function (event) {
     if (password !== confirmPassword) {
         alert(language === 'zh-CN' ? "密码不一致，请重新输入" : "Passwords do not match, please try again.");
     } else {
-        fetch('/register', {
+        fetch('/user/register', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'

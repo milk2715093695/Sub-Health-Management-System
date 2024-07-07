@@ -101,7 +101,7 @@ public class SurveyController {
      * @param session HttpSession，包含用户会话信息。
      * @return 包含问卷结果的Map对象。如果用户未登录，会包含错误信息。
      */
-    @GetMapping("/result")
+    @GetMapping("/survey/result")
     public Map<String, Object> result(HttpSession session) {
         Map<String, Object> result = new HashMap<>();
         User user = (User) session.getAttribute("user");
