@@ -1,16 +1,19 @@
 package com.myapp.util;
 
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.myapp.Model.JsonParserData;
 
+/**
+ * 用于各种与JSON数据有关的操作
+ * @author milk
+ */
 public class JsonParser {
     /**
-     * parseJson方法
-     *
-     * <p>用于解析服务器的相应</p>
+     * 用于解析服务器的响应的parseJson方法
      *
      * @param jsonLine 服务器相应的JSON数据（一行）
      * @return 处理完JSON数据后得到的机器人的回复
@@ -44,6 +47,15 @@ public class JsonParser {
         return new JsonParserData(parsedContent.toString(), false);
     }
 
+    /**
+     * 创建包含指定字段的JSONObject对象。
+     *
+     * @param role         角色
+     * @param type         类型
+     * @param content      内容
+     * @param content_type 内容类型
+     * @return 创建的JSONObject对象
+     */
     public static JSONObject createJsonObject(String role, String type, String content, String content_type) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("role", role);
@@ -53,6 +65,14 @@ public class JsonParser {
         return jsonObject;
     }
 
+    /**
+     * 创建包含指定字段的JSONObject对象。
+     *
+     * @param role         角色
+     * @param content      内容
+     * @param content_type 内容类型
+     * @return 创建的JSONObject对象
+     */
     public static JSONObject createJsonObject(String role, String content, String content_type) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("role", role);
@@ -61,6 +81,17 @@ public class JsonParser {
         return jsonObject;
     }
 
+    /**
+     * 创建包含指定字段的JSONObject对象。
+     *
+     * @param conversation_id 对话ID
+     * @param bot_id          机器人ID
+     * @param user            用户
+     * @param query           查询内容
+     * @param stream          是否流式
+     * @param chat_history    聊天历史记录
+     * @return 创建的JSONObject对象
+     */
     public static JSONObject createJsonObject(String conversation_id, String bot_id, String user, String query, Boolean stream, JSONArray chat_history) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("conversation_id", conversation_id);

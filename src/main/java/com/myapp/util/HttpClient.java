@@ -11,7 +11,20 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * 用于发起http请求的工具类
+ * @author milk
+ */
 public class HttpClient {
+    /**
+     * 用于向制定的URL发起请求
+     *
+     * @param url URL
+     * @param requestBody 请求体的内容
+     * @param token 发起请求时使用的token
+     * @return BufferedReader用于读取反馈
+     * @throws IOException 当发生IO错误时
+     */
     public BufferedReader sendPostRequest(URL url, JSONObject requestBody, String token) throws IOException {
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
