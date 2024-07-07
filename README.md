@@ -236,3 +236,25 @@ spring:
 如果你希望使用正常的AI咨询功能，只需要去`application.yml`文件中，将`active: test`改成`active: prod`，即可正常使用
 
 前提是你需要一个[coze](https://www.coze.com)的账号以及你自己的token令牌，并将运行时的环境变量TOKEN与BOT_ID设置为自己的token与bot_id
+
+---
+
+---
+
+## 贡献
+
+1. 前端：赵jw、缪rk、赵yn、李ls、许sz
+   1. UI设计（包括html与css）：赵jw、缪rk
+   2. JavaScript代码设计：赵jw、缪rk、李ls、许sz
+      1. 与GET和POST请求相关的JavaScript代码（涉及前后端交互）：缪rk、李ls、许sz
+      2. 与网页功能有关的JavaScript代码（前端功能实现等）：赵jw、缪rk
+2. 后端：缪rk、李ls、许sz、赵jw、赵yn
+   1. 路由映射相关代码（Controller包）：缪rk、赵jw、赵yn
+   2. 持久层部分代码（数据库相关Entity包与Repository包）：缪rk、许sz
+   3. 服务层部分代码（业务逻辑部分Service包）：缪rk、李ls
+   4. 工具类（Util包，包括json解析器与文件操作器以及发起路由请求的工具类）：李ls、缪rk
+3. 项目基本架构的搭建：缪rk
+4. 测试与bug修复：缪rk、赵jw
+5. 问卷设计：赵yn
+
+---
