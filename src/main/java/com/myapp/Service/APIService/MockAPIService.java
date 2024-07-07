@@ -54,7 +54,7 @@ public class MockAPIService implements IAPIService {
 
                 final String[] words = text.split(" ");
                 for (String word : words) {
-                    emitter.send("\u200B" + word);
+                    emitter.send("\u200B " + word);
                     Thread.sleep(50);
                 }
                 emitter.send(SseEmitter.event().name("DONE").data(""));
