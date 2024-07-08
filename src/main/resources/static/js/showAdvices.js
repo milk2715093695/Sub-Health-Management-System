@@ -1,4 +1,4 @@
-fetch('/result')
+fetch('/survey/result')
     .then(response => response.json())
     .then(data => {
         if (!data.success) {
