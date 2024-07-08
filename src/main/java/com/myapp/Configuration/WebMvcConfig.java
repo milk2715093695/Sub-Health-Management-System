@@ -19,14 +19,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("forward:/html/homePage.html");
-        registry.addViewController("/home").setViewName("forward:/html/homePage.html");
-        registry.addViewController("/homePage").setViewName("forward:/html/homePage.html");
-        registry.addViewController("/advice").setViewName("forward:/html/advice.html");
-        registry.addViewController("/result").setViewName("forward:/html/result.html");
-        registry.addViewController("/chat").setViewName("forward:/html/chat.html");
-        registry.addViewController("/login").setViewName("forward:/html/login.html");
-        registry.addViewController("/register").setViewName("forward:/html/register.html");
-        registry.addViewController("/show").setViewName("forward:/html/showPdf.html");
+        registry.addViewController("/").setViewName("forward:/index/home-page.html");
+        registry.addViewController("/home").setViewName("forward:/index/home-page.html");
+        registry.addViewController("/homePage").setViewName("forward:/index/home-page.html");
+        registry.addViewController("/advice").setViewName("forward:/index/advice.html");
+        registry.addViewController("/result").setViewName("forward:/index/result.html");
+        registry.addViewController("/chat").setViewName("forward:/index/chat.html");
+        registry.addViewController("/login").setViewName("forward:/index/login.html");
+        registry.addViewController("/register").setViewName("forward:/index/register.html");
+        registry.addViewController("/show").setViewName("forward:/index/show-pdf.html");
     }
 }
