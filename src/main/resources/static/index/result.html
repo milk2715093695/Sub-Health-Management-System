@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>亚健康管理系统-健康报告</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+            if (isMobile) window.location.href = "./../Mobile/html/result.html";
+            else window.location.href = "./../PC/html/result.html";
+        })
+    </script>
+</body>
+
+</html>

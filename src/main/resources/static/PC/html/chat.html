@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./../css/colors.css">
+    <link rel="stylesheet" href="./../css/public-classes.css">
+    <link rel="stylesheet" href="./../css/framework.css">
+    <link rel="stylesheet" href="./../css/chat.css">
+
+    <title>亚健康管理系统-AI咨询</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="header">
+            <div class="header-title">
+                <img src="./../images/logo.png" class="header-logo" alt="中大logo">
+                <span id="header-title" class="header-title-content">亚健康管理系统</span>
+            </div>
+
+            <div class="header-links">
+                <ul class="links">
+                    <li><a href="./home-page.html">首页</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">健康评估</a>
+
+                        <div class="dropdown-content">
+                            <a class="block-display" href="./physical-test.html">体质评测</a>
+                            <a class="block-display" href="./mental-test.html">心理评测</a>
+                            <a class="block-display" href="./risk-test.html">风险评测</a>
+                        </div>
+                    </li>
+
+                    <li><a href="./chat.html">AI医生</a></li>
+
+                    <li><a href="./result.html">健康报告</a></li>
+
+                    <li><a href="./advice.html">健康方案</a></li>
+
+                    <li><a href="./login.html">登录</a></li>
+
+                    <li><a href="./register.html">注册</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="center chat-wrapper">
+            <div class="chat-room">
+                <div class="center unselectable chat-head">
+                    <p>AI医生咨询</p>
+                </div>
+
+                <div id="chat-body" class="position-relative chat-body"></div>
+
+                <div class="position-relative center user-input-wrapper">
+                    <div class="user-input">
+                        <div class="center input-area-wrapper">
+                            <label for="input-box"></label>
+                            <textarea id="input-box" placeholder="在这里输入要询问的问题，按Enter发送，按Shift+Enter换行" class="input-area"></textarea>
+                        </div>
+
+                        <div class="position-relative button-wrapper">
+                            <div id="clean" class="position-absolute icon clean-button" title="清理聊天记录">
+                                <img src="./../images/icons/cleanIcon.png" alt="清理" class="full-height full-width">
+                            </div>
+
+                            <div id="send" class="position-absolute icon send-button" title="发送">
+                                <img src="./../images/icons/sendIcon.png" alt="发送" class="full-height full-width">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="position-relative center unselectable chat-footer">
+                    <p>所有内容均由AI模型输出，仅供参考，不保证准确性，更推荐咨询真人医生意见</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">你的健康，我们关心！（制作者：******************）</div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+            if (isMobile) window.location.href = "./../../Mobile/html/chat.html";
+        })
+    </script>
+    <script type="text/javascript" src="./../js/chat.js"></script>
+</body>
+
+</html>

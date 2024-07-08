@@ -1,0 +1,222 @@
+:root {
+    --light-grey: #F4F4F6;
+    --red: maroon;
+    --grey: grey;
+}
+
+:root {
+    --target-width: 100%;
+}
+
+.test-results-container {
+    height:calc(100% - var(--header-height) - var(--footer-height));
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: var(--light-grey);
+    border-radius: 10px; /* 容器圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 容器阴影效果 */
+}
+
+.overall-test-result {
+    flex-basis: 30%; /* 占据整体宽度的30% */
+    background-color: var(--white);
+    padding: 15px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+.test-result-details {
+    flex-basis: 70%;
+}
+
+.test-result-item {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 20px;
+    background-color: var(--white);
+    padding: 10px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+.left-label, .right-label {
+    margin: 0 10px; /* 左右文本的边距 */
+    color: var(--navy-blue); /* 文本颜色 */
+}
+
+.progress-container {
+    flex-grow: 1;
+    background-color: var(--light-grey); /* 进度条背景色 */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 30px;
+    color: var(--white);
+    background-color: var(--green);
+    text-align: center;
+    line-height: 30px;
+}
+
+/* 增加动画效果使进度条加载时有动画过度效果 */
+@keyframes loadProgress {
+    from {
+        width: 0;
+    }
+    /*换成具体数据*/
+    to {
+        width: var(--target-width);
+    }
+}
+
+.progress-bar::before {
+    content: attr(data);
+    color: var(--white);
+}
+
+.progress-bar {
+    animation: loadProgress 1s ease-out forwards; /* 应用动画 */
+}
+
+.slider {
+    overflow: hidden;
+}
+
+.image-caption {
+    position: relative;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    color: var(--black);
+    padding: 5px 0;
+}
+
+.test-result-details h5{
+    text-align: center;
+    font-size: larger;
+}
+
+.health-report-wrapper{
+    position:relative;
+    padding:20px;
+    background: url('./../images/resultPictures/resultbg.jpg');
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    border-radius: 10px; /* 容器圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 容器阴影效果 */
+    flex-direction: column;
+}
+
+.physical-report {
+    font-size: 18px;
+    color: var(--blue);
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+.mental-report {
+    font-size: 18px;
+    color: var(--green);
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+.ill-report {
+    font-size: 18px;
+    color: var(--red);
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+.all-report{
+    font-size: 18px;
+    color: var(--navy-blue);
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 阴影效果 */
+}
+
+.health-report-wrapper p {
+    font-size: 16px;
+    color: var(--black);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: justify;
+    padding: 0 15px;
+}
+
+#report {
+    font-size: 26px;
+    color: darkblue;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.advice-link{
+    position:relative;
+    padding:20px;
+    background: var(--white);
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.advice-link p{
+    font-size: 16px;
+    color: var(--grey);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.download-button{
+    height:60px;
+    width:180px;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    background: powderblue;
+    color: var(--black);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    right:10px;
+
+}
+
+.download-button:hover {
+    background-color: var(--blue);
+}
+
+.advice-link h1{
+    color: orange;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}

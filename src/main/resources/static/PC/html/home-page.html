@@ -50,9 +50,9 @@
 
     <div class="slider1 position-relative">
         <div class="transition-time flex-display">
-            <div class="slider-item cursor-pointer"><img src="./../images/dna.jpg" alt="图片加载失败"></div>
-            <div class="slider-item cursor-pointer"><img src="./../images/health.jpg" alt="图片加载失败"></div>
-            <div class="slider-item cursor-pointer"><img src="./../images/doctor.png" alt="图片加载失败"></div>
+            <div class="slider-item cursor-pointer"><img src="./../images/sliderPictures/dna.jpg" alt="图片加载失败"></div>
+            <div class="slider-item cursor-pointer"><img src="./../images/sliderPictures/health.jpg" alt="图片加载失败"></div>
+            <div class="slider-item cursor-pointer"><img src="./../images/sliderPictures/doctor.png" alt="图片加载失败"></div>
         </div>
 
         <div class="dots position-absolute">
@@ -73,11 +73,11 @@
 
         <div class="slider2 position-relative">
             <div class="transition-time flex-display">
-                <div class="slider-item cursor-pointer"><img src="./../images/headache.jpg" alt="图片加载失败"></div>
-                <div class="slider-item cursor-pointer"><img src="./../images/insomnia.png" alt="图片加载失败"></div>
-                <div class="slider-item cursor-pointer"><img src="./../images/muscleache.jpg" alt="图片加载失败"></div>
-                <div class="slider-item cursor-pointer"><img src="./../images/stomachache.png" alt="图片加载失败"></div>
-                <div class="slider-item cursor-pointer"><img src="./../images/heartache.jpg" alt="图片加载失败"></div>
+                <div class="slider-item cursor-pointer"><img src="./../images/sliderPictures/headache.jpg" alt="图片加载失败"></div>
+                <div class="slider-item cursor-pointer"><img src="./../images/sliderPictures/insomnia.png" alt="图片加载失败"></div>
+                <div class="slider-item cursor-pointer"><img src="./../images/sliderPictures/muscle-pain.jpg" alt="图片加载失败"></div>
+                <div class="slider-item cursor-pointer"><img src="./../images/sliderPictures/stomachache.png" alt="图片加载失败"></div>
+                <div class="slider-item cursor-pointer"><img src="./../images/sliderPictures/heartache.jpg" alt="图片加载失败"></div>
             </div>
 
             <div class="dots position-absolute">
@@ -124,41 +124,47 @@
         <div class="ik-item">
             <img src="./../images/physical.png" alt="图片加载失败">
             <i class="ik-bg"></i>
-            <a class="btn1 btn-link" href="physicalTest.html">进入测试</a>
+            <a class="btn1 btn-link" href="./physical-test.html">进入测试</a>
             <p>体质评估<br><span></span></p>
         </div>
 
         <div class="ik-item">
             <img src="./../images/mental.png" alt="图片加载失败">
             <i class="ik-bg"></i>
-            <a class="btn1 btn-link" href="mentalTest.html">进入测试</a>
+            <a class="btn1 btn-link" href="./mental-test.html">进入测试</a>
             <p>心理评估<br></p>
         </div>
 
         <div class="ik-item">
             <img src="./../images/risk.png" alt="图片加载失败">
             <i class="ik-bg"></i>
-            <a class="btn1 btn-link" href="riskTest.html">进入测试</a>
+            <a class="btn1 btn-link" href="./risk-test.html">进入测试</a>
             <p>风险评估<br></p>
         </div>
 
         <div class="ik-item" >
             <img src="./../images/result.png" alt="图片加载失败">
             <i class="ik-bg"></i>
-            <a class="btn1 btn-link" href="result.html">查看结果</a>
+            <a class="btn1 btn-link" href="./result.html">查看结果</a>
             <p>健康意见<br></p>
         </div>
 
         <div class="ik-item" >
             <img src="./../images/ai.png" alt="图片加载失败">
             <i class="ik-bg"></i>
-            <a class="btn1 btn-link" href="chat.html">AI问答</a>
+            <a class="btn1 btn-link" href="./chat.html">AI问答</a>
             <p>人工智能技术辅助<br></p>
         </div>
     </div>
 
     <div class="footer">你的健康，我们关心！（制作者：******************）</div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+            if (isMobile) window.location.href = "./../../Mobile/html/home-page.html";
+        })
+    </script>
     <script type="text/javascript" src="./../js/pictureInterval/setSlider.js"></script>
     <script type="text/javascript" src="./../js/pictureInterval/createSliders.js"></script>
     <script type="text/javascript" src="./../js/arrow/arrow.js"></script>

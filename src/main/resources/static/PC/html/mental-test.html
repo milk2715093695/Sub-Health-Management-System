@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ch-CN">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./../css/framework.css">
     <link rel="stylesheet" href="./../css/query.css">
 
-    <title id="totalTitle">亚健康管理系统-体质测试</title>
+    <title id="totalTitle">亚健康管理系统-心理评测</title>
 </head>
 
 <body>
@@ -50,53 +50,57 @@
         </div>
 
         <div class="container">
-            <h2>体质评测</h2>
+            <h2>心理评估问卷</h2>
             <form action="" id="quiz">
-                <h3>1. 你的性别？</h3>
-                <input type="radio" id="male" name="gender" value="20">
-                <label for="male">男性</label><br>
-                <input type="radio" id="female" name="gender" value="20">
-                <label for="female">女性</label><br>
+                <h3>1. 你最近心情如何？</h3>
+                <input type="radio" id="very" name="emo" value="20">
+                <label for="very">非常愉快</label><br>
+                <input type="radio" id="ra" name="emo" value="10">
+                <label for="ra">比较愉快</label><br>
+                <input type="radio" id="less" name="emo" value="0">
+                <label for="less">低落</label>
 
-                <h3>2.是否关注个人体质与健康状况?</h3>
+                <h3>2. 你对当前的人际关系满意度?</h3>
                 <input type="radio" id="yes" name="satisfy" value="10">
-                <label for="yes">满意</label><br>
-                <input type="radio" id="no" name="satisfy" value="0">
-                <label for="no">不满意</label><br>
+                <label for="yes">非常满意</label><br>
+                <input type="radio" id="no" name="satisfy" value="5">
+                <label for="no">比较满意</label><br>
+                <input type="radio" id="not" name="satisfy" value="0">
+                <label for="not">不满意</label>
 
-                <h3>3. 一天中你觉得最精力充沛的是在什么时候？</h3>
+                <h3>3. 一天中你可以集中精力是在什么时候？</h3>
                 <input type="radio" id="morning" name="energy" value="10">
-                <label for="morning">早晨</label><br>
+                <label for="morning">全天</label><br>
                 <input type="radio" id="afternoon" name="energy" value="5">
-                <label for="afternoon">下午</label><br>
+                <label for="afternoon">半天</label><br>
                 <input type="radio" id="evening" name="energy" value="0">
-                <label for="evening">晚上</label>
+                <label for="evening">极少</label>
 
-                <h3>4. 你做运动的频率是？</h3>
-                <input type="radio" id="often" name="sports" value="10">
+                <h3>4. 你感到焦虑的频率是？</h3>
+                <input type="radio" id="often" name="sports" value="0">
                 <label for="often">经常</label><br>
                 <input type="radio" id="sometimes" name="sports" value="5">
                 <label for="sometimes">有时</label><br>
-                <input type="radio" id="rarely" name="sports" value="0">
+                <input type="radio" id="rarely" name="sports" value="10">
                 <label for="rarely">很少</label>
 
-                <h3>5. 你每天晚上睡觉的时间？</h3>
+                <h3>5. 你每天晚上睡眠质量如何？</h3>
                 <input type="radio" id="ten" name="time" value="10">
-                <label for="ten">十点左右</label><br>
+                <label for="ten">很好</label><br>
                 <input type="radio" id="eleven" name="time" value="5">
-                <label for="eleven">十一点左右</label><br>
+                <label for="eleven">一般</label><br>
                 <input type="radio" id="later" name="time" value="0">
-                <label for="later">十一点以后</label>
+                <label for="later">比较差</label>
 
-                <h3>6. 你每天在体育锻炼中投入的时间？</h3>
-                <input type="radio" id="often1" name="put" value="10">
-                <label for="often1">2个小时以上</label><br>
+                <h3>6. 你在有意外发生后多长时间可以恢复心情？</h3>
+                <input type="radio" id="often1" name="put" value="0">
+                <label for="often1">2天以上</label><br>
                 <input type="radio" id="sometimes1" name="put" value="5">
                 <label for="sometimes1">1-2个小时</label><br>
-                <input type="radio" id="rarely1" name="put" value="0">
+                <input type="radio" id="rarely1" name="put" value="10">
                 <label for="rarely1">1个小时以下</label>
 
-                <h3>7. 你是否容易生病？</h3>
+                <h3>7. 你是否感到注意力不集中？</h3>
                 <input type="radio" id="often2" name="ill" value="0">
                 <label for="often2">经常</label><br>
                 <input type="radio" id="sometimes2" name="ill" value="5">
@@ -104,15 +108,15 @@
                 <input type="radio" id="rarely2" name="ill" value="10">
                 <label for="rarely2">很少</label>
 
-                <h3>8. 你的作息时间是否规律？</h3>
-                <input type="radio" id="often3" name="regular" value="10">
-                <label for="often3">很规律</label><br>
-                <input type="radio" id="sometimes3" name="regular" value="5">
-                <label for="sometimes3">偶尔不规律</label><br>
-                <input type="radio" id="rarely3" name="regular" value="0">
-                <label for="rarely3">不规律</label>
+                <h3>8. 你如何评价自己的能力和价值？</h3>
+                <input type="radio" id="often3" name="value" value="10">
+                <label for="often3">非常高</label><br>
+                <input type="radio" id="sometimes3" name="value" value="5">
+                <label for="sometimes3">中等</label><br>
+                <input type="radio" id="rarely3" name="value" value="0">
+                <label for="rarely3">较低</label>
 
-                <h3>9. 你是否经常发脾气？</h3>
+                <h3>9. 你是否感到悲观或绝望？</h3>
                 <input type="radio" id="often4" name="temper" value="0">
                 <label for="often4">经常</label><br>
                 <input type="radio" id="sometimes4" name="temper" value="5">
@@ -121,7 +125,7 @@
                 <label for="rarely4">很少</label>
 
                 <br><br>
-                <input type="submit" value="提交">
+                <input id="submit" type="submit" value="提交">
             </form>
 
             <p id="score"></p>
@@ -133,11 +137,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
-            if (isMobile) window.location.href = "./../../Mobile/html/physical-test.html";
+            if (isMobile) window.location.href = "./../../Mobile/html/mental-test.html";
         })
     </script>
     <script type="text/javascript" src="./../js/queryScores/calculateScore.js"></script>
-    <script type="text/javascript" src="./../js/queryScores/healthScore.js"></script>
+    <script type="text/javascript" src="./../js/queryScores/mentalScore.js"></script>
     <script type="text/javascript" src="./../js/addCursorPointer.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </body>
