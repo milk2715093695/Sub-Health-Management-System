@@ -42,7 +42,7 @@ document.getElementById('register').addEventListener('click', function (event) {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    location.href = '../html/registerSuccess.html'
+                    location.href = './../html/registerSuccess.html'
                 } else {
                     alert(data.errMessage[language]);
                     document.getElementById('username').value = '';

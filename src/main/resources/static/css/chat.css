@@ -19,14 +19,14 @@
     margin: 0;
     width: 100%;
     height: calc(100% - var(--header-height) - var(--footer-height));
-    background: url(../images/icons/chatbg.png)var(--royal-blue) no-repeat center center;
+    background: url(./../images/icons/chatbg.png)var(--royal-blue) no-repeat center center;
     background-size: cover;
 }
 
 .chat-room {
     height: calc(100% - 20px);
     width: calc(100% - 20px);
-    background: url(../images/icons/chatbg.png) var(--royal-blue) no-repeat center center;
+    background: url(./../images/icons/chatbg.png) var(--royal-blue) no-repeat center center;
     background-size: cover;
 }
 
