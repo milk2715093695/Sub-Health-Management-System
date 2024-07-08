@@ -40,7 +40,7 @@
 .wrapper {
     height: 100%;
     width: 100%;
-    background: url("./../images/background.png") no-repeat;
+    background: url("../imagesackground.png") no-repeat;
     background-size: 100% 100%;
     box-sizing: border-box;
 }
@@ -131,13 +131,13 @@
 
 /* 用户名图标 */
 .username {
-    background: url("./../images/user.png") no-repeat;
+    background: url("../imagesser.png") no-repeat;
     background-size: 100% auto;
 }
 
 /* 密码图标 */
 .password {
-    background: url("./../images/pwd.png") no-repeat;
+    background: url("../imageswd.png") no-repeat;
     background-size: 100% auto;
 }
 

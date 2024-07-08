@@ -109,7 +109,7 @@
 .health-report-wrapper{
     position:relative;
     padding:20px;
-    background: url('./../images/resultpic/resultbg.jpg');
+    background: url('../imagesesultpic/resultbg.jpg');
     max-width: 1200px;
     margin: auto;
     display: flex;

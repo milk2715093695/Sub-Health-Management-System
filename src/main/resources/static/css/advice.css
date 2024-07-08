@@ -22,7 +22,7 @@
 }
 .diet-bg {
     height: 600px;
-    background: url('./../images/advicepic/footAdvice.png')var(--royal-blue) no-repeat center center;
+    background: url('../imagesdvicepic/footAdvice.png')var(--royal-blue) no-repeat center center;
     background-size: cover;
 }
 .diet-wrap {
@@ -52,7 +52,7 @@
 }
 .exercise-bg {
     height: 600px;
-    background: url('./../images/advicepic/sportAdvice.png')var(--royal-blue) no-repeat center center;
+    background: url('../imagesdvicepic/sportAdvice.png')var(--royal-blue) no-repeat center center;
     background-size: cover;
 }
 .exercise-wrap {
@@ -82,7 +82,7 @@
 }
 .rest-bg {
     height: 600px;
-    background: url('./../images/advicepic/restAdvice.png')var(--royal-blue) no-repeat center center;
+    background: url('../imagesdvicepic/restAdvice.png')var(--royal-blue) no-repeat center center;
     background-size: cover;
 }
 .rest-wrap {
@@ -112,7 +112,7 @@
 }
 .mental-bg {
     height: 600px;
-    background: url('./../images/advicepic/mentalAdvice.png')var(--royal-blue) no-repeat center center;
+    background: url('../imagesdvicepic/mentalAdvice.png')var(--royal-blue) no-repeat center center;
     background-size: cover;
 }
 .mental-wrap {
@@ -142,7 +142,7 @@
 }
 .doctor-bg {
     height: 600px;
-    background: url('./../images/advicepic/doctorAdvice.png') no-repeat center center;
+    background: url('../imagesdvicepic/doctorAdvice.png') no-repeat center center;
     background-size: cover;
 }
 .doctor-wrap {

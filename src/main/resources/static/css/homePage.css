@@ -65,7 +65,7 @@
     width: 37px;
     height: 24px;
     margin: 0 auto;
-    background: url(./../images/icon-adown.png)no-repeat center center;
+    background: url(../images/icon-adown.png)no-repeat center center;
     background-size: 30px;
     -webkit-transition: 1s linear 0s;
     -moz-transition: 1s linear 0s;
@@ -112,7 +112,7 @@
 }
 .health-bg {
     height: 600px;
-    background: url('./../images/ihealth-bg.png')var(--royal-blue) no-repeat center center;
+    background: url('../imageshealth-bg.png')var(--royal-blue) no-repeat center center;
     background-size: cover;
 }
 .health-wrap {
@@ -150,7 +150,7 @@
     top: 0;
     width: 430px;
     height: 430px;
-    background: url('./../images/i-hcircle.png') no-repeat center center;
+    background: url('../images-hcircle.png') no-repeat center center;
     background-size: 100%;
     animation: hcircle 8s linear 0s infinite;
     -webkit-animation: hcircle 8s linear 0s infinite;
@@ -163,7 +163,7 @@
     top: 45px;
     width: 190px;
     height: 330px;
-    background: url('./../images/i-hpeople.png')no-repeat 0 0;
+    background: url('../images-hpeople.png')no-repeat 0 0;
     background-size: 100%;
 }
 .small {
@@ -173,7 +173,7 @@
     height: 119px;
 }
 .cbg {
-    background: url(./../images/i-hcbg.png) no-repeat;
+    background: url(../images/i-hcbg.png) no-repeat;
     animation: hcircle 8s linear 0s infinite;
     -webkit-animation: hcircle 8s linear 0s infinite;
     -moz-animation: hcircle 8s linear 0s infinite;
@@ -266,7 +266,7 @@ h4 {
     display: block;
     width: 202px;
     height: 119px;
-    background: url('./../images/ik-bg.png')no-repeat 0 0;
+    background: url('../imagesk-bg.png')no-repeat 0 0;
     opacity: 0;
     transition: .5s;
 }

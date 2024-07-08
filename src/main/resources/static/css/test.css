@@ -1,6 +1,6 @@
 body {
     background-color: var(--white);
-    background-image: url('./../images/bodybg.jpg');
+    background-image: url('../imagesodybg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

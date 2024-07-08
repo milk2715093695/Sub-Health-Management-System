@@ -131,6 +131,7 @@ public class SurveyController {
     private Boolean checkUser(Map<String, Object> result, User user) {
         if (user == null || user.getUsername() == null || user.getUsername().isEmpty()) {
             addErrorMessage.addErrorMessage(result, "你还未登录", "You are not logged in");
+            return false;
         }
         return true;
     }
