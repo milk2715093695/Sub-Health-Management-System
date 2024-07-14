@@ -1,0 +1,61 @@
+:root {
+    --header-height: 4vh;
+    --header-paddings: 3vw;
+    --header-logo-height: 4vh;
+}
+
+:root {
+    --header-font-size: 2.5vh;
+    --header-font-weight: 600;
+    --header-title-font-weight: 400;
+    --header-title-content-letter-spacing: 0.4vw;
+}
+
+.page-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    top: 0;
+    width: 100%;
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    background-color: var(--white);
+}
+
+.header-title {
+    padding-left: var(--header-paddings);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-title span {
+    font-size: var(--header-font-size);
+    font-weight: var(--header-font-weight);
+}
+
+.header-title span::before {
+    margin: 0 3vw;
+    content: "|";
+    font-weight: var(--header-title-font-weight);
+}
+
+.header-logo {
+    display: inline-block;
+    height: var(--header-logo-height);
+}
+
+.header-title-content {
+    height: var(--header-title-content-height);
+    letter-spacing: var(--header-title-content-letter-spacing);
+}
+
+
